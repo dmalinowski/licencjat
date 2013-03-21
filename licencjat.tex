@@ -4,6 +4,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb}
 \usepackage{enumitem}
+\usepackage{eufrak}
 %\usepackage[cp1250]{inputenc}
 
 \author{Daniel Malinowski}
@@ -199,11 +200,69 @@ Jak to zostało wcześniej zapowiedziane, na koniec przytoczmy dwa ważne twierd
 
 
 
-
-
 \chapter{Prostota grupy alternującej $A_n$}
 
+
+
+
 \chapter{Lemat Iwasawy}
+W tym rozdziale przedstawione zostanie jedno z ważniejszych narzędzi do dowodzenia prostoty grup -- lemat Iwasawy.
+Lecz najpierw wprowadzimy nowe pojęcie --  prymitywność.
+
+\section{Prymitywne działania grupy}
+Jak zostało to już wspomniane w wiadomościach wstępnych, działanie grupy $G$ na zbiorze $X$ jest tranzytywne, 
+jeżeli elementy $X$ tworzą jedną orbitę, czyli dla dowolnych $x, y \in X$ istnieje $g \in G$ takie, że $x^g = y$.
+Teraz uogólnimy to pojęcie.
+
+\begin{deff}
+	Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$. \\
+	\emph{$\rho$ jest działaniem $k$-tranzytywnym ($k$-przechodnim)}, 
+	jeżeli dla dowolnych ciągów $k$ elementowych $(a_1, a_2, \cdots, a_k)$ oraz $(b_1, b_2, \cdots, b_k)$, 
+	które składają się z różnych elementów z $X$ istnieje taki element $g$ z grupy $G$, że
+	$a_i^g = b_i^g$ dla każdego $i = 1, 2, \cdots, k$.
+\end{deff}
+W szczególności $1$-tranzytywność to jest dokładnie to samo, co zwykła tranzytywność.
+
+Aby lepiej zilustrować to pojęcie, policzmy ilu tranzytywne jest naturalne działanie grupy $S_n$ oraz $A_n$ na zbiorze $X = \{1, 2, \cdots, n\}$,
+tzn. takie, w którym $i^\sigma = \sigma(i)$.
+
+Jak łatwo zauważyć, działanie $S_n$ jest $n$-tranzytywne -- skoro $S_n$ składa się ze wszystkich permutacji, 
+to zawsze możemy odwzorować ciąg $(a_1, a_2, \cdots, a_n)$ na $(b_1, b_2, \cdots, b_n)$, gdyż jak założyliśmy w definicji, 
+wszystkie $a_i$ jaki i wszystkie $b_i$ są parami różne.
+Stąd również działanie $S_n$ jest $k$-tranzytywne dla każdego $k \le n$.
+
+Natomiast w $A_n$ nie ma wszystkich permutacji, zatem działanie $A_n$ nie może być $n$-tranzytywne.
+Nie może być również $(n-1)$-tranzytywne, gdyż skoro mówimy na co przechodzą $n-1$ elementy $X$ i ma to być permutacja,
+to wartość ostatniego elementu też jest ustalona, czyli wybór $(n-1)$ pozycji jest tak na prawdę wyborem wszystkich $n$ pozycji, 
+a na wszystkich elementach nie możemy dowolnie ustalić permutacji.
+Zauważmy jednak, że działanie $A_n$ jest $(n-2)$-tranzytywne. 
+Rzeczywiście, chcąc żeby $a_i$ przeszło na $b_i$ dla $i = 1, 2, \cdots, (n-2)$ mamy do wyboru dwie permutacje.
+Jedna z nich odwzorowuje $x \mapsto y, x' \mapsto y'$, a druga $x \mapsto y', x' \mapsto y$, 
+gdzie $x, x'$ to elementy nie wybrane na $a_i$, a $y, y'$ to elementy nie wybrane na $b_i$. 
+Ale te permutacje różnią się o transpozycję $(y, y')$, zatem jedna z nich jest parzysta, czyli należy do $A_n$,
+więc rzeczywiście możemy odwzorować $(a_1, a_2, \cdots, a_{n-2})$ na $(b_1, b_2, \cdots, b_{n-2})$.
+Stąd działanie $S_n$ jest $k$-tranzytywne dla każdego $k \le n-2$.
+
+Wprowadzimy teraz własność prymitywności. 
+Będzie to coś pomiędzy tranzytywnością a $2$-tranzytywnością.
+
+\begin{deff}
+	Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$. \\
+	\emph{Systemem bloków} działania $\rho$ nazywamy podział zbioru $X$ zachowywany przez $\rho$,
+	tzn. rodzinę zbiorów $\mathfrak{A} = \{Y_i \colon i \in I \}$, które są niepuste, parami rozłączne, sumują się do $X$ 
+	oraz dla dowolnych $Y \in \mathfrak{A}, x, x' \in Y$ oraz $g \in G$ 
+	oba elementy $x^g$ oraz $x'^g$ znajdują się razem w jednym zbiorze $Y' \in \mathfrak{A}$.
+\end{deff}
+
+Zauważmy, że zawsze mamy co najmniej dwa systemy bloków -- jeden blok z całym zbiorem $\mathfrak{A} = \{X\}$
+oraz system z wszystkimi blokami jednoelementowymi $\mathfrak{A} = \{\{x\} \colon x \in X\}$.
+W związku z tym naturalna jest definicja:
+
+\begin{deff}
+	\emph{Nietrywialnym systemem bloków} nazywamy dowolny system bloków, 
+	który jest różny od dwóch wyżej wspomnianych -- z jednym blokiem lub z blokami jednoelementowymi.
+\end{deff}
+
 
 \chapter{Prostota specjalnej rzutowej grupy liniowej $PSL_n(k)$}
 
