@@ -2,6 +2,8 @@
 \usepackage{polski}
 
 \usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{enumitem}
 %\usepackage[cp1250]{inputenc}
 
 \author{Daniel Malinowski}
@@ -34,6 +36,7 @@
 \newtheorem{deff}{Definicja}[section]
 \newtheorem{thh}{Twierdzenie}[section]
 \newtheorem{lemma}{Lemat}[section]
+\newtheorem{fact}{Fakt}[section]
 % koniec definicji
 
 \begin{document}
@@ -52,6 +55,151 @@
 \addcontentsline{toc}{chapter}{Wprowadzenie}
 
 \chapter{Wiadomości wstępne}
+
+Rozdział ten zawiera przypomnienie pewnych definicji, własności i twierdzeń omawianych na podstawowym kursie algebry I
+oraz ustalenie oznaczeń.
+
+W niniejszej pracy dużymi literami alfabetu (np. $G, H, K$) będą oznaczane grupy.
+Ich elementy będą oznaczanie małymi literami alfabetu (np. $g, h, k$), przy czym przez $e$ będzie zawsze oznaczany element neutralny.
+Rozważane grupy będą (w większości) nieprzemienne, w związku z tym będzie stosowany zapis multiplikatywny.
+
+\section{Grupy proste}
+
+Zacznijmy zatem od przypomnienia podstawowej definicji w tej pracy.
+\begin{deff}
+	Nietrywialną grupę $G$ nazwiemy \emph{grupą prostą}, jeżeli nie ma ona podgrup normalnych różnych od $\{e\}$ oraz samej siebie.
+\end{deff}
+\begin{fact}
+	Jedynymi (z dokładnością do izomorfizmu) przemiennymi grupami prostymi są skończone grupy cykliczne o liczbie elementów będącą liczbą pierwszą.
+\end{fact}
+Jest to prosta konsekwencja tego, że w grupach przemiennych wszystkie podgrupy są podgrupami normalnymi.
+% jak zrobić odwołanie po szczegóły?
+
+
+\section{Twierdzenia o izomorfizmie}
+Przejdźmy teraz do podstawowych twierdzeń o izomorfizmie.
+\begin{thh}[Pierwsze twierdzenie o izomorfizmie] $ $ \\
+	Niech $G, H$ -- grupy, 	$ \varphi \colon G \to H$ homomorfizm, $K = \ker{\varphi}$ oraz $H' = \mathrm{im}\varphi $. \\
+	Wówczas zachodzi izomorfizm $$G/K \simeq H'$$
+\end{thh}
+\begin{thh}[Drugie twierdzenie o izomorfizmie]$ $\\
+	Niech $G$ -- grupa, 	$H_1, H_2$ podgrupy normalne $G$, przy czym $H_2 \leq H_1$. \\
+	Wówczas $H_2 \trianglelefteq H_2$, $H_1/H_2 \trianglelefteq G/H_2$ i zachodzi izomorfizm
+	$$ (G/H_2) / (H_1/H_2) \simeq G/H_1$$
+\end{thh}
+\begin{thh}[Trzecie twierdzenie o izomorfizmie] $ $ \\
+	Niech $G$ -- grupa, $H_1$ podgrupa normalna $G$, $H$ podgrupa $H_1$. \\
+	Wówczas $H\cap H_1 \trianglelefteq H$ oraz zachodzi izomorfizm
+	$$ H/(H\cap H_1) \simeq H \cdot H_1 / H_1 $$
+\end{thh}
+
+
+\section{Komutant i abelianizacja}
+Poniżej przedstawionych jest kilka użytecznych wiadomości o komutancie.
+\begin{deff}
+	Niech $G$ będzie dowolną grupą. Wówczas \emph{komutantem grupy $G$} nazywamy podgrupę $G$ generowaną przez wszystkie elementy postacji
+	$aba^{-1}b^{-1}$, gdzie $a, b \in G$. Komutant grupy $G$ oznaczamy przez $[G, G]$.
+\end{deff}
+\begin{thh}[O komutancie] $ $\\
+	Komutant $[G,G]$ jest podgrupą normalną $G$, przy czym grupa ilorazowa $G/[G,G]$ jest grupą abelową.
+	Ponadto dla dowolnej podgrupy normalnej $H \trianglelefteq G$ takiej, że $G/H$ jest abelowa, zachodzi $[G,G] \le H$.
+\end{thh}
+\begin{deff}
+	Przekształcenie kanoniczne $G \to G/[G,G]$ (rzutowanie na grupę ilorazową) nazywamy abelianizacją.
+\end{deff}
+
+O abelianizacji (w przeciwieństwie do twierdzenia o komutancie) nie będzie więcej wspominane w tej pracy, 
+ale ta definicja została przytoczona w celu domknięcia podstawowych faktów o komutancie.
+Ważniejszym dla nas pojęciem jest pojęcie grupy doskonałej:
+
+\begin{deff}
+	\emph{Grupą doskonałą} nazwiemy dowolną grupę, która jest równa swojemu komutantowi.
+\end{deff}
+
+Grupami doskonałymi zajmiemy się w dalszej części pracy -- przy lemacie Iwasawy.
+Na razie zauważmy prosty fakt:
+
+\begin{fact}
+	Nieprzemienne grupy proste są grupami doskonałymi.
+\end{fact}
+
+
+\section{Działanie grupy na zbiorze}
+Na koniec tego rozdziału przyjrzyjmy się jednej z ważniejszej własności grup -- ich możliwości działania na zbiorach.
+
+\begin{deff}
+ 	Niech $G$ będzie grupą, a $X$ -- zbiorem. Mówimy, że \emph{$\rho$ jest działaniem grupy $G$ na zbiorze $X$}, 
+	jeżeli dla każdego $g \in G$ przyporządkowane jest przekształcenie $\rho_g\colon X \to X$, takie, że:
+	\begin{itemize}
+		\item $\rho_e = \mathrm{id}_X$,
+		\item $\rho_g \circ \rho_h = \rho(gh)$, dla dowolnych $g, h \in G$.
+	\end{itemize}
+	Jeżeli sposób działania ($\rho$) wynika z kontekstu, to zamiast $\rho_g(x)$ będziemy pisać $x^g$.
+\end{deff}
+
+Zgrabniejszy opis działania grupy na zbiorze daje poniższe twierdzenie.
+Zanim jednak do niego przejdziemy, przypomnijmy sobie jeszcze jedną definicję.
+
+\begin{deff}
+	Niech $X$ będzie dowolnym zbiorem. Wówczas \emph{grupą symetrii zbioru X} nazywamy zbiór bijekcji $X \to X$,
+	wraz z operacją składania. Grupę tę oznaczamy $S_X$.
+\end{deff}
+
+\begin{thh}[O działaniu grupy na zbiorze] $ $ \\
+	Niech $G$ będzie grupą, a $X$ -- zbiorem. Wówczas $\rho$ jest działaniem $G$ na $X$ wtedy i tylko wtedy, 
+	gdy $\rho$ jest homomorfizmem z $G$ w grupę symetrii zbioru $X$.
+\end{thh}
+
+Z działaniem grupy na zbiorze związane jest dużo ważnych definicji i twierdzeń.
+Poniżej przytoczone są te najistotniejsze z punktu widzenia tej pracy.
+
+\begin{deff}
+	Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$ oraz $x \in X$. Wówczas:
+	\begin{enumerate}[label=\alph*)]
+	 \item \emph{Stabilizatorem punktu $x$ (grupą izotropii $x$)} nazwiemy zbiór elementów $\{g \in G\colon x^g = x \}$. 
+					Stabilizator punktu $x$ oznaczamy $G_x$.
+	 \item \emph{Orbitą punktu $x$} nazwiemy podzbiór $X$ równy $\{y \in X \colon \exists_{g \in G} x^g = y \}$.
+					Orbitę punktu $x$ oznaczamy $G(x)$.
+	\end{enumerate}
+% punkt stały ?
+\end{deff}
+
+Podstawowe własności tych obiektów przedstawia następujący fakt:
+\begin{fact}
+	Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$ oraz $x, y \in X$. Wówczas:
+	\begin{enumerate}[label=\alph*)]
+	 \item $G_x$ jest podgrupą $G$.
+	 \item $G(x)$ i $G(y)$ są równe lub rozłączne (orbity tworzą rozbicie zbioru $X$).
+	\end{enumerate}
+\end{fact}
+
+Zanim przejdziemy do ważniejszych twierdzeń opisujących orbity i stabilizatory, 
+przypomnijmy wcześniej, jakie własności może mieć działanie grupy na zbiorze.
+
+\begin{deff}
+	Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$.
+	\begin{enumerate}[label=\alph*)]
+	 \item \emph{$\rho$ jest działaniem tranzytywnym (przechodnim)}, jeżeli wszystkie elementy $X$ tworzą jedną orbitę.
+	 \item \emph{$\rho$ jest działaniem wiernym}, jeżeli $\rho$ jest iniekcją jako homomorfizm $G \to S_X$.
+	\end{enumerate}
+\end{deff}
+
+Jak to zostało wcześniej zapowiedziane, na koniec przytoczmy dwa ważne twierdzenie pokazujące zależność między orbitami a stabilizatorami.
+
+\begin{thh}[O orbitach i stabilizatorach] $ $\\
+	Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$, przy czym $X$ jest zbiorem skończonym.
+	Ponadto $x \in X$. Wówczas $|G(x)| = [G : G_x]$.
+\end{thh}
+
+\begin{thh}[Równanie klas] $ $\\
+	Przy założeniach z poprzedniego twierdzenia zachodzi
+	$$ |X| = \sum_{i=1}^k [G : G_{x_i}] ,$$
+	gdzie $x_1, x_2, \cdots, x_k$ to reprezentanci wszystkich orbit działania $\rho$.
+\end{thh}
+
+
+
+
 
 \chapter{Prostota grupy alternującej $A_n$}
 
