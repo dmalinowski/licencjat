@@ -3,6 +3,7 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb}
+\usepackage{amsthm}
 \usepackage{enumitem}
 \usepackage{eufrak}
 %\usepackage[cp1250]{inputenc}
@@ -57,46 +58,46 @@
 
 \chapter{Wiadomości wstępne}
 
-Rozdział ten zawiera przypomnienie pewnych definicji, własności i twierdzeń omawianych na podstawowym kursie algebry I
+Rozdział ten zawiera przypomnienie pewnych definicji, własności i~twierdzeń omawianych na podstawowym kursie algebry I
 oraz ustalenie oznaczeń.
 
 W niniejszej pracy dużymi literami alfabetu (np. $G, H, K$) będą oznaczane grupy.
 Ich elementy będą oznaczanie małymi literami alfabetu (np. $g, h, k$), przy czym przez $e$ będzie zawsze oznaczany element neutralny.
-Rozważane grupy będą (w większości) nieprzemienne, w związku z tym będzie stosowany zapis multiplikatywny.
+Rozważane grupy będą (w większości) nieprzemienne, w~związku z~tym będzie stosowany zapis multiplikatywny.
 
 \section{Grupy proste}
 
-Zacznijmy zatem od przypomnienia podstawowej definicji w tej pracy.
+Zacznijmy zatem od przypomnienia podstawowej definicji w~tej pracy.
 \begin{deff}
 	Nietrywialną grupę $G$ nazwiemy \emph{grupą prostą}, jeżeli nie ma ona podgrup normalnych różnych od $\{e\}$ oraz samej siebie.
 \end{deff}
 \begin{fact}
-	Jedynymi (z dokładnością do izomorfizmu) przemiennymi grupami prostymi są skończone grupy cykliczne o liczbie elementów będącą liczbą pierwszą.
+	Jedynymi (z dokładnością do izomorfizmu) przemiennymi grupami prostymi są skończone grupy cykliczne o~liczbie elementów będącą liczbą pierwszą.
 \end{fact}
-Jest to prosta konsekwencja tego, że w grupach przemiennych wszystkie podgrupy są podgrupami normalnymi.
+Jest to prosta konsekwencja tego, że w~grupach przemiennych wszystkie podgrupy są podgrupami normalnymi.
 % jak zrobić odwołanie po szczegóły?
 
 
-\section{Twierdzenia o izomorfizmie}
-Przejdźmy teraz do podstawowych twierdzeń o izomorfizmie.
-\begin{thh}[Pierwsze twierdzenie o izomorfizmie] $ $ \\
+\section{Twierdzenia o~izomorfizmie}
+Przejdźmy teraz do podstawowych twierdzeń o~izomorfizmie.
+\begin{thh}[Pierwsze twierdzenie o~izomorfizmie] $ $ \\
 	Niech $G, H$ -- grupy, 	$ \varphi \colon G \to H$ homomorfizm, $K = \ker{\varphi}$ oraz $H' = \mathrm{im}\varphi $. \\
 	Wówczas zachodzi izomorfizm $$G/K \simeq H'$$
 \end{thh}
-\begin{thh}[Drugie twierdzenie o izomorfizmie]$ $\\
+\begin{thh}[Drugie twierdzenie o~izomorfizmie]$ $\\
 	Niech $G$ -- grupa, 	$H_1, H_2$ podgrupy normalne $G$, przy czym $H_2 \leq H_1$. \\
-	Wówczas $H_2 \trianglelefteq H_2$, $H_1/H_2 \trianglelefteq G/H_2$ i zachodzi izomorfizm
+	Wówczas $H_2 \trianglelefteq H_2$, $H_1/H_2 \trianglelefteq G/H_2$ i~zachodzi izomorfizm
 	$$ (G/H_2) / (H_1/H_2) \simeq G/H_1$$
 \end{thh}
-\begin{thh}[Trzecie twierdzenie o izomorfizmie] $ $ \\
+\begin{thh}[Trzecie twierdzenie o~izomorfizmie] $ $ \\
 	Niech $G$ -- grupa, $H_1$ podgrupa normalna $G$, $H$ podgrupa $H_1$. \\
 	Wówczas $H\cap H_1 \trianglelefteq H$ oraz zachodzi izomorfizm
 	$$ H/(H\cap H_1) \simeq H \cdot H_1 / H_1 $$
 \end{thh}
 
 
-\section{Komutant i abelianizacja}
-Poniżej przedstawionych jest kilka użytecznych wiadomości o komutancie.
+\section{Komutant i~abelianizacja}
+Poniżej przedstawionych jest kilka użytecznych wiadomości o~komutancie.
 \begin{deff}
 	Niech $G$ będzie dowolną grupą. Wówczas \emph{komutantem grupy $G$} nazywamy podgrupę $G$ generowaną przez wszystkie elementy postacji
 	$aba^{-1}b^{-1}$, gdzie $a, b \in G$. Komutant grupy $G$ oznaczamy przez $[G, G]$.
@@ -109,15 +110,15 @@ Poniżej przedstawionych jest kilka użytecznych wiadomości o komutancie.
 	Przekształcenie kanoniczne $G \to G/[G,G]$ (rzutowanie na grupę ilorazową) nazywamy abelianizacją.
 \end{deff}
 
-O abelianizacji (w przeciwieństwie do twierdzenia o komutancie) nie będzie więcej wspominane w tej pracy, 
-ale ta definicja została przytoczona w celu domknięcia podstawowych faktów o komutancie.
+O abelianizacji (w przeciwieństwie do twierdzenia o~komutancie) nie będzie więcej wspominane w~tej pracy, 
+ale ta definicja została przytoczona w~celu domknięcia podstawowych faktów o~komutancie.
 Ważniejszym dla nas pojęciem jest pojęcie grupy doskonałej:
 
 \begin{deff}
 	\emph{Grupą doskonałą} nazwiemy dowolną grupę, która jest równa swojemu komutantowi.
 \end{deff}
 
-Grupami doskonałymi zajmiemy się w dalszej części pracy -- przy lemacie Iwasawy.
+Grupami doskonałymi zajmiemy się w~dalszej części pracy -- przy lemacie Iwasawy.
 Na razie zauważmy prosty fakt:
 
 \begin{fact}
@@ -126,16 +127,16 @@ Na razie zauważmy prosty fakt:
 
 
 \section{Działanie grupy na zbiorze}
-Na koniec tego rozdziału przyjrzyjmy się jednej z ważniejszej własności grup -- ich możliwości działania na zbiorach.
+Na koniec tego rozdziału przyjrzyjmy się jednej z~ważniejszej własności grup -- ich możliwości działania na zbiorach.
 
 \begin{deff}
- 	Niech $G$ będzie grupą, a $X$ -- zbiorem. Mówimy, że \emph{$\rho$ jest działaniem grupy $G$ na zbiorze $X$}, 
+ 	Niech $G$ będzie grupą, a~$X$ -- zbiorem. Mówimy, że \emph{$\rho$ jest działaniem grupy $G$ na zbiorze $X$}, 
 	jeżeli dla każdego $g \in G$ przyporządkowane jest przekształcenie $\rho_g\colon X \to X$, takie, że:
 	\begin{itemize}
 		\item $\rho_e = \mathrm{id}_X$,
 		\item $\rho_g \circ \rho_h = \rho(gh)$, dla dowolnych $g, h \in G$.
 	\end{itemize}
-	Jeżeli sposób działania ($\rho$) wynika z kontekstu, to zamiast $\rho_g(x)$ będziemy pisać $x^g$.
+	Jeżeli sposób działania ($\rho$) wynika z~kontekstu, to zamiast $\rho_g(x)$ będziemy pisać $x^g$.
 \end{deff}
 
 Zgrabniejszy opis działania grupy na zbiorze daje poniższe twierdzenie.
@@ -143,16 +144,16 @@ Zanim jednak do niego przejdziemy, przypomnijmy sobie jeszcze jedną definicję.
 
 \begin{deff}
 	Niech $X$ będzie dowolnym zbiorem. Wówczas \emph{grupą symetrii zbioru X} nazywamy zbiór bijekcji $X \to X$,
-	wraz z operacją składania. Grupę tę oznaczamy $S_X$.
+	wraz z~operacją składania. Grupę tę oznaczamy $S_X$.
 \end{deff}
 
 \begin{thh}[O działaniu grupy na zbiorze] $ $ \\
-	Niech $G$ będzie grupą, a $X$ -- zbiorem. Wówczas $\rho$ jest działaniem $G$ na $X$ wtedy i tylko wtedy, 
-	gdy $\rho$ jest homomorfizmem z $G$ w grupę symetrii zbioru $X$.
+	Niech $G$ będzie grupą, a~$X$ -- zbiorem. Wówczas $\rho$ jest działaniem $G$ na $X$ wtedy i~tylko wtedy, 
+	gdy $\rho$ jest homomorfizmem z~$G$ w~grupę symetrii zbioru $X$.
 \end{thh}
 
-Z działaniem grupy na zbiorze związane jest dużo ważnych definicji i twierdzeń.
-Poniżej przytoczone są te najistotniejsze z punktu widzenia tej pracy.
+Z działaniem grupy na zbiorze związane jest dużo ważnych definicji i~twierdzeń.
+Poniżej przytoczone są te najistotniejsze z~punktu widzenia tej pracy.
 
 \begin{deff}
 	Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$ oraz $x \in X$. Wówczas:
@@ -170,11 +171,11 @@ Podstawowe własności tych obiektów przedstawia następujący fakt:
 	Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$ oraz $x, y \in X$. Wówczas:
 	\begin{enumerate}[label=\alph*)]
 	 \item $G_x$ jest podgrupą $G$.
-	 \item $G(x)$ i $G(y)$ są równe lub rozłączne (orbity tworzą rozbicie zbioru $X$).
+	 \item $G(x)$ i~$G(y)$ są równe lub rozłączne (orbity tworzą rozbicie zbioru $X$).
 	\end{enumerate}
 \end{fact}
 
-Zanim przejdziemy do ważniejszych twierdzeń opisujących orbity i stabilizatory, 
+Zanim przejdziemy do ważniejszych twierdzeń opisujących orbity i~stabilizatory, 
 przypomnijmy wcześniej, jakie własności może mieć działanie grupy na zbiorze.
 
 \begin{deff}
@@ -182,18 +183,19 @@ przypomnijmy wcześniej, jakie własności może mieć działanie grupy na zbior
 	\begin{enumerate}[label=\alph*)]
 	 \item \emph{$\rho$ jest działaniem tranzytywnym (przechodnim)}, jeżeli wszystkie elementy $X$ tworzą jedną orbitę.
 	 \item \emph{$\rho$ jest działaniem wiernym}, jeżeli $\rho$ jest iniekcją jako homomorfizm $G \to S_X$.
+	 \item \emph{$\rho$ jest działaniem nietrywialnym}, jeżeli $\rho$ nie jest zerowe jako homomorfizm $G \to S_X$.
 	\end{enumerate}
 \end{deff}
 
-Jak to zostało wcześniej zapowiedziane, na koniec przytoczmy dwa ważne twierdzenie pokazujące zależność między orbitami a stabilizatorami.
+Jak to zostało wcześniej zapowiedziane, na koniec przytoczmy dwa ważne twierdzenie pokazujące zależność między orbitami a~stabilizatorami.
 
-\begin{thh}[O orbitach i stabilizatorach] $ $\\
+\begin{thh}[O orbitach i~stabilizatorach] $ $\\
 	Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$, przy czym $X$ jest zbiorem skończonym.
 	Ponadto $x \in X$. Wówczas $|G(x)| = [G : G_x]$.
 \end{thh}
 
 \begin{thh}[Równanie klas] $ $\\
-	Przy założeniach z poprzedniego twierdzenia zachodzi
+	Przy założeniach z~poprzedniego twierdzenia zachodzi
 	$$ |X| = \sum_{i=1}^k [G : G_{x_i}] ,$$
 	gdzie $x_1, x_2, \cdots, x_k$ to reprezentanci wszystkich orbit działania $\rho$.
 \end{thh}
@@ -206,11 +208,11 @@ Jak to zostało wcześniej zapowiedziane, na koniec przytoczmy dwa ważne twierd
 
 
 \chapter{Lemat Iwasawy}
-W tym rozdziale przedstawione zostanie jedno z ważniejszych narzędzi do dowodzenia prostoty grup -- lemat Iwasawy.
+W tym rozdziale przedstawione zostanie jedno z~ważniejszych narzędzi do dowodzenia prostoty grup -- lemat Iwasawy.
 Lecz najpierw wprowadzimy nowe pojęcie --  prymitywność.
 
 \section{Prymitywne działania grupy}
-Jak zostało to już wspomniane w wiadomościach wstępnych, działanie grupy $G$ na zbiorze $X$ jest tranzytywne, 
+Jak zostało to już wspomniane w~wiadomościach wstępnych, działanie grupy $G$ na zbiorze $X$ jest tranzytywne, 
 jeżeli elementy $X$ tworzą jedną orbitę, czyli dla dowolnych $x, y \in X$ istnieje $g \in G$ takie, że $x^g = y$.
 Teraz uogólnimy to pojęcie.
 
@@ -218,55 +220,172 @@ Teraz uogólnimy to pojęcie.
 	Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$. \\
 	\emph{$\rho$ jest działaniem $k$-tranzytywnym ($k$-przechodnim)}, 
 	jeżeli dla dowolnych ciągów $k$ elementowych $(a_1, a_2, \cdots, a_k)$ oraz $(b_1, b_2, \cdots, b_k)$, 
-	które składają się z różnych elementów z $X$ istnieje taki element $g$ z grupy $G$, że
+	które składają się z~różnych elementów z~$X$ istnieje taki element $g$ z~grupy $G$, że
 	$a_i^g = b_i^g$ dla każdego $i = 1, 2, \cdots, k$.
 \end{deff}
 W szczególności $1$-tranzytywność to jest dokładnie to samo, co zwykła tranzytywność.
 
-Aby lepiej zilustrować to pojęcie, policzmy ilu tranzytywne jest naturalne działanie grupy $S_n$ oraz $A_n$ na zbiorze $X = \{1, 2, \cdots, n\}$,
-tzn. takie, w którym $i^\sigma = \sigma(i)$.
+Aby zilustrować to pojęcie, policzmy ilu tranzytywne jest naturalne działanie grupy $S_n$ oraz $A_n$ na zbiorze $X = \{1, 2, \cdots, n\}$,
+tzn. takie, w~którym $i^\sigma = \sigma(i)$.
 
 Jak łatwo zauważyć, działanie $S_n$ jest $n$-tranzytywne -- skoro $S_n$ składa się ze wszystkich permutacji, 
-to zawsze możemy odwzorować ciąg $(a_1, a_2, \cdots, a_n)$ na $(b_1, b_2, \cdots, b_n)$, gdyż jak założyliśmy w definicji, 
-wszystkie $a_i$ jaki i wszystkie $b_i$ są parami różne.
+to zawsze możemy odwzorować ciąg $(a_1, a_2, \cdots, a_n)$ na $(b_1, b_2, \cdots, b_n)$, gdyż jak założyliśmy w~definicji, 
+wszystkie $a_i$ jaki i~wszystkie $b_i$ są parami różne.
 Stąd również działanie $S_n$ jest $k$-tranzytywne dla każdego $k \le n$.
 
-Natomiast w $A_n$ nie ma wszystkich permutacji, zatem działanie $A_n$ nie może być $n$-tranzytywne.
-Nie może być również $(n-1)$-tranzytywne, gdyż skoro mówimy na co przechodzą $n-1$ elementy $X$ i ma to być permutacja,
+Natomiast w~$A_n$ nie ma wszystkich permutacji, zatem działanie $A_n$ nie może być $n$-tranzytywne.
+Nie może być również $(n-1)$-tranzytywne, gdyż skoro mówimy na co przechodzą $n-1$ elementy $X$ i~ma to być permutacja,
 to wartość ostatniego elementu też jest ustalona, czyli wybór $(n-1)$ pozycji jest tak na prawdę wyborem wszystkich $n$ pozycji, 
 a na wszystkich elementach nie możemy dowolnie ustalić permutacji.
 Zauważmy jednak, że działanie $A_n$ jest $(n-2)$-tranzytywne. 
 Rzeczywiście, chcąc żeby $a_i$ przeszło na $b_i$ dla $i = 1, 2, \cdots, (n-2)$ mamy do wyboru dwie permutacje.
-Jedna z nich odwzorowuje $x \mapsto y, x' \mapsto y'$, a druga $x \mapsto y', x' \mapsto y$, 
-gdzie $x, x'$ to elementy nie wybrane na $a_i$, a $y, y'$ to elementy nie wybrane na $b_i$. 
-Ale te permutacje różnią się o transpozycję $(y, y')$, zatem jedna z nich jest parzysta, czyli należy do $A_n$,
+Jedna z~nich odwzorowuje $x \mapsto y, x' \mapsto y'$, a~druga $x \mapsto y', x' \mapsto y$, 
+gdzie $x, x'$ to elementy nie wybrane na $a_i$, a~$y, y'$ to elementy nie wybrane na $b_i$. 
+Ale te permutacje różnią się o~transpozycję $(y, y')$, zatem jedna z~nich jest parzysta, czyli należy do $A_n$,
 więc rzeczywiście możemy odwzorować $(a_1, a_2, \cdots, a_{n-2})$ na $(b_1, b_2, \cdots, b_{n-2})$.
 Stąd działanie $S_n$ jest $k$-tranzytywne dla każdego $k \le n-2$.
 
 Wprowadzimy teraz własność prymitywności. 
-Będzie to coś pomiędzy tranzytywnością a $2$-tranzytywnością.
+Będzie to coś pomiędzy tranzytywnością a~$2$-tranzytywnością.
 
 \begin{deff}
 	Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$. \\
 	\emph{Systemem bloków} działania $\rho$ nazywamy podział zbioru $X$ zachowywany przez $\rho$,
 	tzn. rodzinę zbiorów $\mathfrak{A} = \{Y_i \colon i \in I \}$, które są niepuste, parami rozłączne, sumują się do $X$ 
 	oraz dla dowolnych $Y \in \mathfrak{A}, x, x' \in Y$ oraz $g \in G$ 
-	oba elementy $x^g$ oraz $x'^g$ znajdują się razem w jednym zbiorze $Y' \in \mathfrak{A}$.
+	oba elementy $x^g$ oraz $x'^g$ znajdują się razem w~jednym zbiorze $Y' \in \mathfrak{A}$.
 \end{deff}
 
-Zauważmy, że zawsze mamy co najmniej dwa systemy bloków -- jeden blok z całym zbiorem $\mathfrak{A} = \{X\}$
-oraz system z wszystkimi blokami jednoelementowymi $\mathfrak{A} = \{\{x\} \colon x \in X\}$.
-W związku z tym naturalna jest definicja:
+Zauważmy, że zawsze mamy co najmniej dwa systemy bloków -- jeden blok z~całym zbiorem $\mathfrak{A} = \{X\}$
+oraz system z~wszystkimi blokami jednoelementowymi $\mathfrak{A} = \{\{x\} \colon x \in X\}$.
+W~związku z~tym naturalna jest definicja:
 
 \begin{deff}
 	\emph{Nietrywialnym systemem bloków} nazywamy dowolny system bloków, 
-	który jest różny od dwóch wyżej wspomnianych -- z jednym blokiem lub z blokami jednoelementowymi.
+	który jest różny od dwóch wyżej wspomnianych -- z~jednym blokiem lub z~blokami jednoelementowymi.
 \end{deff}
+
+Teraz jesteśmy już gotowi na wprowadzenie pojęcia prymitywności.
+
+\begin{deff}
+	Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$. \\
+	\emph{$\rho$ nazywamy prymitywnym}, jeśli nie istnieje nietrywialny system bloków działania $\rho$.
+\end{deff}
+
+Aby lepiej zrozumieć tą własność, pokażemy, że rzeczywiście jest to własność pomiędzy tranzytywnością oraz $2$-tranzytywnością.
+
+\begin{thh}
+	Załóżmy, że $\rho$ jest nietrywialnym działaniem grupy $G$ na zbiorze $X$. Wówczas:
+	\begin{enumerate}[label=\alph*)]
+	 \item Jeżeli $\rho$ jest prymitywne, to jest tranzytywne.
+	 \item Jeżeli $\rho$ jest $2$-tranzytywne, to jest prymitywne.
+	\end{enumerate}
+\end{thh}
+
+\begin{proof}
+$ $\\
+	\begin{enumerate}[label=Ad \alph*)] 
+	 \item 	Załóżmy nie wprost, że $\rho$ nie jest tranzytywne. 
+					Wówczas rozbicie $X$ na orbity daje nietrywialny system bloków.
+					Rzeczywiście, z nieprzechodniości dostajemy, że ilość bloków wynosi co najmniej 2 a
+					z nietrywialności $\rho$ -- któryś blok ma co najmniej 2 elementy.
+					Ostatecznie $\rho$ permutuje orbity, więc w szczególności je zachowuje.
+					Znaleźliśmy nietrywialny system bloków działania $\rho$, czyli sprzeczność -- $\rho$ nie jest prymitywne.
+					Stąd $\rho$ musi być tranzytywne.
+	 \item 	Załóżmy nie wprost, że $\rho$ nie jest prymitywne.
+					Wówczas istnieje nietrywialny system bloków $\mathfrak{A} = \{Y_i \colon i \in I \}$, 
+					w którym istnieją $Y_1, Y_2 \in \mathfrak{A}$ takie, że $|Y_1| > 1$.
+					Niech więc $x,y \in Y_1, z \in Y_2$ gdzie $x \ne y$.
+					Z 2-tranzytywności możemy odwzorować parę $(x, y)$ na parę $(x, z)$, co daje sprzeczność z definicją systemu bloków.
+					Stąd $\rho$ musi być prymitywne.
+	\end{enumerate}
+\end{proof}
+
+Oczywiście możliwe jest, że grupa działa tranzytywnie a nie prymitywnie, lub prymitywnie, a nie 2-tranzytywnie.
+
+Jako pierwszy przykład możemy rozważyć naturalne działanie czteroelementowej 
+grupy $H= \langle (1,2)(3,4), (1,3)(2,4) \rangle$ będącej podgrupą $S_4$ na zbiorze 4 elementowym.
+Jak łatwo widać jest ono przechodnie.
+Nie jest jednak prymitywne, gdyż zachowuje ono np system bloków $\{\{1,2\}, \{3,4\}\}$.
+
+Jako drugi przykład rozważmy działanie $A_3$ na zbiorze $\{1, 2, 3\}$.
+Jak pokazaliśmy wcześniej nie jest ono 2-tranzytywne, ale jest tranzytywne.
+To, że jest to również działanie prymitywne wynika z następującego lematu:
+
+\begin{lemma}
+	Załóżmy, że $\rho$ jest tranzytywnym działaniem grupy $G$ na zbiorze $X$.
+	Wówczas w dowolnym systemie bloków wszystkie bloki są równych rozmiarów.
+\end{lemma}
+\begin{proof}
+Rzeczywiście, jeżeli $Y_1, Y_2$ są blokami, to skoro możemy odwzorować $y_1 \in Y_1$ na $y_2 \in Y_2$, 
+To całe $Y_1$ musi być przekształcone w $Y_2$ (z własności systemu bloków), stąd $|Y_1| \le |Y_2|$.
+Analogicznie $|Y_2| \le |Y_1|$, zatem $|Y_1| = |Y_2|$.
+\end{proof}
+
+
+W tym przypadku bloki w nietrywialnym systemie bloków muszą mieć rozmiary 1 i 2,
+czyli różne, więc nietrywialny system bloków nie może istnieć.
+
+Udowodnijmy teraz jeszcze jedno stwierdzenie, które jest użyteczne w dowodzie lematu Iwasawy.
+
+\begin{lemma}
+	Załóżmy, że $\rho$ jest tranzytywnym działaniem grupy $G$ na zbiorze $X$ oraz $x \in X$.
+	Wówczas $\rho$ jest prymitywne wtedy i tylko wtedy, gdy $G_x$ jest maksymalną podgrupą $G$, tzn.
+	nie istnieje podgrupa $H$ grupy $G$, że $G_x \lneq H \lneq G$.
+\end{lemma}
+\begin{proof}
+Zauważmy najpierw, że warstwy (lewostronne) $G_x$ odpowiadają jednoznacznie elementom zbioru $X$ --
+bijekcja zadana jest wzorem $\zeta \colon g G_x \mapsto x^g$.
+Funkcja ta jest dobrze określona oraz jest iniekcją, gdyż $g_1 G_x = g_2 G_x \iff g_1^{-1} \cdot g_2 = h$ dla pewnego $h \in G_x$
+$\iff x^{g_1^{-1} \cdot g_2} = x^h = x \iff x^{g_1} = x^{g_2}$.
+Ponadto $\zeta$ jest suriekcją, gdyż działanie jest tranzytywne, stąd rzeczywiście $\zeta$ jest bijekcją.
+
+Przejdźmy teraz do dalszej części dowodu
+
+$\Rightarrow)$ \\
+Załóżmy nie w prost, że $G_x$ nie jest maksymalna, czyli istnieje $H$, takie, że $G_x \lneq H \lneq G$.
+Skoro $H$ zawiera $G_x$, to warstwy $H$ są sumami pewnych warstw $G_x$ -- 
+jeżeli $g_1 G_x = g_2 G_x \iff g_1^{-1} \cdot g_2 \in G_x$ to również $g_1^{-1} \cdot g_2 \in H \iff g_1 H = g_2 H$.
+Stąd warstwy $H$ odpowiadają rozbiciu zbioru warstw $G_x$, czyli również rozbiciu zbioru $X$.
+Zauważmy jeszcze, że działanie $G$ zachowuje warstwy $H$.
+Jest tak dlatego, że dla $g_1 H = g_2 H$ zachodzi $g_1^{-1} \cdot g_2 \in H$.
+Punkt $g_i G_x = x^{g_i}$ przy działaniu elementem $f$ grupy $G$ przechodzi na $(x^{g_i})^f = x^{f g_i} = f g_i G_x$.
+Ale warstwy $f g_1 G_x$ oraz $f g_2 G_x$ zawierają się w jednej warstwie $H$, gdyż $(f g_1)^{-1} f g_2 = g_1^{-1} f^{-1} f g_2 = g_1^{-1} g_2 \in H$.
+
+Otrzymaliśmy zatem system bloków, który na dodatek jest nietrywialny, gdyż $H$ zawiera się ściśle pomiędzy $G_x$ a $G$.
+Zatem działanie $\rho$ nie jest prymitywne -- sprzeczność.
+Stąd taka grupa $H$ nie istnieje -- $G_x$ jest maksymalną podgrupą $G$.
+
+$\Leftarrow)$ \\
+Tutaj również przeprowadzimy dowód nie w prost.
+Załóżmy, że $\rho$ nie działa prymitywnie na $X$, czyli istnieje pewien nietrywialny system bloków $\mathfrak{A}$.
+Niech $Y \in \mathfrak{A}$ takie, że $x \in Y$ oraz niech $H$ będzie stabilizatorem całego zbioru $Y$
+(czyli zbiorem $\{g \in G \colon \forall_{y \in Y} y^g \in Y \}$).
+Skoro $\mathfrak{A}$ jest nietrywialne, to $Y \ne X$ oraz istnieje blok rozmiaru co najmniej 2.
+Ale z poprzedniego lematu wiemy, że wszystkie bloki mają tą samą wielkość, więc również $|Y| \ge 2$.
+
+Zauważmy, że $H = \{ g \in G \colon x^g \in Y\} = K$. 
+Oczywiście $H \subseteq K$, gdyż elementy $H$ zachowują zbiór $Y$.
+Z drugiej strony, jeżeli jakiś element z $Y$ trafia z powrotem do $Y$, to całe $Y$ jest zachowywane, 
+gdyż $Y$ jest elementem systemu bloków.
+Stąd rzeczywiście $H = K$.
+
+Na koniec wystarczy zobaczyć, że skoro $\{x\} \subsetneq  Y \subsetneq X$,
+to $G_x \lneq H \lneq G$.
+Jest tak dlatego, że $H$, w przeciwieństwie do $G_x$, zawiera elementy odwzorowujące $x$ na jakiś inny element zbioru $Y$
+ale nie zawiera elementów, które odwzorowują $x$ na elementy spoza $Y$ (które istnieją).
+Stąd $G_x$ nie jest maksymalne -- sprzeczność.
+Stąd to działanie musi być prymitywne.
+\end{proof}
+
+Teraz jesteśmy już gotowi na sformułowanie i dowód lematy Iwasawy.
+
+\section{Lemat Iwasawy}
 
 
 \chapter{Prostota specjalnej rzutowej grupy liniowej $PSL_n(k)$}
 
-%\chapter{Prostota $A_n$ z lematu Iwasawy}
+%\chapter{Prostota $A_n$ z~lematu Iwasawy}
 
 \begin{thebibliography}{99}
 \addcontentsline{toc}{chapter}{Bibliografia}
