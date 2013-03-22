@@ -61,13 +61,26 @@
 Rozdział ten zawiera przypomnienie pewnych definicji, własności i~twierdzeń omawianych na podstawowym kursie algebry I
 oraz ustalenie oznaczeń.
 
+\section{Oznaczenia}
+
 W niniejszej pracy dużymi literami alfabetu (np. $G, H, K$) będą oznaczane grupy.
 Ich elementy będą oznaczanie małymi literami alfabetu (np. $g, h, k$), przy czym przez $e$ będzie zawsze oznaczany element neutralny.
 Rozważane grupy będą (w większości) nieprzemienne, w~związku z~tym będzie stosowany zapis multiplikatywny.
 
+Jeżeli $H$ oraz $K$ są podgrupami grupy $G$, to przez $H K = H \cdot K$ będzie oznaczana podgrupa $G$ 
+generowana przez wszystkie elementy postaci $h \cdot k$, gdzie $h \in H$ oraz $k \in K$.
+
+W związku z tym oznaczeniem warto przytoczyć twierdzenie:
+
+\begin{thh} \label{mult_groups} $ $ \\
+	Jeżeli $H$ oraz $K$ są podgrupami grupy $G$, przy czym $K$ jest podgrupą normalną,
+	to $HK = \{ h k \colon h \in H, k \in K\}$.
+\end{thh}
+
+
 \section{Grupy proste}
 
-Zacznijmy zatem od przypomnienia podstawowej definicji w~tej pracy.
+Przypomnijmy teraz podstawową definicji w~tej pracy.
 \begin{deff}
 	Nietrywialną grupę $G$ nazwiemy \emph{grupą prostą}, jeżeli nie ma ona podgrup normalnych różnych od $\{e\}$ oraz samej siebie.
 \end{deff}
@@ -187,11 +200,17 @@ przypomnijmy wcześniej, jakie własności może mieć działanie grupy na zbior
 	\end{enumerate}
 \end{deff}
 
-Jak to zostało wcześniej zapowiedziane, na koniec przytoczmy dwa ważne twierdzenie pokazujące zależność między orbitami a~stabilizatorami.
+Jak to zostało wcześniej zapowiedziane, na koniec przytoczmy kilka ważnych twierdzeń pokazujących zależność między orbitami a~stabilizatorami.
+
+\begin{thh}\label{conj_stab} $ $\\
+	Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$ oraz $x, y \in X$ należą do jednej orbity.
+	Wówczas grupy $G_x$ oraz $G_y$ są wzajemnie sprzężone.
+\end{thh}
 
 \begin{thh}[O orbitach i~stabilizatorach] $ $\\
 	Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$, przy czym $X$ jest zbiorem skończonym.
-	Ponadto $x \in X$. Wówczas $|G(x)| = [G : G_x]$.
+	Ponadto $x \in X$. 
+	Wówczas $|G(x)| = [G : G_x]$.
 \end{thh}
 
 \begin{thh}[Równanie klas] $ $\\
@@ -211,7 +230,7 @@ Jak to zostało wcześniej zapowiedziane, na koniec przytoczmy dwa ważne twierd
 W tym rozdziale przedstawione zostanie jedno z~ważniejszych narzędzi do dowodzenia prostoty grup -- lemat Iwasawy.
 Lecz najpierw wprowadzimy nowe pojęcie --  prymitywność.
 
-\section{Prymitywne działania grupy}
+\section{Prymitywne działanie grupy}
 Jak zostało to już wspomniane w~wiadomościach wstępnych, działanie grupy $G$ na zbiorze $X$ jest tranzytywne, 
 jeżeli elementy $X$ tworzą jedną orbitę, czyli dla dowolnych $x, y \in X$ istnieje $g \in G$ takie, że $x^g = y$.
 Teraz uogólnimy to pojęcie.
@@ -392,24 +411,24 @@ Teraz jesteśmy już gotowi na sformułowanie i dowód lematy Iwasawy.
 	Załóżmy przeciwnie, że w $G$ istnieje właściwa, nietrywialna podgrupa normalna $K$.
 	Skoro $G$ działa wiernie oraz $K$ jest nietrywialna, to $x_0^{k_0} \ne x_0$ dla pewnego $k_0 \in K$.
 	Niech $H = G_{x_0}$.
-	Dostajemy, że $K \nleq H$, gdyż $k_0 \not \in H$, stąd również $H \lneq H K$.% coś dopisać coś o HK?
+	Dostajemy, że $K \nleq H$, gdyż $k_0 \not \in H$, stąd również $H \lneq H K$.
 
 	Z lematu \ref{max_group} otrzymujemy, że $H$ jest podgrupą maksymalną w $G$.
 	$H \lneq H K$, więc $H K = G$.
-	Stąd każdy element $g \in G$ jest postaci $g = h k$, gdzie $h \in H$ oraz $k \in K$.
+	Stąd (i z twierdzenia \ref{mult_groups}) każdy element $g \in G$ jest postaci $g = h k$, gdzie $h \in H$ oraz $k \in K$.
 
-	Skoro działanie $\rho$ jest prymitywne, a więc tranzytywne, to z twierdzenia ...%TODO 
-	$G_x$ jest sprzężone z $H$.
+	Skoro działanie $\rho$ jest prymitywne, a więc tranzytywne, to z twierdzenia \ref{conj_stab}
+	dostajemy, że $G_x$ jest sprzężone z $H$.
 	Z założenia dodatkowo wynika, że $H$ zawiera podgrupę $B$ sprzężoną do $A$, 
 	ponadto $B$ jest normalną podgrupą abelową $H$, której sprzężenia (w $G$) generują całe $G$.
-	Sprzężenia $B$ są postaci $g^{-1} B g = k^{-1} h^{-1} B h k = k^{-1} B k \le B K$. % coś dopisać?
+	Sprzężenia $B$ są postaci $g^{-1} B g = k^{-1} h^{-1} B h k = k^{-1} B k \le B K$.
 	Wszystkie sprzężenie $B$ generują $G$ i są zawarte w $B K \le G$, stąd $G = B K$.
 
 	Korzystając z trzeciego twierdzenia o izomorfizmie dostajemy:
 	$$ G/K = BK/K \simeq B/B\cap K$$
 	Ale grupa ilorazowa grupy abelowej jest abelowa, stąd zarówno $B/B\cap K$ jaki i $G/K$ są abelowe.
 	Z twierdzenia o komutancie wnioskujemy, że $K \ge [G, G] = G$, gdyż $G$ jest grupą doskonałą --
-	sprzeczność z założeniem, że $K$ jest właściwą podgrupą $G$, stąd $G$ jest grupą prostą.
+	dostaliśmy sprzeczność z założeniem, że $K$ jest właściwą podgrupą $G$, stąd $G$ jest grupą prostą.
 \end{proof}
 
 Zastosowania lematu Iwasawy znajdują się w dalszej części pracy.
