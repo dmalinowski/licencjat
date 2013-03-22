@@ -90,7 +90,7 @@ Przejdźmy teraz do podstawowych twierdzeń o~izomorfizmie.
 	$$ (G/H_2) / (H_1/H_2) \simeq G/H_1$$
 \end{thh}
 \begin{thh}[Trzecie twierdzenie o~izomorfizmie] $ $ \\
-	Niech $G$ -- grupa, $H_1$ podgrupa normalna $G$, $H$ podgrupa $H_1$. \\
+	Niech $G$ -- grupa, $H_1$ podgrupa normalna $G$, $H$ podgrupa $G$. \\
 	Wówczas $H\cap H_1 \trianglelefteq H$ oraz zachodzi izomorfizm
 	$$ H/(H\cap H_1) \simeq H \cdot H_1 / H_1 $$
 \end{thh}
@@ -328,7 +328,7 @@ czyli różne, więc nietrywialny system bloków nie może istnieć.
 
 Udowodnijmy teraz jeszcze jedno stwierdzenie, które jest użyteczne w dowodzie lematu Iwasawy.
 
-\begin{lemma}
+\begin{lemma}\label{max_group}
 	Załóżmy, że $\rho$ jest tranzytywnym działaniem grupy $G$ na zbiorze $X$ oraz $x \in X$.
 	Wówczas $\rho$ jest prymitywne wtedy i tylko wtedy, gdy $G_x$ jest maksymalną podgrupą $G$, tzn.
 	nie istnieje podgrupa $H$ grupy $G$, że $G_x \lneq H \lneq G$.
@@ -381,6 +381,39 @@ Stąd to działanie musi być prymitywne.
 Teraz jesteśmy już gotowi na sformułowanie i dowód lematy Iwasawy.
 
 \section{Lemat Iwasawy}
+
+\begin{thh}
+	Załóżmy, że $G$ jest skończoną [dowolną?] grupą doskonałą, $\rho$ -- wiernie oraz prymitywnie działanie $G$ na zbiorze $X$.
+	Załóżmy dodatkowo, że dla pewnego $x \in X$ stabilizator $G_x$ zawiera normalną podgrupę abelową $A$, 
+	której sprzężenia w $G$ generują całe $G$.
+	Wówczas grupa $G$ jest prosta.
+\end{thh}
+\begin{proof}
+	Załóżmy przeciwnie, że w $G$ istnieje właściwa, nietrywialna podgrupa normalna $K$.
+	Skoro $G$ działa wiernie oraz $K$ jest nietrywialna, to $x_0^{k_0} \ne x_0$ dla pewnego $k_0 \in K$.
+	Niech $H = G_{x_0}$.
+	Dostajemy, że $K \nleq H$, gdyż $k_0 \not \in H$, stąd również $H \lneq H K$.% coś dopisać coś o HK?
+
+	Z lematu \ref{max_group} otrzymujemy, że $H$ jest podgrupą maksymalną w $G$.
+	$H \lneq H K$, więc $H K = G$.
+	Stąd każdy element $g \in G$ jest postaci $g = h k$, gdzie $h \in H$ oraz $k \in K$.
+
+	Skoro działanie $\rho$ jest prymitywne, a więc tranzytywne, to z twierdzenia ...%TODO 
+	$G_x$ jest sprzężone z $H$.
+	Z założenia dodatkowo wynika, że $H$ zawiera podgrupę $B$ sprzężoną do $A$, 
+	ponadto $B$ jest normalną podgrupą abelową $H$, której sprzężenia (w $G$) generują całe $G$.
+	Sprzężenia $B$ są postaci $g^{-1} B g = k^{-1} h^{-1} B h k = k^{-1} B k \le B K$. % coś dopisać?
+	Wszystkie sprzężenie $B$ generują $G$ i są zawarte w $B K \le G$, stąd $G = B K$.
+
+	Korzystając z trzeciego twierdzenia o izomorfizmie dostajemy:
+	$$ G/K = BK/K \simeq B/B\cap K$$
+	Ale grupa ilorazowa grupy abelowej jest abelowa, stąd zarówno $B/B\cap K$ jaki i $G/K$ są abelowe.
+	Z twierdzenia o komutancie wnioskujemy, że $K \ge [G, G] = G$, gdyż $G$ jest grupą doskonałą --
+	sprzeczność z założeniem, że $K$ jest właściwą podgrupą $G$, stąd $G$ jest grupą prostą.
+\end{proof}
+
+Zastosowania lematu Iwasawy znajdują się w dalszej części pracy.
+
 
 
 \chapter{Prostota specjalnej rzutowej grupy liniowej $PSL_n(k)$}
