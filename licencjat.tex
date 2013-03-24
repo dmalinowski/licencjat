@@ -112,14 +112,14 @@ Przejdźmy teraz do podstawowych twierdzeń o~izomorfizmie.
 \section{Komutant i~abelianizacja}
 Poniżej przedstawionych jest kilka użytecznych wiadomości o~komutancie.
 \begin{deff}
-	Niech $G$ będzie dowolną grupą. Wówczas \emph{komutantem grupy $G$} nazywamy podgrupę $G$ generowaną przez wszystkie elementy postacji
+	Niech $G$ będzie dowolną grupą. Wówczas \emph{komutantem grupy $G$} nazywamy podgrupę $G$ generowaną przez wszystkie elementy postaci
 	$aba^{-1}b^{-1}$, gdzie $a, b \in G$. Komutant grupy $G$ oznaczamy przez $[G, G]$.
 \end{deff}
 \begin{thh}[O komutancie] $ $\\
 	Komutant $[G,G]$ jest podgrupą normalną $G$, przy czym grupa ilorazowa $G/[G,G]$ jest grupą abelową.
 	Ponadto dla dowolnej podgrupy normalnej $H \trianglelefteq G$ takiej, że $G/H$ jest abelowa, zachodzi $[G,G] \le H$.
 \end{thh}
-\begin{deff}
+\begin{deff}  
 	Przekształcenie kanoniczne $G \to G/[G,G]$ (rzutowanie na grupę ilorazową) nazywamy abelianizacją.
 \end{deff}
 
@@ -232,6 +232,7 @@ W poprzednim rozdziale wprowadziliśmy definicję grupy $S_X$ symetrii zbioru $X
 Ważnym przypadkiem szczególnym jest sytuacja, gdy $X$ jest zbiorem skończonym o $n$ elementach.
 Wówczas, jako że grupy symetrii zbiorów równolicznych są izomorficzne, 
 grupę $S_X$ będziemy oznaczać $S_n$ i bez straty ogólności przyjmiemy, że jej elementami są permutacje zbioru $\{1, 2, \cdots, n\}$.
+%napisać coś o składaniu permutacji, tzn. że inaczej niż funkcji?
 
 \begin{fact}
 	Rozmiar grupy $S_n$ wynosi $n!$.
@@ -239,8 +240,8 @@ grupę $S_X$ będziemy oznaczać $S_n$ i bez straty ogólności przyjmiemy, że 
 
 Ważnym sposobem przedstawienia elementów grupy $S_n$ jest rozkład na cykle.
 
-\begin{deff}
-	Permutację $\sigma \in S_n$ nazwiemy \emph{cyklem długości $k \ge 2$}, 
+\begin{deff}	%co z cyklami jednoelementowymi?
+	Permutację $\sigma \in S_n$ nazwiemy \emph{cyklem długości $k$}, 
 	jeżeli istnieją różne elementy $c_1, c_2, \cdots, c_k \in \{1, 2, \cdots, n\}$ takie, że
 	$$ \sigma(x) = \left\{ 
 				\begin{array}{ll}
@@ -259,15 +260,17 @@ Dla $\sigma \in S_n$, jeżeli weźmiemy element zbioru $\{1, 2, \cdots, n\}$, b�
 aż dojdziemy do niego samego, to z otrzymanych elementów możemy stworzyć cykl.
 Powtarzając tę procedurę z niewybranymi jeszcze elementy dostaniemy rozkład na cykle:
 
-\begin{thh} $ $ \\
+\begin{thh} $ $ \\		%co z cyklami jednoelementowymi?
 	Każdą permutację $\sigma \in S_n$ można przedstawić jako iloczyn rozłącznych cykli, 
-	czyli takich $(c_1, c_2, \cdots, c_k)$, $(d_1, d_2, \cdots, d_l)$, że $\{ c_1, c_2, \cdots, c_k \} \cap \{ d_1, d_2, \cdots, d_l \} = \emptyset$.
+	czyli takich $(c_1, c_2, \cdots, c_k)$, $(d_1, d_2, \cdots, d_l)$, że $\{ c_1, c_2, \cdots, c_k \} \cap \{ d_1, d_2, \cdots, d_l \} = \emptyset$
+	przy czym każdy element ze zbioru $\{1, 2, \cdots, n\}$ znajduje się w pewnym cyklu.
 	Przedstawienie jest jednoznaczne z dokładnością do kolejności cykli.
 \end{thh}
 
 \pagebreak[2]
 
 Przejdźmy teraz do zdefiniowania podgrupy $A_n$ grupy $S_n$.
+Załóżmy do końca tego rozdziału, że $n \ge 2$.
 
 \begin{deff}
 	\emph{Transpozycją} nazwiemy dowolny cykl długości 2.
@@ -280,11 +283,12 @@ Transpozycję są cegiełkami, z których można budować permutacje, tzn.
 \end{thh}
 
 Rozkład permutacji na transpozycje nie musi być jednoznaczny.
-Na przykład $(1, 2) (2, 4) (4, 2) = (1, 2)$ oraz $(1, 2) (2, 3) (3, 4) (4, 1) = (4, 2) (2, 3)$.
+Np. $(1, 2) (2, 4) (4, 2) = (1, 2)$ oraz $(1, 2) (2, 3) (3, 4) (4, 1) = (4, 2) (2, 3)$.
 Jednoznaczna natomiast jest parzystość liczby transpozycji w rozkładzie.
 
 \begin{deff}
-	Permutację o parzystej liczbie transpozycji w rozkładzie nazwiemy \emph{parzystą}.
+	Permutację o parzystej liczbie transpozycji w rozkładzie nazwiemy \emph{parzystą}, 
+	w przeciwnym przypadku -- \emph{nieparzystą}.
 	Podgrupę wszystkich permutacji parzystych grupy $S_n$ nazywamy \emph{grupą alternującą} i oznaczamy $A_n$.
 \end{deff}
 
@@ -293,16 +297,85 @@ Poprawność definicji wynika z twierdzenia:
 
 \begin{thh} $ $ \\
 	Parzystość liczby transpozycji w rozkładzie permutacji na transpozycje nie zależy od rozkładu.
-	Permutacje o parzystej liczbie transpozycji tworzą podgrupę normalną grupy $S_n$.
+	Permutacje o parzystej liczbie transpozycji tworzą podgrupę normalną grupy $S_n$ indeksu 2, czyli rozmiaru $n!/2$.
 \end{thh}
 
+Warto tu jeszcze wspomnieć o tym, które cykle są permutacjami parzystymi, a które nie.
+Mianowicie, trochę wbrew swojej nazwie, cykle o długości nieparzystej są parzyste, 
+a o długości parzystej -- nieparzyste.
+Stąd prawdziwy jest fakt:
 
-
+\begin{fact}
+	Permutacja $\sigma \in S_n$ jest parzysta wtedy i tylko wtedy, kiedy w rozkładzie na cykle 
+	zawiera parzystą liczbę cykli o parzystej długości.
+\end{fact}
 
 
 \section{Klasy sprzężoności $S_n$ i $A_n$}
 
+W celu udowodnienia prostoty grupy $A_n$ musimy zbadać klasy sprzężoności tej grupy.
+Najpierw zajmiemy się jednak prostszym problemem -- klasami sprzężoności $S_n$.
+
+\begin{deff}
+	\emph{Typem cyklowym} permutacji $\sigma \in S_n$ nazwiemy listę długości cykli występujących w $\sigma$,
+	tzn. ciąg $(1^{i_1}, 2^{i_2}, \cdots, n^{i_n})$,
+	gdzie $i_k$ to liczba cykli długości $k$ w rozkładzie $\sigma$ na cykle rozłączne.
+\end{deff}
+W celu uproszczenia zapisu można omijać długości cykli, które nie występują w rozkładzie.
+Dla przykładu typem cyklowym transpozycji jest $(1^{n-2}, 2^1)$, a identyczności -- $(1^n)$.
+
+Okazuje się, że w grupie $S_n$ typ cyklowy jednoznacznie wskazuje na klasę sprzężoności:
+
+\begin{thh} $ $ \\
+	Permutacje $\pi, \sigma \in S_n$ są wzajemnie sprzężone wtedy i tylko wtedy, gdy ich indeks cyklowy jest taki sam.
+\end{thh}
+\begin{proof}
+	Niech $\lambda = (c_1, c_2, \cdots, c_k)$ będzie cyklem w $S_n$, $c_{k+1} = c_1$ oraz $\gamma \in S_n$.
+	Wówczas $(\gamma^{-1} \lambda \gamma)(\gamma(c_i)) = (\lambda \gamma)(c_i) = \gamma(c_{i+1})$,
+	na pozostałych elementach $\gamma^{-1} \lambda \gamma$ jest stałe, 
+	stąd $\gamma^{-1} (c_1, c_2, \cdots, c_k) \gamma = (\gamma(c_1), \gamma(c_2), \cdots, \gamma(c_k))$.
+	Stąd również 
+
+		$$\gamma \Big(c_1^1, c_2^1, \cdots, c_{k^1}^1\Big) \cdots \Big(c_1^m, c_2^m, \cdots, c_{k^m}^m \Big) \gamma^{-1} = $$
+		$$ = \gamma \Big(c_1^1, c_2^1, \cdots, c_{k^1}^1\Big) \gamma^{-1} \gamma  \cdots \gamma ^{-1} \gamma \Big(c_1^m, c_2^m, \cdots, c_{k^m}^m\Big) \gamma^{-1} = $$
+		$$ = \Big(\gamma (c_1^1), \gamma (c_2^1), \cdots, \gamma (c_{k^1}^1)\Big) \cdots \Big(\gamma (c_1^m), \gamma (c_2^m), \cdots, \gamma (c_{k^m}^m)\Big)$$
+
+	Jeżeli cykle $\Big(c_1^1, c_2^1, \cdots, c_{k^1}^1\Big) \cdots \Big(c_1^m, c_2^m, \cdots, c_{k^m}^m \Big)$ były rozłączne,
+	to również powstałe po sprzężeniu cykle są rozłączne.
+	Jest ich tyle samo i mają te same długości, zatem rzeczywiście sprzężenie zachowuje typ permutacji.
+
+	Wystarczy jeszcze pokazać, że permutacje o tym samym typie są sprzężone.
+	Niech $\pi =    \Big(c_1^1, c_2^1, \cdots, c_{k^1}^1\Big) \cdots \Big(c_1^m, c_2^m, \cdots, c_{k^m}^m \Big)$ 
+	oraz  $\sigma = \Big(d_1^1, d_2^1, \cdots, d_{k^1}^1\Big) \cdots \Big(d_1^m, d_2^m, \cdots, d_{k^m}^m \Big)$.
+	Wówczas permutacja $\gamma \colon c_i^j \mapsto d_i^j$ jest taka, że $\gamma \pi \gamma^{-1} = \sigma$.
+\end{proof}
+
+Klasy sprzężoności permutacji parzystych w $S_n$ mogą zostać rozbite na kilka mniejszych w $A_n$, 
+gdyż $A_n \le S_n$, czyli w $A_n$ jest mniejszy wybór elementów, którymi możemy sprzęgać.
+Okazuje się, że rzeczywiście niektóre z tych klas rozpadają się na dwie:
+
+\begin{thh} $ $ \\
+	Typy cyklowe permutacji parzystych, które zawierają cykl parzysty lub dwa cykle nieparzyste o tej samej długości (możliwe, że o długości 1)
+	odpowiadają jednej klasie sprzężoności w $S_n$.
+	Pozostałe typy permutacji parzystych odpowiadają dwóm klasom sprzężoności w $S_n$.
+\end{thh}
+\begin{proof}
+ %TODO
+\end{proof}
+
+Zanim udowodnimy prostotę grup $A_n$ pokażemy jeszcze jeden przydatny lemat.
+
+\begin{lemma}
+	Dla $n \ge 5$ nietrywialne klasy sprzężoności (klasy elementów różnych od elementu neutralnego) $A_n$ mają rozmiar co najmniej $n$.
+\end{lemma}
+\begin{proof}
+	%TODO
+\end{proof}
+
+
 \section{Prostota $A_n$}
+
+
 
 
 
@@ -381,8 +454,8 @@ Aby lepiej zrozumieć tą własność, pokażemy, że rzeczywiście jest to wła
 	\end{enumerate}
 \end{thh}
 
-\begin{proof}
-$ $\\
+\begin{proof}% jak to zrobić, żeby było ładne?
+%$ $\\
 	\begin{enumerate}[label=Ad \alph*)] 
 	 \item 	Załóżmy nie wprost, że $\rho$ nie jest tranzytywne. 
 					Wówczas rozbicie $X$ na orbity daje nietrywialny system bloków.
