@@ -223,6 +223,86 @@ Jak to zostało wcześniej zapowiedziane, na koniec przytoczmy kilka ważnych tw
 
 \chapter{Prostota grupy alternującej $A_n$}
 
+Zanim udowodnimy główną tezę tego rozdziału, czyli fakt, że $A_n$ jest grupą prostą dla $n \ne 4$,
+przypomnimy znane własności o tej grupie oraz udowodnimy kilka mniej znanych.
+
+\section{Przypomnienie wiadomości o $S_n$ oraz $A_n$}
+
+W poprzednim rozdziale wprowadziliśmy definicję grupy $S_X$ symetrii zbioru $X$.
+Ważnym przypadkiem szczególnym jest sytuacja, gdy $X$ jest zbiorem skończonym o $n$ elementach.
+Wówczas, jako że grupy symetrii zbiorów równolicznych są izomorficzne, 
+grupę $S_X$ będziemy oznaczać $S_n$ i bez straty ogólności przyjmiemy, że jej elementami są permutacje zbioru $\{1, 2, \cdots, n\}$.
+
+\begin{fact}
+	Rozmiar grupy $S_n$ wynosi $n!$.
+\end{fact}
+
+Ważnym sposobem przedstawienia elementów grupy $S_n$ jest rozkład na cykle.
+
+\begin{deff}
+	Permutację $\sigma \in S_n$ nazwiemy \emph{cyklem długości $k \ge 2$}, 
+	jeżeli istnieją różne elementy $c_1, c_2, \cdots, c_k \in \{1, 2, \cdots, n\}$ takie, że
+	$$ \sigma(x) = \left\{ 
+				\begin{array}{ll}
+					c_{i+1}, & \textrm{jeżeli $x = c_i$}\\
+					c_1,     & \textrm{jeżeli $x = c_k$}\\
+					x,       & \textrm{w przeciwnym przypadku}
+				\end{array} \right.
+	$$
+	Wówczas permutację $\sigma$ zapisujemy jako $(c_1, c_2, \cdots, c_k)$.
+\end{deff}
+
+Oczywiście zapis cyklu nie jest jednoznaczny -- $(c_1, c_2, \cdots, c_k) = (c_k, c_1, c_2, \cdots, c_{k-1}) = (c_2, c_3, \cdots, c_k, c_1)$.
+Ponadto ten zapis ma tylko sens, gdy wiemy, w jakiej grupie symetrii ten cykl się znajduje.
+
+Dla $\sigma \in S_n$, jeżeli weźmiemy element zbioru $\{1, 2, \cdots, n\}$, będziemy na niego działać permutacją $\sigma$ tak długo, 
+aż dojdziemy do niego samego, to z otrzymanych elementów możemy stworzyć cykl.
+Powtarzając tę procedurę z niewybranymi jeszcze elementy dostaniemy rozkład na cykle:
+
+\begin{thh} $ $ \\
+	Każdą permutację $\sigma \in S_n$ można przedstawić jako iloczyn rozłącznych cykli, 
+	czyli takich $(c_1, c_2, \cdots, c_k)$, $(d_1, d_2, \cdots, d_l)$, że $\{ c_1, c_2, \cdots, c_k \} \cap \{ d_1, d_2, \cdots, d_l \} = \emptyset$.
+	Przedstawienie jest jednoznaczne z dokładnością do kolejności cykli.
+\end{thh}
+
+\pagebreak[2]
+
+Przejdźmy teraz do zdefiniowania podgrupy $A_n$ grupy $S_n$.
+
+\begin{deff}
+	\emph{Transpozycją} nazwiemy dowolny cykl długości 2.
+\end{deff}
+
+Transpozycję są cegiełkami, z których można budować permutacje, tzn.
+
+\begin{thh} $ $ \\
+	Każda permutacja jest iloczynem pewnej liczby transpozycji.
+\end{thh}
+
+Rozkład permutacji na transpozycje nie musi być jednoznaczny.
+Na przykład $(1, 2) (2, 4) (4, 2) = (1, 2)$ oraz $(1, 2) (2, 3) (3, 4) (4, 1) = (4, 2) (2, 3)$.
+Jednoznaczna natomiast jest parzystość liczby transpozycji w rozkładzie.
+
+\begin{deff}
+	Permutację o parzystej liczbie transpozycji w rozkładzie nazwiemy \emph{parzystą}.
+	Podgrupę wszystkich permutacji parzystych grupy $S_n$ nazywamy \emph{grupą alternującą} i oznaczamy $A_n$.
+\end{deff}
+
+
+Poprawność definicji wynika z twierdzenia:
+
+\begin{thh} $ $ \\
+	Parzystość liczby transpozycji w rozkładzie permutacji na transpozycje nie zależy od rozkładu.
+	Permutacje o parzystej liczbie transpozycji tworzą podgrupę normalną grupy $S_n$.
+\end{thh}
+
+
+
+
+
+\section{Klasy sprzężoności $S_n$ i $A_n$}
+
+\section{Prostota $A_n$}
 
 
 
