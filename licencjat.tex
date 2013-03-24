@@ -223,7 +223,7 @@ Jak to zostało wcześniej zapowiedziane, na koniec przytoczmy kilka ważnych tw
 
 \chapter{Prostota grupy alternującej $A_n$}
 
-Zanim udowodnimy główną tezę tego rozdziału, czyli fakt, że $A_n$ jest grupą prostą dla $n \ne 4$,
+Zanim udowodnimy główną tezę tego rozdziału, czyli fakt, że $A_n$ jest grupą prostą dla $n \ge 5$,
 przypomnimy znane własności o tej grupie oraz udowodnimy kilka mniej znanych.
 
 \section{Przypomnienie wiadomości o $S_n$ oraz $A_n$}
@@ -295,7 +295,7 @@ Jednoznaczna natomiast jest parzystość liczby transpozycji w rozkładzie.
 
 Poprawność definicji wynika z twierdzenia:
 
-\begin{thh} $ $ \\
+\begin{thh}\label{thm_A_n} $ $ \\
 	Parzystość liczby transpozycji w rozkładzie permutacji na transpozycje nie zależy od rozkładu.
 	Permutacje o parzystej liczbie transpozycji tworzą podgrupę normalną grupy $S_n$ indeksu 2, czyli rozmiaru $n!/2$.
 \end{thh}
@@ -305,7 +305,7 @@ Mianowicie, trochę wbrew swojej nazwie, cykle o długości nieparzystej są par
 a o długości parzystej -- nieparzyste.
 Stąd prawdziwy jest fakt:
 
-\begin{fact}
+\begin{fact}\label{fact_typ_A_n}
 	Permutacja $\sigma \in S_n$ jest parzysta wtedy i tylko wtedy, kiedy w rozkładzie na cykle 
 	zawiera parzystą liczbę cykli o parzystej długości.
 \end{fact}
@@ -354,10 +354,10 @@ Klasy sprzężoności permutacji parzystych w $S_n$ mogą zostać rozbite na kil
 gdyż $A_n \le S_n$, czyli w $A_n$ jest mniejszy wybór elementów, którymi możemy sprzęgać.
 Okazuje się, że rzeczywiście niektóre z tych klas rozpadają się na dwie:
 
-\begin{thh} $ $ \\
+\begin{thh}\label{thm_o_klasach_A_n} $ $ \\
 	Typy cyklowe permutacji parzystych, które zawierają cykl parzysty lub dwa cykle nieparzyste o tej samej długości (możliwe, że o długości 1)
 	odpowiadają jednej klasie sprzężoności w $S_n$.
-	Pozostałe typy permutacji parzystych odpowiadają dwóm klasom sprzężoności w $S_n$.
+	Pozostałe typy permutacji parzystych odpowiadają dwóm równolicznym klasom sprzężoności w $S_n$.
 \end{thh}
 \begin{proof}
  %TODO
@@ -365,7 +365,7 @@ Okazuje się, że rzeczywiście niektóre z tych klas rozpadają się na dwie:
 
 Zanim udowodnimy prostotę grup $A_n$ pokażemy jeszcze jeden przydatny lemat.
 
-\begin{lemma}
+\begin{lemma}\label{lemma_big_con}
 	Dla $n \ge 5$ nietrywialne klasy sprzężoności (klasy elementów różnych od elementu neutralnego) $A_n$ mają rozmiar co najmniej $n$.
 \end{lemma}
 \begin{proof}
@@ -374,6 +374,55 @@ Zanim udowodnimy prostotę grup $A_n$ pokażemy jeszcze jeden przydatny lemat.
 
 
 \section{Prostota $A_n$}
+
+Jesteśmy już gotowi, żeby udowodnić twierdzenie:
+
+\begin{thh}[O prostocie $A_n$] $ $ \\
+	Grupa alternująca $A_n$ jest prosta dla $n \ge 5$.
+\end{thh}
+\begin{proof}
+	Dowód przeprowadzimy przez indukcję ze względu na $n$
+
+	Pokażemy najpierw, że grupa $A_5$ jest prosta.
+
+	Na podstawie faktu \ref{fact_typ_A_n} wiemy, że elementy $A_5$ mają jeden z następujących typów cyklowych:
+	$(1^5), (1^2, 3^1), (1^1, 2^2)$ lub $(5^1)$.
+	z twierdzenia \ref{thm_o_klasach_A_n} każdy z pierwszych czterech odpowiada jednej klasie sprzężoności, a ostatni dwóm -- równolicznym.
+	Stąd klasy sprzężoności $A_5$ mają rozmiary: 1, 20, 15, 12, 12.
+
+	Załóżmy nie w prost, że $H$ jest nietrywialną, właściwą podgrupą normalną $A_5$.
+	Wówczas $H$ musi być sumą pewnych klas sprzężoności $A_5$, w tym klasy sprzężoności elementu neutralnego.
+	Ponadto rozmiar $H$ musi być dzielnikiem rozmiaru $A_5 = 60$.
+	Najmniejszy możliwy rozmiar sumy klas sprzężoności wraz z trywialną wynosi 13.
+	Stąd $|H| = 15$, $|H| = 20$ lub $|H| = 30$.
+	Ale żaden podzbiór multibioru $\{1, 12, 12, 15, 20 \}$ zawierający jedynkę nie sumuje się do potencjalnego rozmiaru $H$,
+	zatem takie $H$ nie może istnieć -- $A_5$ jest grupą prostą.
+
+\pagebreak[2]
+
+	Załóżmy zatem, że $n \ge 6$ oraz grupa $A_{n-1}$ jest prosta.
+	Pokażemy, że $A_n$ również jest prosta.
+
+	Załóżmy nie w prost, że $H$ jest nietrywialną, właściwą podgrupą $A_n$.
+
+	Jeżeli $H$ zawiera pewną nietrywialną permutację $\sigma$, która ma punkt stały $a \in \{ 1, 2, \cdots, n \}$, to niech $K = H_a$.
+	Wówczas $K \simeq A_{n-1}$ oraz (np. z trzeciego twierdzenia o izomorfizmie) $H \cap K$ jest podgrupą normalną w $K$.
+	Ale $\sigma \in H \cap K$ oraz $K$ jest grupą prostą, zatem z założenia indukcyjnego $H \cap K = K$.
+	Stąd $H$ zawiera pewien element o typie $(1^{n-3}, 3^1)$, a zatem z twierdzenia \ref{thm_o_klasach_A_n} wszystkie, gdyż $n-3 \ge 3$.
+	Ale z lematu ... %TODO
+	cykle o długości 3 generują całe $A_n$, stąd $H = A_n$ -- sprzeczność z właściwością $H$.
+
+	Jeżeli natomiast żaden nietrywialny element $H$ nie ma punktu stałego, to $|H| \le n$.
+	W przeciwnym przypadku istniałyby dwie różne permutacje $\pi, \sigma \in H$ takie, że $\pi(1) = \sigma(1)$.
+	Wtedy $\gamma = \pi \sigma ^{-1} \ne \mathrm{id}$, $\gamma \in H$ oraz $\gamma(1) = 1$ -- sprzeczność.
+	Stąd rzeczywiście $|H| \le n$.
+	Ale z lematu \ref{lemma_big_con} $H$ jako nietrywialna suma pewnej liczby klas sprzężoności w tym trywialnej musiałaby mieć rozmiar co najmniej $n+1$.
+	Stąd w tym przypadku również otrzymujemy sprzeczność.
+
+	We wszystkich przypadkach otrzymaliśmy sprzeczność, czyli rzeczywiście $A_n$ jest grupą pierwszą,
+	czyli z indukcji $A_n$ jest grupą pierwszą dla wszystkich $n \ge 5$.
+\end{proof}
+%TODO
 
 
 
