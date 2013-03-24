@@ -46,6 +46,7 @@
 
 \begin{abstract}
   % TODO
+	TODO 
 \end{abstract}
 
 \tableofcontents
@@ -55,6 +56,9 @@
 
 \chapter*{Wprowadzenie}
 \addcontentsline{toc}{chapter}{Wprowadzenie}
+
+%TODO
+TODO
 
 \chapter{Wiadomości wstępne}
 
@@ -355,12 +359,40 @@ gdyż $A_n \le S_n$, czyli w $A_n$ jest mniejszy wybór elementów, którymi mo�
 Okazuje się, że rzeczywiście niektóre z~tych klas rozpadają się na dwie:
 
 \begin{thh}\label{thm_o_klasach_A_n} $ $ \\
-	Typy cyklowe permutacji parzystych, które zawierają cykl parzysty lub dwa cykle nieparzyste o tej samej długości (możliwe, że o długości 1)
-	odpowiadają jednej klasie sprzężoności w $S_n$.
-	Pozostałe typy permutacji parzystych odpowiadają dwóm równolicznym klasom sprzężoności w $S_n$.
+	Typy cyklowe permutacji parzystych, które zawierają cykl o~parzystej długości 
+	lub dwa cykle o~tej samej nieparzystej długości (możliwe, że o długości 1)
+	odpowiadają jednej klasie sprzężoności w $A_n$.
+	Pozostałe typy permutacji parzystych odpowiadają dwóm równolicznym klasom sprzężoności w $A_n$.
 \end{thh}
-\begin{proof}TODO
- %TODO
+\begin{proof}
+	Zauważmy najpierw, że jeżeli $\sigma \in A_n$ jest centralizowane przez pewną nieparzystą permutację $\gamma$ 
+	(tzn. $\sigma = \gamma \sigma \gamma ^{-1}$), 
+	to $\sigma$ jest sprzężona w $A_n$ ze wszystkimi permutacjami o tym samym typie cyklowym.
+	Jest tak dlatego, że z każdą taką permutacją $\psi$ permutacja $\sigma$ jest sprzężona w $S_n$ przez pewną permutację $\pi$,
+	tzn. $\psi = \pi \sigma \pi^{-1}$.
+	Ale również $\psi = \pi \gamma \sigma \gamma^{-1} \pi^{-1} = (\pi \gamma) \sigma (\pi \gamma)^{-1}$.
+	Jedna z permutacji $\pi$ lub $\pi \gamma$ jest parzysta, więc rzeczywiście $\psi$ oraz $\sigma$ są sprzężone w $A_n$.
+
+	Zatem jeżeli $\sigma$ ma w rozkładzie na cykle rozłączne cykl parzystej długości $\lambda$, 
+	to jest przez niego centralizowana (a jest on nieparzysty),
+	a jeżeli ma dwa cykle nieparzyste tej samej długości $(c_1, c_2, \cdots, c_m)$ oraz $(d_1, d_2, \cdots, d_m)$, 
+	to jest centralizowana przez nieparzystą permutację $(c_1, d_1)(c_2, d_2) \cdots (c_m, d_m)$,
+	czyli $\sigma$ jest sprzężona ze wszystkimi elementami o tym samym typie cyklowym.
+
+	W przypadku, gdy $\sigma$ nie jest centralizowana przez żadną nieparzystą permutację,
+	to permutacje o tym samym typie cyklowym co $\sigma$ rozpadają się na dwie klasy sprzężoności --
+	$\{\lambda \sigma \lambda^{-1} \colon \lambda \in S_n \backslash A_n \}$ oraz
+	$\{\pi \sigma \pi^{-1} \colon \pi \in  A_n \}$.
+	Są one równoliczne, gdyż są sprzężone w $S_n$.
+
+	Z takim przypadkiem mamy do czynienia, gdy $\sigma$ w rozkładzie na cykle rozłączne 
+	ma tylko cykle o różnych nieparzystych długościach.
+	Przy centralizowaniu każdy taki cykl musi przejść na cykl o tej samej długości, czyli na siebie.
+	Ponadto pierwsze elementy z cykli muszą przejść na elementy z tych samych cykli, 
+	a obraz pozostałych elementów jest już przez to wyznaczony jednoznacznie.
+	W związku z tym $\sigma$ może być centralizowane tylko przez permutacje, 
+	które składają się z produktów potęg cykli z rozkładu $\sigma$, 
+	czyli przez permutacje parzyste.
 \end{proof}
 
 Zanim udowodnimy prostotę grup $A_n$ pokażemy jeszcze dwa przydatne lematy.
@@ -368,8 +400,18 @@ Zanim udowodnimy prostotę grup $A_n$ pokażemy jeszcze dwa przydatne lematy.
 \begin{lemma}\label{lemma_big_con}
 	Dla $n \ge 5$ nietrywialne klasy sprzężoności (klasy elementów różnych od elementu neutralnego) $A_n$ mają rozmiar co najmniej $n$.
 \end{lemma}
-\begin{proof}TODO
-	%TODO
+\begin{proof}
+	Niech $\sigma \in A_n$, $\sigma \ne \mathrm{id}$.
+	Oszacujmy ile permutacji ma ten sam typ cyklowy co $\sigma$.
+
+	Jeżeli $\sigma$ zawiera cykl długości $\ge 3$, to samych permutacji o tym samym typie co $\sigma$, które w tym cyklu mają liczbę 1 jest co najmniej $(n-1)(n-2)$, 
+	gdyż możemy wybrać na co przechodzi liczba 1 i~na co przechodzi wybrana liczba. 
+	Stąd z poprzedniego twierdzenia w~klasie sprzężoności $\sigma$ jest co najmniej $\frac{(n-1)(n-2)}{2} \ge n$ elementów (bo $n \ge 5$).
+	
+	W przeciwnym przypadku $\sigma$ zawiera co najmniej dwa cykle długości 2.
+	Analogicznie dostajemy, że samych permutacji o tym samym typie co $\sigma$, 
+	które w jednym z tych cykli mają liczbę 1, a w drugim liczbę 2 jest co najmniej $(n-2)(n-3)$,
+	więc z poprzedniego twierdzenia w tym przypadku również rozmiar klasy sprzężoności $\sigma$ wynosi co najmniej $(n-2)(n-3) \ge n$.
 \end{proof}
 
 \begin{lemma}\label{lemma_3cycles}
@@ -432,9 +474,13 @@ Jesteśmy już gotowi, żeby udowodnić twierdzenie:
 	We wszystkich przypadkach otrzymaliśmy sprzeczność, czyli rzeczywiście $A_n$ jest grupą pierwszą,
 	czyli z~indukcji $A_n$ jest grupą pierwszą dla wszystkich $n \ge 5$.
 \end{proof}
-%TODO
 
-
+Można się jeszcze zastanawiać, jak wygląda $A_n$ dla $n < 5$.
+Z twierdzenia \ref{thm_A_n} wiemy, że $|A_n| = n!/2$.
+Zatem $A_2$ jest grupą trywialną, więc nie traktujemy jej jako grupę prostą.
+$A_3$ ma 3 elementy -- jest grupą cykliczną o 3 elementach, więc jest prosta.
+Natomiast grupa $A_4$ nie jest prosta -- jej czteroelementowa podgrupa 
+$H = \langle (1,2)(3,4), (1,3)(2,4) \rangle$ jest normalna, gdyż składa się ze wszystkich elementów o rzędzie $\le 2$.
 
 
 
