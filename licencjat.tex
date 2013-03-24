@@ -363,7 +363,7 @@ Okazuje się, że rzeczywiście niektóre z tych klas rozpadają się na dwie:
  %TODO
 \end{proof}
 
-Zanim udowodnimy prostotę grup $A_n$ pokażemy jeszcze jeden przydatny lemat.
+Zanim udowodnimy prostotę grup $A_n$ pokażemy jeszcze dwa przydatne lematy.
 
 \begin{lemma}\label{lemma_big_con}
 	Dla $n \ge 5$ nietrywialne klasy sprzężoności (klasy elementów różnych od elementu neutralnego) $A_n$ mają rozmiar co najmniej $n$.
@@ -372,9 +372,22 @@ Zanim udowodnimy prostotę grup $A_n$ pokażemy jeszcze jeden przydatny lemat.
 	%TODO
 \end{proof}
 
+\begin{lemma}\label{lemma_3cycles}
+	Dla $n \ge 5$ cykle długości 3 generują całą grupę $A_n$
+\end{lemma}
+\begin{proof}
+	Każdą permutację  $\sigma \in A_n$ można przedstawić w postaci iloczynu parzystej liczby transpozycji
+	$\sigma = \lambda_1 \lambda_2 \cdots \lambda_{2m-1} \lambda_{2m} = (\lambda_1 \lambda_2) \cdots (\lambda_{2m-1} \lambda_{2m})$.
+	Stąd wystarczy przedstawić iloczyn dwóch transpozycji $\lambda_1 \lambda_2$ jako iloczyn cykli długości 3, a dostaniemy tezę.
+
+	Jeżeli $\lambda_1 = \lambda_2$, to $\lambda_1 \lambda_2 = \mathrm{id}$.
+	Gdy $\lambda_1$ i $\lambda_2$ są rozłączne, czyli $\lambda_1 = (a, b)$, $\lambda_2 = (c, d)$, to $\lambda_1 \lambda_2 = (a, c, d)(a, c, b)$.
+	Jeżeli natomiast $\lambda_1$ i $\lambda_2$ mają jeden element wspólny, 
+	czyli $\lambda_1 = (a, b)$, $\lambda_2 = (a, c)$, to $\lambda_1 \lambda_2 = (a, b, c)$.
+\end{proof}
+
 
 \section{Prostota $A_n$}
-
 Jesteśmy już gotowi, żeby udowodnić twierdzenie:
 
 \begin{thh}[O prostocie $A_n$] $ $ \\
@@ -398,8 +411,6 @@ Jesteśmy już gotowi, żeby udowodnić twierdzenie:
 	Ale żaden podzbiór multibioru $\{1, 12, 12, 15, 20 \}$ zawierający jedynkę nie sumuje się do potencjalnego rozmiaru $H$,
 	zatem takie $H$ nie może istnieć -- $A_5$ jest grupą prostą.
 
-\pagebreak[2]
-
 	Załóżmy zatem, że $n \ge 6$ oraz grupa $A_{n-1}$ jest prosta.
 	Pokażemy, że $A_n$ również jest prosta.
 
@@ -409,8 +420,7 @@ Jesteśmy już gotowi, żeby udowodnić twierdzenie:
 	Wówczas $K \simeq A_{n-1}$ oraz (np. z trzeciego twierdzenia o izomorfizmie) $H \cap K$ jest podgrupą normalną w $K$.
 	Ale $\sigma \in H \cap K$ oraz $K$ jest grupą prostą, zatem z założenia indukcyjnego $H \cap K = K$.
 	Stąd $H$ zawiera pewien element o typie $(1^{n-3}, 3^1)$, a zatem z twierdzenia \ref{thm_o_klasach_A_n} wszystkie, gdyż $n-3 \ge 3$.
-	Ale z lematu ... %TODO
-	cykle o długości 3 generują całe $A_n$, stąd $H = A_n$ -- sprzeczność z właściwością $H$.
+	Ale z lematu \ref{lemma_3cycles} 	cykle o długości 3 generują całe $A_n$, stąd $H = A_n$ -- sprzeczność z właściwością $H$.
 
 	Jeżeli natomiast żaden nietrywialny element $H$ nie ma punktu stałego, to $|H| \le n$.
 	W przeciwnym przypadku istniałyby dwie różne permutacje $\pi, \sigma \in H$ takie, że $\pi(1) = \sigma(1)$.
