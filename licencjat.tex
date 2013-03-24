@@ -32,7 +32,7 @@
 %  D.127.6. Numerical blabalysis}
 \klasyfikacja{20. Group theory and generalizations}
 
-\keywords{grupa prosta, grupa alternująca, grupa specjalna rzutowa liniowa, lemat Iwasawy}
+\keywords{grupa prosta, grupa alternująca, specjalna rzutowa grupa liniowa, lemat Iwasawy}
 
 % Tu jest dobre miejsce na Twoje w?asne makra i~?rodowiska:
 \newtheorem{deff}{Definicja}[section]
@@ -70,7 +70,7 @@ Rozważane grupy będą (w większości) nieprzemienne, w~związku z~tym będzie
 Jeżeli $H$ oraz $K$ są podgrupami grupy $G$, to przez $H K = H \cdot K$ będzie oznaczana podgrupa $G$ 
 generowana przez wszystkie elementy postaci $h \cdot k$, gdzie $h \in H$ oraz $k \in K$.
 
-W związku z tym oznaczeniem warto przytoczyć twierdzenie:
+W związku z~tym oznaczeniem warto przytoczyć twierdzenie:
 
 \begin{thh} \label{mult_groups} $ $ \\
 	Jeżeli $H$ oraz $K$ są podgrupami grupy $G$, przy czym $K$ jest podgrupą normalną,
@@ -99,7 +99,7 @@ Przejdźmy teraz do podstawowych twierdzeń o~izomorfizmie.
 \end{thh}
 \begin{thh}[Drugie twierdzenie o~izomorfizmie]$ $\\
 	Niech $G$ -- grupa, 	$H_1, H_2$ podgrupy normalne $G$, przy czym $H_2 \leq H_1$. \\
-	Wówczas $H_2 \trianglelefteq H_2$, $H_1/H_2 \trianglelefteq G/H_2$ i~zachodzi izomorfizm
+	Wówczas $H_2 \trianglelefteq H_1$, $H_1/H_2 \trianglelefteq G/H_2$ i~zachodzi izomorfizm
 	$$ (G/H_2) / (H_1/H_2) \simeq G/H_1$$
 \end{thh}
 \begin{thh}[Trzecie twierdzenie o~izomorfizmie] $ $ \\
@@ -132,7 +132,7 @@ Ważniejszym dla nas pojęciem jest pojęcie grupy doskonałej:
 \end{deff}
 
 Grupami doskonałymi zajmiemy się w~dalszej części pracy -- przy lemacie Iwasawy.
-Na razie zauważmy prosty fakt:
+Na razie zanotujmy prosty fakt:
 
 \begin{fact}
 	Nieprzemienne grupy proste są grupami doskonałymi.
@@ -240,7 +240,7 @@ grupę $S_X$ będziemy oznaczać $S_n$ i bez straty ogólności przyjmiemy, że 
 
 Ważnym sposobem przedstawienia elementów grupy $S_n$ jest rozkład na cykle.
 
-\begin{deff}	%co z cyklami jednoelementowymi?
+\begin{deff}	%co z~cyklami jednoelementowymi?
 	Permutację $\sigma \in S_n$ nazwiemy \emph{cyklem długości $k$}, 
 	jeżeli istnieją różne elementy $c_1, c_2, \cdots, c_k \in \{1, 2, \cdots, n\}$ takie, że
 	$$ \sigma(x) = \left\{ 
@@ -257,14 +257,14 @@ Oczywiście zapis cyklu nie jest jednoznaczny -- $(c_1, c_2, \cdots, c_k) = (c_k
 Ponadto ten zapis ma tylko sens, gdy wiemy, w jakiej grupie symetrii ten cykl się znajduje.
 
 Dla $\sigma \in S_n$, jeżeli weźmiemy element zbioru $\{1, 2, \cdots, n\}$, będziemy na niego działać permutacją $\sigma$ tak długo, 
-aż dojdziemy do niego samego, to z otrzymanych elementów możemy stworzyć cykl.
-Powtarzając tę procedurę z niewybranymi jeszcze elementy dostaniemy rozkład na cykle:
+aż dojdziemy do niego samego, to z~otrzymanych elementów możemy stworzyć cykl.
+Powtarzając tę procedurę z~niewybranymi jeszcze elementy dostaniemy rozkład na cykle:
 
-\begin{thh} $ $ \\		%co z cyklami jednoelementowymi?
+\begin{thh} $ $ \\		%co z~cyklami jednoelementowymi?
 	Każdą permutację $\sigma \in S_n$ można przedstawić jako iloczyn rozłącznych cykli, 
 	czyli takich $(c_1, c_2, \cdots, c_k)$, $(d_1, d_2, \cdots, d_l)$, że $\{ c_1, c_2, \cdots, c_k \} \cap \{ d_1, d_2, \cdots, d_l \} = \emptyset$
 	przy czym każdy element ze zbioru $\{1, 2, \cdots, n\}$ znajduje się w pewnym cyklu.
-	Przedstawienie jest jednoznaczne z dokładnością do kolejności cykli.
+	Przedstawienie jest jednoznaczne z~dokładnością do kolejności cykli.
 \end{thh}
 
 \pagebreak[2]
@@ -276,7 +276,7 @@ Załóżmy do końca tego rozdziału, że $n \ge 2$.
 	\emph{Transpozycją} nazwiemy dowolny cykl długości 2.
 \end{deff}
 
-Transpozycję są cegiełkami, z których można budować permutacje, tzn.
+Transpozycję są cegiełkami, z~których można budować permutacje, tzn.
 
 \begin{thh} $ $ \\
 	Każda permutacja jest iloczynem pewnej liczby transpozycji.
@@ -293,7 +293,7 @@ Jednoznaczna natomiast jest parzystość liczby transpozycji w rozkładzie.
 \end{deff}
 
 
-Poprawność definicji wynika z twierdzenia:
+Poprawność definicji wynika z~twierdzenia:
 
 \begin{thh}\label{thm_A_n} $ $ \\
 	Parzystość liczby transpozycji w rozkładzie permutacji na transpozycje nie zależy od rozkładu.
@@ -302,7 +302,7 @@ Poprawność definicji wynika z twierdzenia:
 
 Warto tu jeszcze wspomnieć o tym, które cykle są permutacjami parzystymi, a które nie.
 Mianowicie, trochę wbrew swojej nazwie, cykle o długości nieparzystej są parzyste, 
-a o długości parzystej -- nieparzyste.
+a~o~długości parzystej -- nieparzyste.
 Stąd prawdziwy jest fakt:
 
 \begin{fact}\label{fact_typ_A_n}
@@ -333,7 +333,7 @@ Okazuje się, że w grupie $S_n$ typ cyklowy jednoznacznie wskazuje na klasę sp
 	Niech $\lambda = (c_1, c_2, \cdots, c_k)$ będzie cyklem w $S_n$, $c_{k+1} = c_1$ oraz $\gamma \in S_n$.
 	Wówczas $(\gamma^{-1} \lambda \gamma)(\gamma(c_i)) = (\lambda \gamma)(c_i) = \gamma(c_{i+1})$,
 	na pozostałych elementach $\gamma^{-1} \lambda \gamma$ jest stałe, 
-	stąd $\gamma^{-1} (c_1, c_2, \cdots, c_k) \gamma = (\gamma(c_1), \gamma(c_2), \cdots, \gamma(c_k))$.
+	zatem $\gamma^{-1} (c_1, c_2, \cdots, c_k) \gamma = (\gamma(c_1), \gamma(c_2), \cdots, \gamma(c_k))$.
 	Stąd również 
 
 		$$\gamma \Big(c_1^1, c_2^1, \cdots, c_{k^1}^1\Big) \cdots \Big(c_1^m, c_2^m, \cdots, c_{k^m}^m \Big) \gamma^{-1} = $$
@@ -352,14 +352,14 @@ Okazuje się, że w grupie $S_n$ typ cyklowy jednoznacznie wskazuje na klasę sp
 
 Klasy sprzężoności permutacji parzystych w $S_n$ mogą zostać rozbite na kilka mniejszych w $A_n$, 
 gdyż $A_n \le S_n$, czyli w $A_n$ jest mniejszy wybór elementów, którymi możemy sprzęgać.
-Okazuje się, że rzeczywiście niektóre z tych klas rozpadają się na dwie:
+Okazuje się, że rzeczywiście niektóre z~tych klas rozpadają się na dwie:
 
 \begin{thh}\label{thm_o_klasach_A_n} $ $ \\
 	Typy cyklowe permutacji parzystych, które zawierają cykl parzysty lub dwa cykle nieparzyste o tej samej długości (możliwe, że o długości 1)
 	odpowiadają jednej klasie sprzężoności w $S_n$.
 	Pozostałe typy permutacji parzystych odpowiadają dwóm równolicznym klasom sprzężoności w $S_n$.
 \end{thh}
-\begin{proof}
+\begin{proof}TODO
  %TODO
 \end{proof}
 
@@ -368,7 +368,7 @@ Zanim udowodnimy prostotę grup $A_n$ pokażemy jeszcze dwa przydatne lematy.
 \begin{lemma}\label{lemma_big_con}
 	Dla $n \ge 5$ nietrywialne klasy sprzężoności (klasy elementów różnych od elementu neutralnego) $A_n$ mają rozmiar co najmniej $n$.
 \end{lemma}
-\begin{proof}
+\begin{proof}TODO
 	%TODO
 \end{proof}
 
@@ -398,15 +398,15 @@ Jesteśmy już gotowi, żeby udowodnić twierdzenie:
 
 	Pokażemy najpierw, że grupa $A_5$ jest prosta.
 
-	Na podstawie faktu \ref{fact_typ_A_n} wiemy, że elementy $A_5$ mają jeden z następujących typów cyklowych:
+	Na podstawie faktu \ref{fact_typ_A_n} wiemy, że elementy $A_5$ mają jeden z~następujących typów cyklowych:
 	$(1^5), (1^2, 3^1), (1^1, 2^2)$ lub $(5^1)$.
-	z twierdzenia \ref{thm_o_klasach_A_n} każdy z pierwszych czterech odpowiada jednej klasie sprzężoności, a ostatni dwóm -- równolicznym.
+	z twierdzenia \ref{thm_o_klasach_A_n} każdy z~pierwszych czterech odpowiada jednej klasie sprzężoności, a~ostatni dwóm -- równolicznym.
 	Stąd klasy sprzężoności $A_5$ mają rozmiary: 1, 20, 15, 12, 12.
 
 	Załóżmy nie w prost, że $H$ jest nietrywialną, właściwą podgrupą normalną $A_5$.
 	Wówczas $H$ musi być sumą pewnych klas sprzężoności $A_5$, w tym klasy sprzężoności elementu neutralnego.
 	Ponadto rozmiar $H$ musi być dzielnikiem rozmiaru $A_5 = 60$.
-	Najmniejszy możliwy rozmiar sumy klas sprzężoności wraz z trywialną wynosi 13.
+	Najmniejszy nietrywialny możliwy rozmiar sumy klas sprzężoności wraz z~trywialną wynosi 13.
 	Stąd $|H| = 15$, $|H| = 20$ lub $|H| = 30$.
 	Ale żaden podzbiór multibioru $\{1, 12, 12, 15, 20 \}$ zawierający jedynkę nie sumuje się do potencjalnego rozmiaru $H$,
 	zatem takie $H$ nie może istnieć -- $A_5$ jest grupą prostą.
@@ -417,20 +417,20 @@ Jesteśmy już gotowi, żeby udowodnić twierdzenie:
 	Załóżmy nie w prost, że $H$ jest nietrywialną, właściwą podgrupą $A_n$.
 
 	Jeżeli $H$ zawiera pewną nietrywialną permutację $\sigma$, która ma punkt stały $a \in \{ 1, 2, \cdots, n \}$, to niech $K = H_a$.
-	Wówczas $K \simeq A_{n-1}$ oraz (np. z trzeciego twierdzenia o izomorfizmie) $H \cap K$ jest podgrupą normalną w $K$.
-	Ale $\sigma \in H \cap K$ oraz $K$ jest grupą prostą, zatem z założenia indukcyjnego $H \cap K = K$.
-	Stąd $H$ zawiera pewien element o typie $(1^{n-3}, 3^1)$, a zatem z twierdzenia \ref{thm_o_klasach_A_n} wszystkie, gdyż $n-3 \ge 3$.
-	Ale z lematu \ref{lemma_3cycles} 	cykle o długości 3 generują całe $A_n$, stąd $H = A_n$ -- sprzeczność z właściwością $H$.
+	Wówczas $K \simeq A_{n-1}$ oraz (np. z~trzeciego twierdzenia o izomorfizmie) $H \cap K$ jest podgrupą normalną w $K$.
+	Ale $\sigma \in H \cap K$ oraz $K$ jest grupą prostą, zatem z~założenia indukcyjnego $H \cap K = K$.
+	Stąd $H$ zawiera pewien element o typie $(1^{n-3}, 3^1)$, a~zatem z~twierdzenia \ref{thm_o_klasach_A_n} wszystkie, gdyż $n-3 \ge 3$.
+	Ale z~lematu \ref{lemma_3cycles} 	cykle o długości 3 generują całe $A_n$, stąd $H = A_n$ -- sprzeczność z~właściwością $H$.
 
 	Jeżeli natomiast żaden nietrywialny element $H$ nie ma punktu stałego, to $|H| \le n$.
-	W przeciwnym przypadku istniałyby dwie różne permutacje $\pi, \sigma \in H$ takie, że $\pi(1) = \sigma(1)$.
+	W~przeciwnym przypadku istniałyby dwie różne permutacje $\pi, \sigma \in H$ takie, że $\pi(1) = \sigma(1)$.
 	Wtedy $\gamma = \pi \sigma ^{-1} \ne \mathrm{id}$, $\gamma \in H$ oraz $\gamma(1) = 1$ -- sprzeczność.
 	Stąd rzeczywiście $|H| \le n$.
-	Ale z lematu \ref{lemma_big_con} $H$ jako nietrywialna suma pewnej liczby klas sprzężoności w tym trywialnej musiałaby mieć rozmiar co najmniej $n+1$.
+	Ale z~lematu \ref{lemma_big_con} $H$ jako nietrywialna suma pewnej liczby klas sprzężoności w tym trywialnej musiałaby mieć rozmiar co najmniej $n+1$.
 	Stąd w tym przypadku również otrzymujemy sprzeczność.
 
 	We wszystkich przypadkach otrzymaliśmy sprzeczność, czyli rzeczywiście $A_n$ jest grupą pierwszą,
-	czyli z indukcji $A_n$ jest grupą pierwszą dla wszystkich $n \ge 5$.
+	czyli z~indukcji $A_n$ jest grupą pierwszą dla wszystkich $n \ge 5$.
 \end{proof}
 %TODO
 
@@ -449,9 +449,9 @@ Teraz uogólnimy to pojęcie.
 
 \begin{deff}
 	Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$. \\
-	\emph{$\rho$ jest działaniem $k$-tranzytywnym ($k$-przechodnim)}, 
+	$\rho$ jest \emph{działaniem $k$-tranzytywnym ($k$-przechodnim)}, 
 	jeżeli dla dowolnych ciągów $k$ elementowych $(a_1, a_2, \cdots, a_k)$ oraz $(b_1, b_2, \cdots, b_k)$, 
-	które składają się z~różnych elementów z~$X$ istnieje taki element $g$ z~grupy $G$, że
+	które składają się z~różnych elementów z~$X$, istnieje taki element $g$ z~grupy $G$, że
 	$a_i^g = b_i^g$ dla każdego $i = 1, 2, \cdots, k$.
 \end{deff}
 W szczególności $1$-tranzytywność to jest dokładnie to samo, co zwykła tranzytywność.
@@ -469,7 +469,7 @@ Nie może być również $(n-1)$-tranzytywne, gdyż skoro mówimy na co przechod
 to wartość ostatniego elementu też jest ustalona, czyli wybór $(n-1)$ pozycji jest tak na prawdę wyborem wszystkich $n$ pozycji, 
 a na wszystkich elementach nie możemy dowolnie ustalić permutacji.
 Zauważmy jednak, że działanie $A_n$ jest $(n-2)$-tranzytywne. 
-Rzeczywiście, chcąc żeby $a_i$ przeszło na $b_i$ dla $i = 1, 2, \cdots, (n-2)$ mamy do wyboru dwie permutacje.
+Rzeczywiście, chcąc żeby $a_i$ przeszło na $b_i$ dla $i = 1, 2, \cdots, (n-2)$ mamy do wyboru dwie permutacje (z $S_n$).
 Jedna z~nich odwzorowuje $x \mapsto y, x' \mapsto y'$, a~druga $x \mapsto y', x' \mapsto y$, 
 gdzie $x, x'$ to elementy nie wybrane na $a_i$, a~$y, y'$ to elementy nie wybrane na $b_i$. 
 Ale te permutacje różnią się o~transpozycję $(y, y')$, zatem jedna z~nich jest parzysta, czyli należy do $A_n$,
@@ -477,7 +477,7 @@ więc rzeczywiście możemy odwzorować $(a_1, a_2, \cdots, a_{n-2})$ na $(b_1, 
 Stąd działanie $S_n$ jest $k$-tranzytywne dla każdego $k \le n-2$.
 
 Wprowadzimy teraz własność prymitywności. 
-Będzie to coś pomiędzy tranzytywnością a~$2$-tranzytywnością.
+Jest to własność pomiędzy tranzytywnością a~$2$-tranzytywnością.
 
 \begin{deff}
 	Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$. \\
@@ -518,16 +518,16 @@ Aby lepiej zrozumieć tą własność, pokażemy, że rzeczywiście jest to wła
 	\begin{enumerate}[label=Ad \alph*)] 
 	 \item 	Załóżmy nie wprost, że $\rho$ nie jest tranzytywne. 
 					Wówczas rozbicie $X$ na orbity daje nietrywialny system bloków.
-					Rzeczywiście, z nieprzechodniości dostajemy, że ilość bloków wynosi co najmniej 2 a
+					Rzeczywiście, z~nieprzechodniości dostajemy, że ilość bloków wynosi co najmniej 2 a
 					z nietrywialności $\rho$ -- któryś blok ma co najmniej 2 elementy.
-					Ostatecznie $\rho$ permutuje orbity, więc w szczególności je zachowuje.
+					Ostatecznie $\rho$ permutuje elementy orbit, więc w szczególności je zachowuje.
 					Znaleźliśmy nietrywialny system bloków działania $\rho$, czyli sprzeczność -- $\rho$ nie jest prymitywne.
 					Stąd $\rho$ musi być tranzytywne.
 	 \item 	Załóżmy nie wprost, że $\rho$ nie jest prymitywne.
 					Wówczas istnieje nietrywialny system bloków $\mathfrak{A} = \{Y_i \colon i \in I \}$, 
 					w którym istnieją $Y_1, Y_2 \in \mathfrak{A}$ takie, że $|Y_1| > 1$.
 					Niech więc $x,y \in Y_1, z \in Y_2$ gdzie $x \ne y$.
-					Z 2-tranzytywności możemy odwzorować parę $(x, y)$ na parę $(x, z)$, co daje sprzeczność z definicją systemu bloków.
+					Z 2-tranzytywności możemy odwzorować parę $(x, y)$ na parę $(x, z)$, co daje sprzeczność z~definicją systemu bloków.
 					Stąd $\rho$ musi być prymitywne.
 	\end{enumerate}
 \end{proof}
@@ -537,11 +537,11 @@ Oczywiście możliwe jest, że grupa działa tranzytywnie a nie prymitywnie, lub
 Jako pierwszy przykład możemy rozważyć naturalne działanie czteroelementowej 
 grupy $H= \langle (1,2)(3,4), (1,3)(2,4) \rangle$ będącej podgrupą $S_4$ na zbiorze 4 elementowym.
 Jak łatwo widać jest ono przechodnie.
-Nie jest jednak prymitywne, gdyż zachowuje ono np system bloków $\{\{1,2\}, \{3,4\}\}$.
+Nie jest jednak prymitywne, gdyż zachowuje ono np. system bloków $\{\{1,2\}, \{3,4\}\}$.
 
 Jako drugi przykład rozważmy działanie $A_3$ na zbiorze $\{1, 2, 3\}$.
 Jak pokazaliśmy wcześniej nie jest ono 2-tranzytywne, ale jest tranzytywne.
-To, że jest to również działanie prymitywne wynika z następującego lematu:
+To, że jest to również działanie prymitywne wynika z~następującego lematu:
 
 \begin{lemma}
 	Załóżmy, że $\rho$ jest tranzytywnym działaniem grupy $G$ na zbiorze $X$.
@@ -562,14 +562,15 @@ Udowodnijmy teraz jeszcze jedno stwierdzenie, które jest użyteczne w dowodzie 
 \begin{lemma}\label{max_group}
 	Załóżmy, że $\rho$ jest tranzytywnym działaniem grupy $G$ na zbiorze $X$ oraz $x \in X$.
 	Wówczas $\rho$ jest prymitywne wtedy i tylko wtedy, gdy $G_x$ jest maksymalną podgrupą $G$, tzn.
-	nie istnieje podgrupa $H$ grupy $G$, że $G_x \lneq H \lneq G$.
+	nie istnieje podgrupa $H$ grupy $G$, taka że $G_x \lneq H \lneq G$.
 \end{lemma}
 \begin{proof}
 Zauważmy najpierw, że warstwy (lewostronne) $G_x$ odpowiadają jednoznacznie elementom zbioru $X$ --
 bijekcja zadana jest wzorem $\zeta \colon g G_x \mapsto x^g$.
 Funkcja ta jest dobrze określona oraz jest iniekcją, gdyż $g_1 G_x = g_2 G_x \iff g_1^{-1} \cdot g_2 = h$ dla pewnego $h \in G_x$
 $\iff x^{g_1^{-1} \cdot g_2} = x^h = x \iff x^{g_1} = x^{g_2}$.
-Ponadto $\zeta$ jest suriekcją, gdyż działanie jest tranzytywne, stąd rzeczywiście $\zeta$ jest bijekcją.
+Ponadto $\zeta$ jest suriekcją, gdyż działanie jest tranzytywne.
+Stąd rzeczywiście $\zeta$ jest bijekcją.
 
 Przejdźmy teraz do dalszej części dowodu
 
@@ -593,11 +594,11 @@ Załóżmy, że $\rho$ nie działa prymitywnie na $X$, czyli istnieje pewien nie
 Niech $Y \in \mathfrak{A}$ takie, że $x \in Y$ oraz niech $H$ będzie stabilizatorem całego zbioru $Y$
 (czyli zbiorem $\{g \in G \colon \forall_{y \in Y} y^g \in Y \}$).
 Skoro $\mathfrak{A}$ jest nietrywialne, to $Y \ne X$ oraz istnieje blok rozmiaru co najmniej 2.
-Ale z poprzedniego lematu wiemy, że wszystkie bloki mają tą samą wielkość, więc również $|Y| \ge 2$.
+Ale z~poprzedniego lematu wiemy, że wszystkie bloki mają tą samą wielkość, więc również $|Y| \ge 2$.
 
-Zauważmy, że $H = \{ g \in G \colon x^g \in Y\} = K$. 
+Zauważmy, że $H = \{ g \in G \colon x^g \in Y\} \stackrel{def}{=} K$. 
 Oczywiście $H \subseteq K$, gdyż elementy $H$ zachowują zbiór $Y$.
-Z drugiej strony, jeżeli jakiś element z $Y$ trafia z powrotem do $Y$, to całe $Y$ jest zachowywane, 
+Z drugiej strony, jeżeli jakiś element z~$Y$ trafia z~powrotem do $Y$, to całe $Y$ jest zachowywane, 
 gdyż $Y$ jest elementem systemu bloków.
 Stąd rzeczywiście $H = K$.
 
@@ -627,20 +628,20 @@ Teraz jesteśmy już gotowi na sformułowanie i dowód lematy Iwasawy.
 
 	Z lematu \ref{max_group} otrzymujemy, że $H$ jest podgrupą maksymalną w $G$.
 	$H \lneq H K$, więc $H K = G$.
-	Stąd (i z twierdzenia \ref{mult_groups}) każdy element $g \in G$ jest postaci $g = h k$, gdzie $h \in H$ oraz $k \in K$.
+	Stąd (i z~twierdzenia \ref{mult_groups}) każdy element $g \in G$ jest postaci $g = h k$, gdzie $h \in H$ oraz $k \in K$.
 
-	Skoro działanie $\rho$ jest prymitywne, a więc tranzytywne, to z twierdzenia \ref{conj_stab}
-	dostajemy, że $G_x$ jest sprzężone z $H$.
+	Skoro działanie $\rho$ jest prymitywne, a więc tranzytywne, to z~twierdzenia \ref{conj_stab}
+	dostajemy, że $G_x$ jest sprzężone z~$H$.
 	Z założenia dodatkowo wynika, że $H$ zawiera podgrupę $B$ sprzężoną do $A$, 
 	ponadto $B$ jest normalną podgrupą abelową $H$, której sprzężenia (w $G$) generują całe $G$.
 	Sprzężenia $B$ są postaci $g^{-1} B g = k^{-1} h^{-1} B h k = k^{-1} B k \le B K$.
 	Wszystkie sprzężenie $B$ generują $G$ i są zawarte w $B K \le G$, stąd $G = B K$.
 
-	Korzystając z trzeciego twierdzenia o izomorfizmie dostajemy:
+	Korzystając z~trzeciego twierdzenia o izomorfizmie dostajemy:
 	$$ G/K = BK/K \simeq B/B\cap K$$
 	Ale grupa ilorazowa grupy abelowej jest abelowa, stąd zarówno $B/B\cap K$ jaki i $G/K$ są abelowe.
 	Z twierdzenia o komutancie wnioskujemy, że $K \ge [G, G] = G$, gdyż $G$ jest grupą doskonałą --
-	dostaliśmy sprzeczność z założeniem, że $K$ jest właściwą podgrupą $G$, stąd $G$ jest grupą prostą.
+	dostaliśmy sprzeczność z~założeniem, że $K$ jest właściwą podgrupą $G$, stąd $G$ jest grupą prostą.
 \end{proof}
 
 Zastosowania lematu Iwasawy znajdują się w dalszej części pracy.
