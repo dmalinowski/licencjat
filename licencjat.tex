@@ -1,11 +1,11 @@
 \documentclass[licencjacka]{pracamgr}
 \usepackage{polski}
-
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{enumitem}
 \usepackage{eufrak}
+\usepackage{color}
 %\usepackage[cp1250]{inputenc}
 
 \author{Daniel Malinowski}
@@ -22,23 +22,22 @@
 
 \date{Czerwiec 2013}
 
-\dziedzina{ 
-11.1 Matematyka\\ 
+\dziedzina{
+11.1 Matematyka\\
 }
 
-%Klasyfikacja tematyczna wedlug AMS (matematyka) lub ACM (informatyka)
-%\klasyfikacja{D. Software\\
-%  D.127. Blabalgorithms\\
-%  D.127.6. Numerical blabalysis}
+%Klasyfikacja tematyczna według AMS (matematyka) lub ACM (informatyka)
 \klasyfikacja{20. Group theory and generalizations}
 
-\keywords{grupa prosta, grupa alternująca, specjalna rzutowa grupa liniowa, lemat Iwasawy}
+\keywords{grupa prosta, grupa alternująca, specjalna rzutowa grupa
+liniowa, lemat Iwasawy}
 
 % Tu jest dobre miejsce na Twoje w?asne makra i~?rodowiska:
 \newtheorem{deff}{Definicja}[section]
 \newtheorem{thh}{Twierdzenie}[section]
 \newtheorem{lemma}{Lemat}[section]
-\newtheorem{fact}{Fakt}[section]
+\newtheorem{fact}{Stwierdzenie}[section]
+\newsymbol\eop 1003
 % koniec definicji
 
 \begin{document}
@@ -46,7 +45,7 @@
 
 \begin{abstract}
   % TODO
-	TODO 
+    TODO
 \end{abstract}
 
 \tableofcontents
@@ -62,370 +61,408 @@ TODO
 
 \chapter{Wiadomości wstępne}
 
-Rozdział ten zawiera przypomnienie pewnych definicji, własności i~twierdzeń omawianych na podstawowym kursie algebry I
-oraz ustalenie oznaczeń.
+Rozdział ten zawiera przypomnienie pewnych definicji, własności
+i~twierdzeń omawianych na podstawowym kursie
+Algebry I oraz ustalenie oznaczeń.
 
 \section{Oznaczenia}
 
-W niniejszej pracy dużymi literami alfabetu (np. $G, H, K$) będą oznaczane grupy.
-Ich elementy będą oznaczanie małymi literami alfabetu (np. $g, h, k$), przy czym przez $e$ będzie zawsze oznaczany element neutralny.
-Rozważane grupy będą (w większości) nieprzemienne, w~związku z~tym będzie stosowany zapis multiplikatywny.
+W niniejszej pracy wielkimi literami alfabetu (np.
+$G, H, K$) będą oznaczane grupy. Ich elementy będą oznaczanie małymi
+literami alfabetu (np. $g, h, k$), przy czym przez $e$ będzie zawsze
+oznaczany element neutralny. Rozważane grupy będą (w większości)
+nieprzemienne, w~związku z~tym będzie stosowany zapis
+multiplikatywny.
 
-Jeżeli $H$ oraz $K$ są podgrupami grupy $G$, to przez $H K = H \cdot K$ będzie oznaczana podgrupa $G$ 
-generowana przez wszystkie elementy postaci $h \cdot k$, gdzie $h \in H$ oraz $k \in K$.
+Jeżeli $H$ oraz $K$ są podzbiorami grupy $G$, to przez $HK$
+będzie oznaczany podzbiór iloczynów $\{ h\cdot k \colon h \in H, k \in K\}\subseteq G$.
 
 W związku z~tym oznaczeniem warto przytoczyć twierdzenie:
 
 \begin{thh} \label{mult_groups} $ $ \\
-	Jeżeli $H$ oraz $K$ są podgrupami grupy $G$, przy czym $K$ jest podgrupą normalną,
-	to $HK = \{ h k \colon h \in H, k \in K\}$.
+    Jeżeli $H$ oraz $K$ są podgrupami grupy $G$, przy czym $K$ jest podgrupą normalną,
+    to $HK$ jest podgrupą grupy $G$.
 \end{thh}
 
 
 \section{Grupy proste}
 
-Przypomnijmy teraz podstawową definicji w~tej pracy.
+Przypomnijmy teraz podstawową definicję w~tej pracy.
 \begin{deff}
-	Nietrywialną grupę $G$ nazwiemy \emph{grupą prostą}, jeżeli nie ma ona podgrup normalnych różnych od $\{e\}$ oraz samej siebie.
+    Nietrywialną grupę $G$ nazwiemy \emph{grupą prostą}, jeżeli nie ma ona podgrup normalnych różnych od $\{e\}$ oraz samej siebie.
 \end{deff}
 \begin{fact}
-	Jedynymi (z dokładnością do izomorfizmu) przemiennymi grupami prostymi są skończone grupy cykliczne o~liczbie elementów będącą liczbą pierwszą.
+    Jedynymi (z dokładnością do izomorfizmu) przemiennymi grupami prostymi są skończone grupy cykliczne,
+    których rząd jest liczbą pierwszą.
 \end{fact}
-Jest to prosta konsekwencja tego, że w~grupach przemiennych wszystkie podgrupy są podgrupami normalnymi.
+Jest to prosta konsekwencja tego, że w~grupach przemiennych
+wszystkie podgrupy są normalne oraz że każda inna grupa przemienna ma właściwą podgrupę cykliczną.
 % jak zrobić odwołanie po szczegóły?
 
 
 \section{Twierdzenia o~izomorfizmie}
 Przejdźmy teraz do podstawowych twierdzeń o~izomorfizmie.
-\begin{thh}[Pierwsze twierdzenie o~izomorfizmie] $ $ \\
-	Niech $G, H$ -- grupy, 	$ \varphi \colon G \to H$ homomorfizm, $K = \ker{\varphi}$ oraz $H' = \mathrm{im}\varphi $. \\
-	Wówczas zachodzi izomorfizm $$G/K \simeq H'$$
+\begin{thh}[Pierwsze twierdzenie o~izomorfizmie \textcolor{red}{ -- odsyłacz}] $ $ \\
+    Niech $ \varphi \colon G \to H$ będzie homomorfizmem grup. Oznaczmy $K = \ker{\varphi}$ oraz
+    $H' = \mathrm{im}\varphi $. 
+    Wówczas ma miejsce izomorfizm $$G/K \simeq H'.\quad\eop$$
 \end{thh}
-\begin{thh}[Drugie twierdzenie o~izomorfizmie]$ $\\
-	Niech $G$ -- grupa, 	$H_1, H_2$ podgrupy normalne $G$, przy czym $H_2 \leq H_1$. \\
-	Wówczas $H_2 \trianglelefteq H_1$, $H_1/H_2 \trianglelefteq G/H_2$ i~zachodzi izomorfizm
-	$$ (G/H_2) / (H_1/H_2) \simeq G/H_1$$
+\begin{thh}[Drugie twierdzenie o~izomorfizmie \textcolor{red}{ -- odsyłacz}]$ $\\
+    Niech $G$ będzie grupą,  $H_1, H_2$ jej podgrupami normalnymi,
+    przy czym $H_2 \leq H_1$. 
+    Wówczas $H_2 \trianglelefteq H_1$, $H_1/H_2 \trianglelefteq G/H_2$ i~ma miejsce izomorfizm
+    $$ (G/H_2) / (H_1/H_2) \simeq G/H_1.\quad\eop$$
 \end{thh}
-\begin{thh}[Trzecie twierdzenie o~izomorfizmie] $ $ \\
-	Niech $G$ -- grupa, $H_1$ podgrupa normalna $G$, $H$ podgrupa $G$. \\
-	Wówczas $H\cap H_1 \trianglelefteq H$ oraz zachodzi izomorfizm
-	$$ H/(H\cap H_1) \simeq H \cdot H_1 / H_1 $$
+\begin{thh}[Trzecie twierdzenie o~izomorfizmie \textcolor{red}{ -- odsyłacz}] $ $ \\
+    Niech $G$ będzie grupą, $H$ oraz $H_1$
+    -- jej podgrupami, przy czym $H_1$ jest podgrupą normalną w~$G$. 
+    Wówczas $H\cap H_1$ jest podgrupą normalną w~$H$ oraz ma miejsce izomorfizm
+    $$ H/(H\cap H_1) \simeq HH_1 / H_1.\quad\eop$$
 \end{thh}
 
 
 \section{Komutant i~abelianizacja}
-Poniżej przedstawionych jest kilka użytecznych wiadomości o~komutancie.
+Poniżej przedstawionych jest kilka użytecznych wiadomości
+o~komutancie.
 \begin{deff}
-	Niech $G$ będzie dowolną grupą. Wówczas \emph{komutantem grupy $G$} nazywamy podgrupę $G$ generowaną przez wszystkie elementy postaci
-	$aba^{-1}b^{-1}$, gdzie $a, b \in G$. Komutant grupy $G$ oznaczamy przez $[G, G]$.
+    Niech $G$ będzie dowolną grupą. Wówczas \emph{komutantem grupy $G$} nazywamy podgrupę $G$ generowaną przez wszystkie elementy postaci
+    $aba^{-1}b^{-1}$, gdzie $a, b \in G$. Komutant grupy $G$ oznaczamy przez $[G, G]$.
 \end{deff}
-\begin{thh}[O komutancie] $ $\\
-	Komutant $[G,G]$ jest podgrupą normalną $G$, przy czym grupa ilorazowa $G/[G,G]$ jest grupą abelową.
-	Ponadto dla dowolnej podgrupy normalnej $H \trianglelefteq G$ takiej, że $G/H$ jest abelowa, zachodzi $[G,G] \le H$.
+\begin{thh}[O komutancie \textcolor{red}{ -- odsyłacz}] $ $\\
+    Komutant $[G,G]$ jest podgrupą normalną $G$, przy czym grupa ilorazowa $G/[G,G]$ jest grupą abelową.
+    Ponadto dla dowolnej podgrupy normalnej $H \trianglelefteq G$ takiej, że $G/H$ jest abelowa, zachodzi $[G,G] \le H$
+    \quad$\eop$.
 \end{thh}
-\begin{deff}  
-	Przekształcenie kanoniczne $G \to G/[G,G]$ (rzutowanie na grupę ilorazową) nazywamy abelianizacją.
+\begin{deff}
+    Przekształcenie kanoniczne $G \to G/[G,G]$ (rzutowanie na grupę ilorazową) nazywamy
+    homomorfizmem abelianizacji, zaś grupę ilorazową $G/[G,G]$ -- abelianizacją grupy $G$.
 \end{deff}
 
-O abelianizacji (w przeciwieństwie do twierdzenia o~komutancie) nie będzie więcej wspominane w~tej pracy, 
-ale ta definicja została przytoczona w~celu domknięcia podstawowych faktów o~komutancie.
-Ważniejszym dla nas pojęciem jest pojęcie grupy doskonałej:
+W skrajnym przypadku abelianizacja grupy jest trywialna, co prowadzi do ważnego pojęcia
+grupy doskonałej:
 
 \begin{deff}
-	\emph{Grupą doskonałą} nazwiemy dowolną grupę, która jest równa swojemu komutantowi.
+    \emph{Grupą doskonałą} nazwiemy dowolną grupę, która jest równa swojemu komutantowi.
 \end{deff}
 
-Grupami doskonałymi zajmiemy się w~dalszej części pracy -- przy lemacie Iwasawy.
-Na razie zanotujmy prosty fakt:
+Grupami doskonałymi zajmiemy się w~dalszej części pracy -- przy
+lemacie Iwasawy. Na razie zanotujmy prosty fakt:
 
 \begin{fact}
-	Nieprzemienne grupy proste są grupami doskonałymi.
+    Nieprzemienne grupy proste są grupami doskonałymi.\quad$\eop$
 \end{fact}
 
 
 \section{Działanie grupy na zbiorze}
-Na koniec tego rozdziału przyjrzyjmy się jednej z~ważniejszej własności grup -- ich możliwości działania na zbiorach.
+Na koniec tego rozdziału przyjrzyjmy się użytecznej
+własności grup -- możliwości działania na zbiorach.
 
 \begin{deff}
- 	Niech $G$ będzie grupą, a~$X$ -- zbiorem. Mówimy, że \emph{$\rho$ jest działaniem grupy $G$ na zbiorze $X$}, 
-	jeżeli dla każdego $g \in G$ przyporządkowane jest przekształcenie $\rho_g\colon X \to X$, takie, że:
-	\begin{itemize}
-		\item $\rho_e = \mathrm{id}_X$,
-		\item $\rho_g \circ \rho_h = \rho(gh)$, dla dowolnych $g, h \in G$.
-	\end{itemize}
-	Jeżeli sposób działania ($\rho$) wynika z~kontekstu, to zamiast $\rho_g(x)$ będziemy pisać $x^g$.
+    Niech $G$ będzie grupą, a~$X$ -- zbiorem. Mówimy, że \emph{$\rho$ jest działaniem grupy $G$ na zbiorze $X$},
+    jeżeli każdemu elementowi $g \in G$ przyporządkowane jest przekształcenie $\rho_g\colon X \to X$, takie, że:
+    \begin{itemize}
+        \item $\rho_e = \mathrm{id}_X$,
+        \item $\rho_g \circ \rho_h = \rho_{gh}$, dla dowolnych $g, h \in G$.
+    \end{itemize}
+    Jeżeli sposób działania ($\rho$) wynika z~kontekstu, to zamiast $\rho_g(x)$ będziemy pisać $x^g$.
 \end{deff}
 
-Zgrabniejszy opis działania grupy na zbiorze daje poniższe twierdzenie.
-Zanim jednak do niego przejdziemy, przypomnijmy sobie jeszcze jedną definicję.
+Zgrabniejszy opis działania grupy na zbiorze daje następne
+twierdzenie. Zanim jednak do niego przejdziemy, przypomnijmy
+jeszcze jedną definicję.
 
 \begin{deff}
-	Niech $X$ będzie dowolnym zbiorem. Wówczas \emph{grupą symetrii zbioru X} nazywamy zbiór bijekcji $X \to X$,
-	wraz z~operacją składania. Grupę tę oznaczamy $S_X$.
+    Niech $X$ będzie dowolnym zbiorem. Wówczas \emph{grupą symetrii zbioru X} nazywamy zbiór bijekcji $X \to X$,
+    wraz z~operacją składania. Grupę tę oznaczamy $S_X$.
 \end{deff}
 
 \begin{thh}[O działaniu grupy na zbiorze] $ $ \\
-	Niech $G$ będzie grupą, a~$X$ -- zbiorem. Wówczas $\rho$ jest działaniem $G$ na $X$ wtedy i~tylko wtedy, 
-	gdy $\rho$ jest homomorfizmem z~$G$ w~grupę symetrii zbioru $X$.
+    Niech $G$ będzie grupą, a~$X$ -- zbiorem. Wówczas $\rho$ jest działaniem $G$ na $X$ wtedy i~tylko wtedy,
+    gdy $\rho$ jest homomorfizmem z~$G$ w~grupę symetrii zbioru $X$.\quad$\eop$
 \end{thh}
 
-Z działaniem grupy na zbiorze związane jest dużo ważnych definicji i~twierdzeń.
-Poniżej przytoczone są te najistotniejsze z~punktu widzenia tej pracy.
+Z działaniem grupy na zbiorze związane jest dużo ważnych definicji
+i~twierdzeń. Poniżej przytoczone są te najistotniejsze z~punktu
+widzenia tej pracy.
 
 \begin{deff}
-	Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$ oraz $x \in X$. Wówczas:
-	\begin{enumerate}[label=\alph*)]
-	 \item \emph{Stabilizatorem punktu $x$ (grupą izotropii $x$)} nazwiemy zbiór elementów $\{g \in G\colon x^g = x \}$. 
-					Stabilizator punktu $x$ oznaczamy $G_x$.
-	 \item \emph{Orbitą punktu $x$} nazwiemy podzbiór $X$ równy $\{y \in X \colon \exists_{g \in G} x^g = y \}$.
-					Orbitę punktu $x$ oznaczamy $G(x)$.
-	\end{enumerate}
+    Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$ oraz $x \in X$. Wówczas:
+    \begin{enumerate}[label=\alph*)]
+     \item \emph{Stabilizatorem punktu $x$ (grupą izotropii $x$)} nazwiemy zbiór elementów $\{g \in G\colon x^g = x \}$.
+                    Stabilizator punktu $x$ oznaczamy $G_x$.
+     \item \emph{Orbitą punktu $x$} nazwiemy podzbiór $X$ równy $\{y \in X \colon \exists_{g \in G} x^g = y \}$.
+                    Orbitę punktu $x$ oznaczamy $G(x)$.
+    \end{enumerate}
 % punkt stały ?
 \end{deff}
 
-Podstawowe własności tych obiektów przedstawia następujący fakt:
-\begin{fact}
-	Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$ oraz $x, y \in X$. Wówczas:
-	\begin{enumerate}[label=\alph*)]
-	 \item $G_x$ jest podgrupą $G$.
-	 \item $G(x)$ i~$G(y)$ są równe lub rozłączne (orbity tworzą rozbicie zbioru $X$).
-	\end{enumerate}
+Podstawowe własności tych obiektów przedstawia następujące stwierdzenie:
+\begin{fact} [\textcolor{red}{odsyłacz}]
+    Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$ oraz $x, y \in X$. Wówczas:
+    \begin{enumerate}[label=\alph*)]
+     \item $G_x$ jest podgrupą $G$.
+     \item $G(x)$ i~$G(y)$ są równe lub rozłączne (orbity tworzą rozbicie zbioru $X$).\quad$\eop$
+    \end{enumerate}
 \end{fact}
 
-Zanim przejdziemy do ważniejszych twierdzeń opisujących orbity i~stabilizatory, 
-przypomnijmy wcześniej, jakie własności może mieć działanie grupy na zbiorze.
+Zanim przejdziemy do ważniejszych twierdzeń opisujących orbity
+i~stabilizatory, przypomnijmy wcześniej, jakie własności może mieć
+działanie grupy na zbiorze.
 
 \begin{deff}
-	Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$.
-	\begin{enumerate}[label=\alph*)]
-	 \item \emph{$\rho$ jest działaniem tranzytywnym (przechodnim)}, jeżeli wszystkie elementy $X$ tworzą jedną orbitę.
-	 \item \emph{$\rho$ jest działaniem wiernym}, jeżeli $\rho$ jest iniekcją jako homomorfizm $G \to S_X$.
-	 \item \emph{$\rho$ jest działaniem nietrywialnym}, jeżeli $\rho$ nie jest zerowe jako homomorfizm $G \to S_X$.
-	\end{enumerate}
+    Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$.
+    \begin{enumerate}[label=\alph*)]
+     \item \emph{$\rho$ jest działaniem tranzytywnym (przechodnim)}, jeżeli wszystkie elementy $X$ tworzą jedną orbitę.
+     \item \emph{$\rho$ jest działaniem wiernym}, jeżeli $\rho$ jest iniekcją jako homomorfizm $G \to S_X$.
+     \item \emph{$\rho$ jest działaniem nietrywialnym}, jeżeli $\rho$ nie jest homomorfizmem stałym $G \to S_X$.
+    \end{enumerate}
 \end{deff}
 
-Jak to zostało wcześniej zapowiedziane, na koniec przytoczmy kilka ważnych twierdzeń pokazujących zależność między orbitami a~stabilizatorami.
+Jak to zostało wcześniej zapowiedziane, na koniec przytoczmy kilka
+ważnych twierdzeń pokazujących zależność między orbitami
+a~stabilizatorami.
 
-\begin{thh}\label{conj_stab} $ $\\
-	Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$ oraz $x, y \in X$ należą do jednej orbity.
-	Wówczas grupy $G_x$ oraz $G_y$ są wzajemnie sprzężone.
+\begin{thh}\label{conj_stab} $ $[\textcolor{red}{odsyłacz}]\\
+    Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$ oraz $x, y \in X$ należą do jednej orbity.
+    Wówczas grupy $G_x$ oraz $G_y$ są sprzężone w grupie $G$.
 \end{thh}
 
-\begin{thh}[O orbitach i~stabilizatorach] $ $\\
-	Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$, przy czym $X$ jest zbiorem skończonym.
-	Ponadto $x \in X$. 
-	Wówczas $|G(x)| = [G : G_x]$.
+\begin{thh}[O orbitach i~stabilizatorach] [\textcolor{red}{odsyłacz}]$ $\\
+    Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$ oraz $x\in X$.
+    Wówczas $|G(x)| = [G : G_x]$.
 \end{thh}
 
-\begin{thh}[Równanie klas] $ $\\
-	Przy założeniach z~poprzedniego twierdzenia zachodzi
-	$$ |X| = \sum_{i=1}^k [G : G_{x_i}] ,$$
-	gdzie $x_1, x_2, \cdots, x_k$ to reprezentanci wszystkich orbit działania $\rho$.
+\begin{thh}[Równanie klas] [\textcolor{red}{odsyłacz}] $ $\\
+    Przy założeniach z~poprzedniego twierdzenia zachodzi
+    $$ |X| = \sum_{i=1}^k [G : G_{x_i}] ,$$
+    gdzie $x_1, x_2, \cdots, x_k$ są reprezentantami wszystkich orbit działania $\rho$.
 \end{thh}
 
 
 
 \chapter{Prostota grupy alternującej $A_n$}
 
-Zanim udowodnimy główną tezę tego rozdziału, czyli fakt, że $A_n$ jest grupą prostą dla $n \ge 5$,
-przypomnimy znane własności o tej grupie oraz udowodnimy kilka mniej znanych.
+Zanim udowodnimy główną tezę tego rozdziału, czyli twierdzenie, że $A_n$
+jest grupą prostą dla $n \ge 5$, przypomnimy znane własności o tej
+grupie oraz udowodnimy kilka mniej znanych.
 
 \section{Przypomnienie wiadomości o $S_n$ oraz $A_n$}
 
-W poprzednim rozdziale wprowadziliśmy definicję grupy $S_X$ symetrii zbioru $X$.
-Ważnym przypadkiem szczególnym jest sytuacja, gdy $X$ jest zbiorem skończonym o $n$ elementach.
-Wówczas, jako że grupy symetrii zbiorów równolicznych są izomorficzne, 
-grupę $S_X$ będziemy oznaczać $S_n$ i bez straty ogólności przyjmiemy, że jej elementami są permutacje zbioru $\{1, 2, \cdots, n\}$.
+W poprzednim rozdziale wprowadziliśmy definicję grupy $S_X$ symetrii
+zbioru $X$. Ważnym przypadkiem szczególnym jest sytuacja, gdy $X$
+jest zbiorem skończonym o $n$ elementach. Wówczas, jako że grupy
+symetrii zbiorów równolicznych są izomorficzne, grupę $S_X$ będziemy
+oznaczać $S_n$ i bez straty ogólności przyjmiemy, że jej elementami
+są permutacje zbioru $\{1, 2, \cdots, n\}$.
 %napisać coś o składaniu permutacji, tzn. że inaczej niż funkcji?
 
 \begin{fact}
-	Rozmiar grupy $S_n$ wynosi $n!$.
+    Rząd grupy $S_n$ wynosi $n!$.\quad$\eop$
 \end{fact}
 
-Ważnym sposobem przedstawienia elementów grupy $S_n$ jest rozkład na cykle.
+Ważnym sposobem przedstawienia elementów grupy $S_n$ jest rozkład na
+cykle.
 
-\begin{deff}	%co z~cyklami jednoelementowymi?
-	Permutację $\sigma \in S_n$ nazwiemy \emph{cyklem długości $k$}, 
-	jeżeli istnieją różne elementy $c_1, c_2, \cdots, c_k \in \{1, 2, \cdots, n\}$ takie, że
-	$$ \sigma(x) = \left\{ 
-				\begin{array}{ll}
-					c_{i+1}, & \textrm{jeżeli $x = c_i$}\\
-					c_1,     & \textrm{jeżeli $x = c_k$}\\
-					x,       & \textrm{w przeciwnym przypadku}
-				\end{array} \right.
-	$$
-	Wówczas permutację $\sigma$ zapisujemy jako $(c_1, c_2, \cdots, c_k)$.
+\begin{deff}    %co z~cyklami jednoelementowymi?
+    Permutację $\sigma \in S_n$ nazwiemy \emph{cyklem długości $k$},
+    jeżeli istnieją różne elementy $c_1, c_2, \ldots, c_k \in \{1, 2, \cdots, n\}$ takie, że
+    $$ \sigma(x) = \left\{
+                \begin{array}{ll}
+                    c_{i+1}, & \textrm{jeżeli $x = c_i$}\\
+                    c_1,     & \textrm{jeżeli $x = c_k$}\\
+                    x,       & \textrm{w przeciwnym przypadku}
+                \end{array} \right.
+    $$
 \end{deff}
 
-Oczywiście zapis cyklu nie jest jednoznaczny -- $(c_1, c_2, \cdots, c_k) = (c_k, c_1, c_2, \cdots, c_{k-1}) = (c_2, c_3, \cdots, c_k, c_1)$.
-Ponadto ten zapis ma tylko sens, gdy wiemy, w jakiej grupie symetrii ten cykl się znajduje.
+Cykle zapisujemy w postaci $(c_1, c_2, \cdots, c_k)$. Oczywiście zapis cyklu nie jest jednoznaczny; 
+następujące zapisy: $(c_1, c_2, \cdots, c_k) = (c_k, c_1, c_2, \cdots, c_{k-1}) = (c_2, c_3, \cdots, c_k,
+c_1)$ reprezentują ten sam cykl.
 
-Dla $\sigma \in S_n$, jeżeli weźmiemy element zbioru $\{1, 2, \cdots, n\}$, będziemy na niego działać permutacją $\sigma$ tak długo, 
-aż dojdziemy do niego samego, to z~otrzymanych elementów możemy stworzyć cykl.
-Powtarzając tę procedurę z~niewybranymi jeszcze elementy dostaniemy rozkład na cykle:
+Dla $\sigma \in S_n$ oraz $x\in\{1, 2,\cdots, n\}$ zbiór
+$\{x,\sigma(x),\sigma^2(x),\ldots\}\subseteq\{1,\ldots,n\}$ jest skończony, zatem istnieją
+liczby $k<l\leq n$ takie, że $\sigma^k(x)=\sigma^l(x)$, a stąd $\sigma^{l-k}(x)=x$. Jeśli $d$ jest najmniejszą
+liczbą całkowitą dodatnią taką, że $\sigma^d(x)=x$, to mamy cykl $\left(x,\sigma(x),\ldots,\sigma^{d-1}(x)\right)$.
+Powtarzając tę procedurę z~niewybranymi jeszcze elementami $x$, dostaniemy rozkład na cykle:
 
-\begin{thh} $ $ \\		%co z~cyklami jednoelementowymi?
-	Każdą permutację $\sigma \in S_n$ można przedstawić jako iloczyn rozłącznych cykli, 
-	czyli takich $(c_1, c_2, \cdots, c_k)$, $(d_1, d_2, \cdots, d_l)$, że $\{ c_1, c_2, \cdots, c_k \} \cap \{ d_1, d_2, \cdots, d_l \} = \emptyset$
-	przy czym każdy element ze zbioru $\{1, 2, \cdots, n\}$ znajduje się w pewnym cyklu.
-	Przedstawienie jest jednoznaczne z~dokładnością do kolejności cykli.
+\begin{thh} $ $ \\      %co z~cyklami jednoelementowymi?
+    Każdą permutację $\sigma \in S_n$ można przedstawić jako iloczyn rozłącznych cykli,
+    czyli takich $(c_1, c_2, \cdots, c_k)$, $(d_1, d_2, \cdots, d_l)$, że $\{ c_1, c_2, \cdots, c_k \} \cap \{ d_1, d_2, \cdots, d_l \} = \emptyset$
+    przy czym każdy element ze zbioru $\{1, 2, \cdots, n\}$ znajduje się w pewnym cyklu.
+    Przedstawienie jest jednoznaczne z~dokładnością do kolejności cykli.
 \end{thh}
 
 \pagebreak[2]
 
-Przejdźmy teraz do zdefiniowania podgrupy $A_n$ grupy $S_n$.
-Załóżmy do końca tego rozdziału, że $n \ge 2$.
+Przejdźmy teraz do zdefiniowania podgrupy $A_n$ grupy $S_n$. Załóżmy
+do końca tego rozdziału, że $n \ge 2$.
 
 \begin{deff}
-	\emph{Transpozycją} nazwiemy dowolny cykl długości 2.
+    \emph{Transpozycją} nazwiemy dowolny cykl długości 2.
 \end{deff}
 
 Transpozycję są cegiełkami, z~których można budować permutacje, tzn.
 
 \begin{thh} $ $ \\
-	Każda permutacja jest iloczynem pewnej liczby transpozycji.
+    Każda permutacja jest iloczynem pewnej liczby transpozycji.
 \end{thh}
 
-Rozkład permutacji na transpozycje nie musi być jednoznaczny.
-Np. $(1, 2) (2, 4) (4, 2) = (1, 2)$ oraz $(1, 2) (2, 3) (3, 4) (4, 1) = (4, 2) (2, 3)$.
-Jednoznaczna natomiast jest parzystość liczby transpozycji w rozkładzie.
+Rozkład permutacji na transpozycje nie musi być jednoznaczny. Np.
+$(1, 2) (2, 4) (4, 2) = (1, 2)$ oraz $(1, 2) (2, 3) (3, 4) (4, 1) =
+(4, 2) (2, 3)$. Jednoznaczna natomiast jest parzystość liczby
+transpozycji w rozkładzie.
 
 \begin{deff}
-	Permutację o parzystej liczbie transpozycji w rozkładzie nazwiemy \emph{parzystą}, 
-	w przeciwnym przypadku -- \emph{nieparzystą}.
-	Podgrupę wszystkich permutacji parzystych grupy $S_n$ nazywamy \emph{grupą alternującą} i oznaczamy $A_n$.
+    Permutację, którą można przedstawić w postaci iloczynu parzystej liczby
+    transpozycji, nazwiemy \emph{permutacją parzystą},
+    w przeciwnym przypadku -- \emph{nieparzystą}.
+    Podgrupę wszystkich permutacji parzystych grupy $S_n$ nazywamy \emph{grupą alternującą} i oznaczamy $A_n$.
 \end{deff}
 
 
 Poprawność definicji wynika z~twierdzenia:
 
-\begin{thh}\label{thm_A_n} $ $ \\
-	Parzystość liczby transpozycji w rozkładzie permutacji na transpozycje nie zależy od rozkładu.
-	Permutacje o parzystej liczbie transpozycji tworzą podgrupę normalną grupy $S_n$ indeksu 2, czyli rozmiaru $n!/2$.
+\begin{thh}\label{thm_A_n} $ $[\textcolor{red}{odsyłacz}] \\
+    Parzystość liczby transpozycji w rozkładzie permutacji na transpozycje nie zależy od rozkładu.
+    Permutacje o parzystej liczbie transpozycji tworzą podgrupę normalną grupy $S_n$ indeksu 2, czyli
+    rzędu $n!/2$.
 \end{thh}
 
-Warto tu jeszcze wspomnieć o tym, które cykle są permutacjami parzystymi, a które nie.
-Mianowicie, trochę wbrew swojej nazwie, cykle o długości nieparzystej są parzyste, 
-a~o~długości parzystej -- nieparzyste.
-Stąd prawdziwy jest fakt:
+Warto tu jeszcze wspomnieć o tym, które cykle są permutacjami
+parzystymi, a które nie. Mianowicie, trochę wbrew swojej nazwie,
+cykle o długości nieparzystej są parzyste, a~o~długości parzystej --
+nieparzyste. Stąd prawdziwe jest:
 
 \begin{fact}\label{fact_typ_A_n}
-	Permutacja $\sigma \in S_n$ jest parzysta wtedy i tylko wtedy, kiedy w rozkładzie na cykle 
-	zawiera parzystą liczbę cykli o parzystej długości.
+    Permutacja $\sigma \in S_n$ jest parzysta wtedy i tylko wtedy, kiedy w rozkładzie na cykle
+    zawiera parzystą liczbę cykli o parzystej długości.\quad$\eop$
 \end{fact}
 
 
 \section{Klasy sprzężoności $S_n$ i $A_n$}
 
-W celu udowodnienia prostoty grupy $A_n$ musimy zbadać klasy sprzężoności tej grupy.
-Najpierw zajmiemy się jednak prostszym problemem -- klasami sprzężoności $S_n$.
+W celu udowodnienia prostoty grupy $A_n$ zbadamy klasy
+sprzężoności tej grupy. Najpierw zajmiemy się jednak prostszym
+problemem -- klasami sprzężoności $S_n$.
 
 \begin{deff}
-	\emph{Typem cyklowym} permutacji $\sigma \in S_n$ nazwiemy listę długości cykli występujących w $\sigma$,
-	tzn. ciąg $(1^{i_1}, 2^{i_2}, \cdots, n^{i_n})$,
-	gdzie $i_k$ to liczba cykli długości $k$ w rozkładzie $\sigma$ na cykle rozłączne.
+    \emph{Typem cyklowym} permutacji $\sigma \in S_n$ nazwiemy listę długości cykli występujących w $\sigma$,
+    tzn. ciąg $(1^{i_1}, 2^{i_2}, \cdots, n^{i_n})$,
+    gdzie $i_k$ to liczba cykli długości $k$ w rozkładzie $\sigma$ na cykle rozłączne.
 \end{deff}
-W celu uproszczenia zapisu można omijać długości cykli, które nie występują w rozkładzie.
-Dla przykładu typem cyklowym transpozycji jest $(1^{n-2}, 2^1)$, a identyczności -- $(1^n)$.
+W celu uproszczenia zapisu można omijać długości cykli, które nie
+występują w rozkładzie. Dla przykładu typem cyklowym transpozycji
+jest $(1^{n-2}, 2^1)$, a identyczności -- $(1^n)$.
 
-Okazuje się, że w grupie $S_n$ typ cyklowy jednoznacznie wskazuje na klasę sprzężoności:
+Okazuje się, że w grupie $S_n$ typ cyklowy jednoznacznie wskazuje na
+klasę sprzężoności:
 
 \begin{thh} $ $ \\
-	Permutacje $\pi, \sigma \in S_n$ są wzajemnie sprzężone wtedy i tylko wtedy, gdy ich indeks cyklowy jest taki sam.
+    Permutacje $\pi, \sigma \in S_n$ są sprzężone wtedy i tylko wtedy, gdy ich indeks cyklowy jest taki sam.
 \end{thh}
 \begin{proof}
-	Niech $\lambda = (c_1, c_2, \cdots, c_k)$ będzie cyklem w $S_n$, $c_{k+1} = c_1$ oraz $\gamma \in S_n$.
-	Wówczas $(\gamma^{-1} \lambda \gamma)(\gamma(c_i)) = (\lambda \gamma)(c_i) = \gamma(c_{i+1})$,
-	na pozostałych elementach $\gamma^{-1} \lambda \gamma$ jest stałe, 
-	zatem $\gamma^{-1} (c_1, c_2, \cdots, c_k) \gamma = (\gamma(c_1), \gamma(c_2), \cdots, \gamma(c_k))$.
-	Stąd również 
 
-		$$\gamma \Big(c_1^1, c_2^1, \cdots, c_{k^1}^1\Big) \cdots \Big(c_1^m, c_2^m, \cdots, c_{k^m}^m \Big) \gamma^{-1} = $$
-		$$ = \gamma \Big(c_1^1, c_2^1, \cdots, c_{k^1}^1\Big) \gamma^{-1} \gamma  \cdots \gamma ^{-1} \gamma \Big(c_1^m, c_2^m, \cdots, c_{k^m}^m\Big) \gamma^{-1} = $$
-		$$ = \Big(\gamma (c_1^1), \gamma (c_2^1), \cdots, \gamma (c_{k^1}^1)\Big) \cdots \Big(\gamma (c_1^m), \gamma (c_2^m), \cdots, \gamma (c_{k^m}^m)\Big)$$
+    [\textcolor{red}{\bf Wygląda na to, że stosuje Pan funkcje do argumentu od strony lewej do prawej,
+    czyli działa grupą permutacji z prawej strony. Warto to chyba zapowiedzieć zaraz po definicji permutacji}]
 
-	Jeżeli cykle $\Big(c_1^1, c_2^1, \cdots, c_{k^1}^1\Big) \cdots \Big(c_1^m, c_2^m, \cdots, c_{k^m}^m \Big)$ były rozłączne,
-	to również powstałe po sprzężeniu cykle są rozłączne.
-	Jest ich tyle samo i mają te same długości, zatem rzeczywiście sprzężenie zachowuje typ permutacji.
+    Niech $\lambda = (c_1, c_2, \cdots, c_k)$ będzie cyklem w $S_n$, $c_{k+1} = c_1$ oraz $\gamma \in S_n$.
+    Wówczas
+    $(\gamma^{-1} \lambda \gamma)(\gamma(c_i)) = (\lambda \gamma)(c_i) = \gamma(c_{i+1})$,
+    na pozostałych elementach $\gamma^{-1} \lambda \gamma$ jest stałe,
+    zatem $\gamma^{-1} (c_1, c_2, \cdots, c_k) \gamma = (\gamma(c_1), \gamma(c_2), \cdots, \gamma(c_k))$.
+    Stąd również
 
-	Wystarczy jeszcze pokazać, że permutacje o tym samym typie są sprzężone.
-	Niech $\pi =    \Big(c_1^1, c_2^1, \cdots, c_{k^1}^1\Big) \cdots \Big(c_1^m, c_2^m, \cdots, c_{k^m}^m \Big)$ 
-	oraz  $\sigma = \Big(d_1^1, d_2^1, \cdots, d_{k^1}^1\Big) \cdots \Big(d_1^m, d_2^m, \cdots, d_{k^m}^m \Big)$.
-	Wówczas permutacja $\gamma \colon c_i^j \mapsto d_i^j$ jest taka, że $\gamma \pi \gamma^{-1} = \sigma$.
+        $$\gamma \Big(c_1^1, c_2^1, \cdots, c_{k_1}^1\Big) \cdots \Big(c_1^m, c_2^m, \cdots, c_{k_m}^m \Big) \gamma^{-1} = $$
+        $$ = \gamma \Big(c_1^1, c_2^1, \cdots, c_{k_1}^1\Big) \gamma^{-1} \gamma  \cdots \gamma ^{-1} \gamma \Big(c_1^m, c_2^m, \cdots, c_{k_m}^m\Big) \gamma^{-1} = $$
+        $$ = \Big(\gamma (c_1^1), \gamma (c_2^1), \cdots, \gamma (c_{k_1}^1)\Big) \cdots \Big(\gamma (c_1^m), \gamma (c_2^m), \cdots, \gamma (c_{k_m}^m)\Big)$$
+
+    Jeżeli cykle $\Big(c_1^1, c_2^1, \cdots, c_{k_1}^1\Big) \cdots \Big(c_1^m, c_2^m, \cdots, c_{k_m}^m \Big)$ były rozłączne,
+    to również powstałe po sprzężeniu cykle są rozłączne.
+    Jest ich tyle samo i mają te same długości, zatem rzeczywiście sprzężenie zachowuje typ permutacji.
+
+    Wystarczy jeszcze pokazać, że permutacje o tym samym typie są sprzężone.
+    Niech $\pi =    \Big(c_1^1, c_2^1, \cdots, c_{k_1}^1\Big) \cdots \Big(c_1^m, c_2^m, \cdots, c_{k_m}^m \Big)$
+    oraz  $\sigma = \Big(d_1^1, d_2^1, \cdots, d_{k_1}^1\Big) \cdots \Big(d_1^m, d_2^m, \cdots, d_{k_m}^m \Big)$.
+    Wówczas permutacja $\gamma \colon c_i^j \mapsto d_i^j$ jest taka, że $\gamma \pi \gamma^{-1} = \sigma$.
 \end{proof}
 
-Klasy sprzężoności permutacji parzystych w $S_n$ mogą zostać rozbite na kilka mniejszych w $A_n$, 
-gdyż $A_n \le S_n$, czyli w $A_n$ jest mniejszy wybór elementów, którymi możemy sprzęgać.
-Okazuje się, że rzeczywiście niektóre z~tych klas rozpadają się na dwie:
+Klasy sprzężoności permutacji parzystych w $S_n$ mogą rozpaść się
+na kilka mniejszych w~$A_n$, gdyż $A_n \le S_n$, czyli w $A_n$ jest
+mniejszy wybór elementów, którymi możemy sprzęgać. Okazuje się, że
+rzeczywiście niektóre z~tych klas rozpadają się na dwie:
 
 \begin{thh}\label{thm_o_klasach_A_n} $ $ \\
-	Typy cyklowe permutacji parzystych, które zawierają cykl o~parzystej długości 
-	lub dwa cykle o~tej samej nieparzystej długości (możliwe, że o długości 1)
-	odpowiadają jednej klasie sprzężoności w $A_n$.
-	Pozostałe typy permutacji parzystych odpowiadają dwóm równolicznym klasom sprzężoności w $A_n$.
+    Typy cyklowe permutacji parzystych, które zawierają cykl o~parzystej długości
+    lub dwa cykle o~tej samej nieparzystej długości (możliwe, że o długości 1)
+    odpowiadają jednej klasie sprzężoności w $A_n$.
+    Pozostałe typy permutacji parzystych odpowiadają dwóm równolicznym klasom sprzężoności w $A_n$.
 \end{thh}
 \begin{proof}
-	Zauważmy najpierw, że jeżeli $\sigma \in A_n$ jest centralizowane przez pewną nieparzystą permutację $\gamma$ 
-	(tzn. $\sigma = \gamma \sigma \gamma ^{-1}$), 
-	to $\sigma$ jest sprzężona w $A_n$ ze wszystkimi permutacjami o tym samym typie cyklowym.
-	Jest tak dlatego, że z każdą taką permutacją $\psi$ permutacja $\sigma$ jest sprzężona w $S_n$ przez pewną permutację $\pi$,
-	tzn. $\psi = \pi \sigma \pi^{-1}$.
-	Ale również $\psi = \pi \gamma \sigma \gamma^{-1} \pi^{-1} = (\pi \gamma) \sigma (\pi \gamma)^{-1}$.
-	Jedna z permutacji $\pi$ lub $\pi \gamma$ jest parzysta, więc rzeczywiście $\psi$ oraz $\sigma$ są sprzężone w $A_n$.
+    Zauważmy najpierw, że jeżeli $\sigma \in A_n$ jest centralizowane przez pewną nieparzystą permutację $\gamma$
+    (tzn. $\sigma = \gamma \sigma \gamma ^{-1}$),
+    to $\sigma$ jest sprzężona w $A_n$ ze wszystkimi permutacjami o tym samym typie cyklowym.
+    Jest tak dlatego, że z każdą taką permutacją $\psi$ permutacja $\sigma$ jest sprzężona w $S_n$ przez pewną permutację $\pi$,
+    tzn. $\psi = \pi \sigma \pi^{-1}$.
+    Ale również $\psi = \pi \gamma \sigma \gamma^{-1} \pi^{-1} = (\pi \gamma) \sigma (\pi \gamma)^{-1}$.
+    Jedna z permutacji $\pi$ lub $\pi \gamma$ jest parzysta, więc rzeczywiście $\psi$ oraz $\sigma$ są sprzężone w $A_n$.
 
-	Jeżeli $\sigma$ ma w rozkładzie na cykle rozłączne cykl parzystej długości $\lambda$, 
-	to jest przez niego centralizowana (a jest on nieparzysty),
-	a jeżeli ma dwa cykle o tej samej nieparzystej długości $(c_1, c_2, \cdots, c_m)$ oraz $(d_1, d_2, \cdots, d_m)$, 
-	to jest centralizowana przez nieparzystą permutację $(c_1, d_1)(c_2, d_2) \cdots (c_m, d_m)$,
-	czyli rzeczywiście $\sigma$ jest sprzężona ze wszystkimi elementami o~tym samym typie cyklowym.
+    Jeżeli $\sigma$ ma w rozkładzie na cykle rozłączne cykl parzystej długości $\lambda$,
+    to jest przez niego centralizowana (a jest on nieparzysty),
+    a jeżeli ma dwa cykle o tej samej nieparzystej długości $(c_1, c_2, \cdots, c_m)$ oraz $(d_1, d_2, \cdots, d_m)$,
+    to jest centralizowana przez nieparzystą permutację $(c_1, d_1)(c_2, d_2) \cdots (c_m, d_m)$,
+    czyli rzeczywiście $\sigma$ jest sprzężona ze wszystkimi elementami o~tym samym typie cyklowym.
 
-	W przypadku, gdy $\sigma$ nie jest centralizowana przez żadną nieparzystą permutację,
-	to permutacje o tym samym typie cyklowym co $\sigma$ rozpadają się na dwie klasy sprzężoności --
-	$\{\lambda \sigma \lambda^{-1} \colon \lambda \in S_n \backslash A_n \}$ oraz
-	$\{\pi \sigma \pi^{-1} \colon \pi \in  A_n \}$.
-	Są one równoliczne, gdyż są sprzężone w $S_n$.
+    W przypadku, gdy $\sigma$ nie jest centralizowana przez żadną nieparzystą permutację,
+    to permutacje o tym samym typie cyklowym co $\sigma$ rozpadają się na dwie klasy sprzężoności --
+    $\{\lambda \sigma \lambda^{-1} \colon \lambda \in S_n \backslash A_n \}$ oraz
+    $\{\pi \sigma \pi^{-1} \colon \pi \in  A_n \}$.
+    Są one równoliczne, gdyż są sprzężone w $S_n$.
 
-	Z takim przypadkiem mamy do czynienia, gdy $\sigma$ w rozkładzie na cykle rozłączne 
-	ma tylko cykle o różnych nieparzystych długościach.
-	Przy centralizowaniu każdy taki cykl musi przejść na cykl o tej samej długości, czyli na siebie.
-	Ponadto pierwsze elementy z cykli muszą przejść na elementy ze swoich cykli, 
-	a obraz pozostałych elementów jest już przez to wyznaczony jednoznacznie.
-	W związku z tym $\sigma$ może być centralizowane tylko przez permutacje, 
-	które są równe iloczynowi potęg cykli z rozkładu $\sigma$, 
-	czyli tylko przez permutacje parzyste.
+    Z takim przypadkiem mamy do czynienia, gdy $\sigma$ w rozkładzie na cykle rozłączne
+    ma tylko cykle o różnych nieparzystych długościach.
+    Przy centralizowaniu każdy taki cykl musi przejść na cykl o tej samej długości, czyli na siebie.
+    Ponadto pierwsze elementy z cykli muszą przejść na elementy ze swoich cykli,
+    a obraz pozostałych elementów jest już przez to wyznaczony jednoznacznie.
+    W związku z tym $\sigma$ może być centralizowane tylko przez permutacje,
+    które są równe iloczynowi potęg cykli z rozkładu $\sigma$,
+    czyli tylko przez permutacje parzyste.
 \end{proof}
 
-Zanim udowodnimy prostotę grup $A_n$ pokażemy jeszcze dwa przydatne lematy.
+Zanim udowodnimy prostotę grup $A_n$ pokażemy jeszcze dwa przydatne
+lematy.
 
 \begin{lemma}\label{lemma_big_con}
-	Dla $n \ge 5$ nietrywialne klasy sprzężoności (klasy elementów różnych od elementu neutralnego) $A_n$ mają rozmiar co najmniej $n$.
+    Dla $n \ge 5$ klasy sprzężoności elementów nietrywialnych $A_n$ mają co najmniej $n$ elementów.
 \end{lemma}
 \begin{proof}
-	Niech $\sigma \in A_n$, $\sigma \ne \mathrm{id}$.
-	Oszacujmy ile permutacji ma ten sam typ cyklowy co $\sigma$.
+    Niech $\sigma \in A_n$, $\sigma \ne \mathrm{id}$.
+    Oszacujmy ile permutacji ma ten sam typ cyklowy co $\sigma$.
 
-	Jeżeli $\sigma$ zawiera cykl długości $\ge 3$, to samych permutacji o tym samym typie co $\sigma$, które w tym cyklu mają liczbę 1 jest co najmniej $(n-1)(n-2)$, 
-	gdyż możemy wybrać na co przechodzi liczba 1 i~na co przechodzi wybrana liczba. 
-	Stąd z poprzedniego twierdzenia w~klasie sprzężoności $\sigma$ jest co najmniej $\frac{(n-1)(n-2)}{2} \ge n$ elementów (bo $n \ge 5$).
-	
-	W przeciwnym przypadku $\sigma$ zawiera co najmniej dwa cykle długości 2.
-	Analogicznie dostajemy, że samych permutacji o tym samym typie co $\sigma$, 
-	które w jednym z tych cykli mają liczbę 1, a w drugim liczbę 2 jest co najmniej $(n-2)(n-3)$,
-	więc z poprzedniego twierdzenia w tym przypadku również rozmiar klasy sprzężoności $\sigma$ wynosi co najmniej $(n-2)(n-3) \ge n$.
+    Jeżeli $\sigma$ zawiera cykl długości $\ge 3$, to samych permutacji o tym samym typie co $\sigma$, które w tym cyklu mają liczbę 1 jest co najmniej $(n-1)(n-2)$,
+    gdyż możemy wybrać na co przechodzi liczba 1 i~na co przechodzi wybrana liczba.
+    \textcolor{red}{$\leftarrow$ \bf niejasne}
+    Stąd z poprzedniego twierdzenia w~klasie sprzężoności $\sigma$ jest co najmniej $\frac{(n-1)(n-2)}{2} \ge n$ elementów (bo $n \ge 5$).
+
+    W przeciwnym przypadku $\sigma$ zawiera co najmniej dwa cykle długości 2.
+    Analogicznie dostajemy, że samych permutacji o tym samym typie co $\sigma$,
+    które w jednym z tych cykli mają liczbę 1, a w drugim liczbę 2 jest co najmniej $(n-2)(n-3)$,
+    więc z poprzedniego twierdzenia w tym przypadku również rozmiar klasy sprzężoności $\sigma$ wynosi co najmniej $(n-2)(n-3) \ge n$.
 \end{proof}
 
+
+
 \begin{lemma}\label{lemma_3cycles}
-	Cykle długości 3 generują całą grupę $A_n$
+    Cykle długości 3 generują całą grupę $A_n$.
 \end{lemma}
 \begin{proof}
-	Każdą permutację  $\sigma \in A_n$ można przedstawić w postaci iloczynu parzystej liczby transpozycji
-	$\sigma = \lambda_1 \lambda_2 \cdots \lambda_{2m-1} \lambda_{2m} = (\lambda_1 \lambda_2) \cdots (\lambda_{2m-1} \lambda_{2m})$.
-	Stąd wystarczy przedstawić iloczyn dwóch transpozycji $\lambda_1 \lambda_2$ jako iloczyn cykli długości 3, a dostaniemy tezę.
+    Każdą permutację  $\sigma \in A_n$ można przedstawić w postaci iloczynu parzystej liczby transpozycji
+    $\sigma = \lambda_1 \lambda_2 \cdots \lambda_{2m-1} \lambda_{2m} = (\lambda_1 \lambda_2) \cdots (\lambda_{2m-1} \lambda_{2m})$.
+    Stąd wystarczy przedstawić iloczyn dwóch transpozycji $\lambda_1 \lambda_2$ jako iloczyn cykli długości 3, a dostaniemy tezę.
 
-	Jeżeli $\lambda_1 = \lambda_2$, to $\lambda_1 \lambda_2 = \mathrm{id}$.
-	Gdy $\lambda_1$ i $\lambda_2$ są rozłączne, czyli $\lambda_1 = (a, b)$, $\lambda_2 = (c, d)$, to $\lambda_1 \lambda_2 = (a, c, d)(a, c, b)$.
-	Jeżeli natomiast $\lambda_1$ i $\lambda_2$ mają jeden element wspólny, 
-	czyli $\lambda_1 = (a, b)$, $\lambda_2 = (a, c)$, to $\lambda_1 \lambda_2 = (a, b, c)$.
+    Jeżeli $\lambda_1 = \lambda_2$, to $\lambda_1 \lambda_2 = \mathrm{id}$.
+    Gdy $\lambda_1$ i $\lambda_2$ są rozłączne, czyli $\lambda_1 = (a, b)$, $\lambda_2 = (c, d)$, to $\lambda_1 \lambda_2 = (a, c, d)(a, c, b)$.
+    Jeżeli natomiast $\lambda_1$ i $\lambda_2$ mają jeden element wspólny,
+    czyli $\lambda_1 = (a, b)$, $\lambda_2 = (a, c)$, to $\lambda_1 \lambda_2 = (a, b, c)$.
 \end{proof}
 
 
@@ -433,261 +470,293 @@ Zanim udowodnimy prostotę grup $A_n$ pokażemy jeszcze dwa przydatne lematy.
 Jesteśmy już gotowi, żeby udowodnić twierdzenie:
 
 \begin{thh}[O prostocie $A_n$] $ $ \\
-	Grupa alternująca $A_n$ jest prosta dla $n \ge 5$.
+    Grupa alternująca $A_n$ jest prosta dla $n \ge 5$.
 \end{thh}
 \begin{proof}
-	Dowód przeprowadzimy przez indukcję ze względu na $n$
+    Dowód przeprowadzimy przez indukcję ze względu na $n$.
 
-	Pokażemy najpierw, że grupa $A_5$ jest prosta.
+    Pokażemy najpierw, że grupa $A_5$ jest prosta.
 
-	Na podstawie faktu \ref{fact_typ_A_n} wiemy, że elementy $A_5$ mają jeden z~następujących typów cyklowych:
-	$(1^5), (1^2, 3^1), (1^1, 2^2)$ lub $(5^1)$.
-	z twierdzenia \ref{thm_o_klasach_A_n} każdy z~pierwszych czterech odpowiada jednej klasie sprzężoności, a~ostatni dwóm -- równolicznym.
-	Stąd klasy sprzężoności $A_5$ mają rozmiary: 1, 20, 15, 12, 12.
+    Na podstawie Stwierdzenia \ref{fact_typ_A_n} wiemy, że elementy $A_5$ mają jeden z~następujących typów cyklowych:
+    $(1^5), (1^2, 3^1), (1^1, 2^2)$ lub $(5^1)$.
+    z twierdzenia \ref{thm_o_klasach_A_n} każdy z~pierwszych czterech odpowiada jednej klasie sprzężoności, a~ostatni dwóm -- równolicznym.
+    Stąd klasy sprzężoności $A_5$ mają rozmiary: 1, 20, 15, 12, 12.
 
-	Załóżmy nie w prost, że $H$ jest nietrywialną, właściwą podgrupą normalną $A_5$.
-	Wówczas $H$ musi być sumą pewnych klas sprzężoności $A_5$, w tym klasy sprzężoności elementu neutralnego.
-	Ponadto rozmiar $H$ musi być dzielnikiem rozmiaru $A_5 = 60$.
-	Najmniejszy nietrywialny możliwy rozmiar sumy klas sprzężoności wraz z~trywialną wynosi 13.
-	Stąd $|H| = 15$, $|H| = 20$ lub $|H| = 30$.
-	Ale żaden podzbiór multibioru $\{1, 12, 12, 15, 20 \}$ zawierający jedynkę nie sumuje się do potencjalnego rozmiaru $H$,
-	zatem takie $H$ nie może istnieć -- $A_5$ jest grupą prostą.
+    Załóżmy nie wprost, że $H$ jest nietrywialną, właściwą podgrupą normalną $A_5$.
+    Wówczas $H$ musi być sumą pewnych klas sprzężoności $A_5$, w tym klasy sprzężoności elementu neutralnego.
+    Ponadto rozmiar $H$ musi być dzielnikiem rozmiaru $A_5 = 60$.
+    Najmniejszy nietrywialny możliwy rozmiar sumy klas sprzężoności wraz z~trywialną wynosi 13.
+    Stąd $|H| = 15$, $|H| = 20$ lub $|H| = 30$.
+    Ale żaden podzbiór multizbioru $\{1, 12, 12, 15, 20 \}$ zawierający jedynkę nie sumuje się do potencjalnego rozmiaru $H$,
+    zatem takie $H$ nie może istnieć -- $A_5$ jest grupą prostą.
 
-	Załóżmy zatem, że $n \ge 6$ oraz grupa $A_{n-1}$ jest prosta.
-	Pokażemy, że $A_n$ również jest prosta.
+    Załóżmy zatem, że $n \ge 6$ oraz grupa $A_{n-1}$ jest prosta.
+    Pokażemy, że $A_n$ również jest prosta.
 
-	Załóżmy nie w prost, że $H$ jest nietrywialną, właściwą podgrupą $A_n$.
+    Załóżmy nie wprost, że $H$ jest nietrywialną, właściwą podgrupą normalną w $A_n$.
 
-	Jeżeli $H$ zawiera pewną nietrywialną permutację $\sigma$, która ma punkt stały $a \in \{ 1, 2, \cdots, n \}$, to niech $K = H_a$.
-	Wówczas $K \simeq A_{n-1}$ oraz (np. z~trzeciego twierdzenia o izomorfizmie) $H \cap K$ jest podgrupą normalną w $K$.
-	Ale $\sigma \in H \cap K$ oraz $K$ jest grupą prostą, zatem z~założenia indukcyjnego $H \cap K = K$.
-	Stąd $H$ zawiera pewien element o typie $(1^{n-3}, 3^1)$, a~zatem z~twierdzenia \ref{thm_o_klasach_A_n} wszystkie, gdyż $n-3 \ge 3$.
-	Ale z~lematu \ref{lemma_3cycles} 	cykle o długości 3 generują całe $A_n$, stąd $H = A_n$ -- sprzeczność z~właściwością $H$.
+    Jeżeli $H$ zawiera pewną nietrywialną permutację $\sigma$, która ma punkt stały $a \in \{ 1, 2, \cdots, n \}$, to niech $K = H_a$.
+    Wówczas $K \simeq A_{n-1}$ oraz (np. z~trzeciego twierdzenia o izomorfizmie) $H \cap K$ jest podgrupą normalną w $K$.
+    Ale $\sigma \in H \cap K$ oraz $K$ jest grupą prostą, zatem z~założenia indukcyjnego $H \cap K = K$.
+    Stąd $H$ zawiera pewien element o typie $(1^{n-3}, 3^1)$, a~zatem wszystkie elementy
+    tego typu, na mocy twierdzenia \ref{thm_o_klasach_A_n}, gdyż $n-3 \ge 3$.
+    Ale z~lematu \ref{lemma_3cycles}    cykle o długości 3 generują całe $A_n$, stąd $H = A_n$ --
+    sprzeczność z~założeniem, że $H$ jest podgrupą właściwą.
 
-	Jeżeli natomiast żaden nietrywialny element $H$ nie ma punktu stałego, to $|H| \le n$.
-	W~przeciwnym przypadku istniałyby dwie różne permutacje $\pi, \sigma \in H$ takie, że $\pi(1) = \sigma(1)$.
-	Wtedy $\gamma = \pi \sigma ^{-1} \ne \mathrm{id}$, $\gamma \in H$ oraz $\gamma(1) = 1$ -- sprzeczność.
-	Stąd rzeczywiście $|H| \le n$.
-	Ale z~lematu \ref{lemma_big_con} $H$ jako nietrywialna suma pewnej liczby klas sprzężoności w tym trywialnej musiałaby mieć rozmiar co najmniej $n+1$.
-	Stąd w tym przypadku również otrzymujemy sprzeczność.
+    Jeżeli natomiast żaden nietrywialny element $H$ nie ma punktu stałego, to $|H| \le n$.
+    W~przeciwnym przypadku istniałyby dwie różne permutacje $\pi, \sigma \in H$ takie, że $\pi(1) = \sigma(1)$.
+    Wtedy $\gamma = \pi \sigma ^{-1} \ne \mathrm{id}$, $\gamma \in H$ oraz $\gamma(1) = 1$ -- sprzeczność.
+    Stąd rzeczywiście $|H| \le n$.
+    Ale z~lematu \ref{lemma_big_con} $H$ jako nietrywialna suma pewnej liczby klas sprzężoności w tym trywialnej musiałaby mieć rozmiar co najmniej $n+1$.
+    Stąd w tym przypadku również otrzymujemy sprzeczność.
 
-	We wszystkich przypadkach otrzymaliśmy sprzeczność, czyli rzeczywiście $A_n$ jest grupą pierwszą,
-	czyli z~indukcji $A_n$ jest grupą pierwszą dla wszystkich $n \ge 5$.
+    We wszystkich przypadkach otrzymaliśmy sprzeczność, czyli rzeczywiście $A_n$ jest grupą prostą,
+    czyli z~indukcji $A_n$ jest grupą prostą dla wszystkich $n \ge 5$.
 \end{proof}
 
-Można się jeszcze zastanawiać, jak wygląda $A_n$ dla $n < 5$.
-Z twierdzenia \ref{thm_A_n} wiemy, że $|A_n| = n!/2$.
-Zatem $A_2$ jest grupą trywialną, więc nie traktujemy jej jako grupę prostą.
-$A_3$ ma 3 elementy -- jest grupą cykliczną o 3 elementach, więc jest prosta.
-Natomiast grupa $A_4$ nie jest prosta -- jej czteroelementowa podgrupa 
-$H = \langle (1,2)(3,4), (1,3)(2,4) \rangle$ jest normalna, gdyż składa się ze wszystkich elementów o rzędzie $\le 2$.
+Można się jeszcze zastanawiać, jak wygląda $A_n$ dla $n < 5$. Z
+twierdzenia \ref{thm_A_n} wiemy, że $|A_n| = n!/2$. Zatem $A_2$ jest
+grupą trywialną. $A_3$ ma
+3 elementy -- jest grupą cykliczną o 3 elementach, więc jest prosta.
+Natomiast grupa $A_4$ nie jest prosta -- jej czteroelementowa
+podgrupa $H = \langle (1,2)(3,4), (1,3)(2,4) \rangle$ jest normalna,
+gdyż składa się ze wszystkich elementów o rzędzie $\le 2$.
 
 
 
 \chapter{Lemat Iwasawy}
-W tym rozdziale przedstawione zostanie jedno z~ważniejszych narzędzi do dowodzenia prostoty grup -- lemat Iwasawy.
-Lecz najpierw wprowadzimy nowe pojęcie --  prymitywność.
+W tym rozdziale przedstawione zostanie jedno z~ważniejszych narzędzi
+do dowodzenia prostoty grup -- lemat Iwasawy. Lecz najpierw
+wprowadzimy nowe pojęcie --  prymitywność.
 
 \section{Prymitywne działanie grupy}
-Jak zostało to już wspomniane w~wiadomościach wstępnych, działanie grupy $G$ na zbiorze $X$ jest tranzytywne, 
-jeżeli elementy $X$ tworzą jedną orbitę, czyli dla dowolnych $x, y \in X$ istnieje $g \in G$ takie, że $x^g = y$.
-Teraz uogólnimy to pojęcie.
+Jak zostało to już wspomniane w~wiadomościach wstępnych, działanie
+grupy $G$ na zbiorze $X$ jest tranzytywne, jeżeli elementy $X$
+tworzą jedną orbitę, czyli dla dowolnych $x, y \in X$ istnieje $g
+\in G$ takie, że $x^g = y$. Teraz uogólnimy to pojęcie.
 
 \begin{deff}
-	Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$. \\
-	$\rho$ jest \emph{działaniem $k$-tranzytywnym ($k$-przechodnim)}, 
-	jeżeli dla dowolnych ciągów $k$ elementowych $(a_1, a_2, \cdots, a_k)$ oraz $(b_1, b_2, \cdots, b_k)$, 
-	które składają się z~różnych elementów z~$X$, istnieje taki element $g$ z~grupy $G$, że
-	$a_i^g = b_i^g$ dla każdego $i = 1, 2, \cdots, k$.
+    Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$. \\
+    Powiemy, że $\rho$ jest \emph{działaniem $k$-tranzytywnym ($k$-przechodnim)},
+    jeżeli dla dowolnych ciągów $k$ elementowych $(a_1, a_2, \cdots, a_k)$ oraz $(b_1, b_2, \cdots, b_k)$,
+    które składają się z~różnych elementów z~$X$, istnieje taki element $g$ z~grupy $G$, że
+    $a_i^g = b_i^g$ dla każdego $i = 1, 2, \cdots, k$.
 \end{deff}
-W szczególności $1$-tranzytywność to jest dokładnie to samo, co zwykła tranzytywność.
+W szczególności $1$-tranzytywność to jest dokładnie to samo, co
+zwykła tranzytywność.
 
-Aby zilustrować to pojęcie, policzmy ilu tranzytywne jest naturalne działanie grupy $S_n$ oraz $A_n$ na zbiorze $X = \{1, 2, \cdots, n\}$,
-tzn. takie, w~którym $i^\sigma = \sigma(i)$.
+Aby zilustrować to pojęcie, policzmy jaki jest stopień tranzytywności naturalnego działania
+$S_n$ oraz $A_n$ na zbiorze $X = \{1, 2, \cdots,
+n\}$, tzn. takiego, w~którym $i^\sigma = \sigma(i)$.
 
-Jak łatwo zauważyć, działanie $S_n$ jest $n$-tranzytywne -- skoro $S_n$ składa się ze wszystkich permutacji, 
-to zawsze możemy odwzorować ciąg $(a_1, a_2, \cdots, a_n)$ na $(b_1, b_2, \cdots, b_n)$, gdyż jak założyliśmy w~definicji, 
-wszystkie $a_i$ jaki i~wszystkie $b_i$ są parami różne.
-Stąd również działanie $S_n$ jest $k$-tranzytywne dla każdego $k \le n$.
+Jak łatwo zauważyć, działanie $S_n$ jest $n$-tranzytywne -- skoro
+$S_n$ składa się ze wszystkich permutacji, to zawsze możemy
+odwzorować ciąg $(a_1, a_2, \cdots, a_n)$ na $(b_1, b_2, \cdots,
+b_n)$, gdyż jak założyliśmy w~definicji, wszystkie $a_i$ jak
+i~wszystkie $b_i$ są parami różne. Stąd również działanie $S_n$ jest
+$k$-tranzytywne dla każdego $k \le n$.
 
-Natomiast w~$A_n$ nie ma wszystkich permutacji, zatem działanie $A_n$ nie może być $n$-tranzytywne.
-Nie może być również $(n-1)$-tranzytywne, gdyż skoro mówimy na co przechodzą $n-1$ elementy $X$ i~ma to być permutacja,
-to wartość ostatniego elementu też jest ustalona, czyli wybór $(n-1)$ pozycji jest tak na prawdę wyborem wszystkich $n$ pozycji, 
-a na wszystkich elementach nie możemy dowolnie ustalić permutacji.
-Zauważmy jednak, że działanie $A_n$ jest $(n-2)$-tranzytywne. 
-Rzeczywiście, chcąc żeby $a_i$ przeszło na $b_i$ dla $i = 1, 2, \cdots, (n-2)$ mamy do wyboru dwie permutacje (z $S_n$).
-Jedna z~nich odwzorowuje $x \mapsto y, x' \mapsto y'$, a~druga $x \mapsto y', x' \mapsto y$, 
-gdzie $x, x'$ to elementy nie wybrane na $a_i$, a~$y, y'$ to elementy nie wybrane na $b_i$. 
-Ale te permutacje różnią się o~transpozycję $(y, y')$, zatem jedna z~nich jest parzysta, czyli należy do $A_n$,
-więc rzeczywiście możemy odwzorować $(a_1, a_2, \cdots, a_{n-2})$ na $(b_1, b_2, \cdots, b_{n-2})$.
-Stąd działanie $S_n$ jest $k$-tranzytywne dla każdego $k \le n-2$.
+Natomiast w~$A_n$ nie ma wszystkich permutacji, zatem działanie
+$A_n$ nie może być $n$-tranzytywne. Nie może być również
+$(n-1)$-tranzytywne, gdyż skoro ustalimy na co przejdzie pierwsze $n-1$
+elementów $X$ i~ma to być permutacja, to obraz ostatniego elementu
+też jest ustalony, czyli wybór $(n-1)$ pozycji jest tak na prawdę
+wyborem wszystkich $n$ pozycji, a na wszystkich elementach nie
+możemy dowolnie ustalić permutacji. Zauważmy jednak, że działanie
+$A_n$ jest $(n-2)$-tranzytywne. Rzeczywiście, chcąc żeby $a_i$
+przeszło na $b_i$ dla $i = 1, 2, \cdots, (n-2)$ mamy do wyboru dwie
+permutacje (z $S_n$). Jedna z~nich odwzorowuje $x \mapsto y, x'
+\mapsto y'$, a~druga $x \mapsto y', x' \mapsto y$, gdzie $x, x'$ to
+elementy różne od wszystkich  $a_i$, a~$y, y'$ to elementy różne od wszystkich
+$b_i$. Ale te permutacje różnią się o~transpozycję $(y, y')$, zatem
+jedna z~nich jest parzysta, czyli należy do $A_n$, więc rzeczywiście
+możemy odwzorować $(a_1, a_2, \cdots, a_{n-2})$ na $(b_1, b_2,
+\cdots, b_{n-2})$. Stąd działanie $S_n$ jest $k$-tranzytywne dla
+każdego $k \le n-2$.
 
-Wprowadzimy teraz własność prymitywności. 
-Jest to własność pomiędzy tranzytywnością a~$2$-tranzytywnością.
+Wprowadzimy teraz własność prymitywności. Jest to własność pomiędzy
+tranzytywnością a~$2$-tranzytywnością.
 
 \begin{deff}
-	Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$. \\
-	\emph{Systemem bloków} działania $\rho$ nazywamy podział zbioru $X$ zachowywany przez $\rho$,
-	tzn. rodzinę zbiorów $\mathfrak{A} = \{Y_i \colon i \in I \}$, które są niepuste, parami rozłączne, sumują się do $X$ 
-	oraz dla dowolnych $Y \in \mathfrak{A}, x, x' \in Y$ oraz $g \in G$ 
-	oba elementy $x^g$ oraz $x'^g$ znajdują się razem w~jednym zbiorze $Y' \in \mathfrak{A}$.
+    Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$. \\
+    \emph{Systemem bloków} działania $\rho$ nazywamy podział zbioru $X$ zachowywany przez $\rho$,
+    tzn. rodzinę zbiorów $\mathfrak{A} = \{Y_i \colon i \in I \}$, które są niepuste, parami rozłączne, sumują się do $X$
+    oraz dla dowolnych $Y \in \mathfrak{A}, x, x' \in Y$ oraz $g \in G$
+    oba elementy $x^g$ oraz $x'^g$ znajdują się razem w~jednym zbiorze $Y' \in \mathfrak{A}$.
 \end{deff}
 
-Zauważmy, że zawsze mamy co najmniej dwa systemy bloków -- jeden blok z~całym zbiorem $\mathfrak{A} = \{X\}$
-oraz system z~wszystkimi blokami jednoelementowymi $\mathfrak{A} = \{\{x\} \colon x \in X\}$.
+Zauważmy, że zawsze mamy co najmniej dwa systemy bloków -- jeden
+blok z~całym zbiorem $\mathfrak{A} = \{X\}$ oraz system z~wszystkimi
+blokami jednoelementowymi $\mathfrak{A} = \{\{x\} \colon x \in X\}$.
 W~związku z~tym naturalna jest definicja:
 
 \begin{deff}
-	\emph{Nietrywialnym systemem bloków} nazywamy dowolny system bloków, 
-	który jest różny od dwóch wyżej wspomnianych -- z~jednym blokiem lub z~blokami jednoelementowymi.
+    \emph{Nietrywialnym systemem bloków} nazywamy dowolny system bloków,
+    który jest różny od dwóch wyżej wspomnianych -- z~jednym blokiem lub z~blokami jednoelementowymi.
 \end{deff}
 
 Teraz jesteśmy już gotowi na wprowadzenie pojęcia prymitywności.
 
 \begin{deff}
-	Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$. \\
-	\emph{$\rho$ nazywamy prymitywnym}, jeśli nie istnieje nietrywialny system bloków działania $\rho$.
+    Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$. \\
+    Działanie \emph{$\rho$ nazywamy prymitywnym}, jeśli nie istnieje nietrywialny system bloków działania $\rho$.
 \end{deff}
 
-Aby lepiej zrozumieć tą własność, pokażemy, że rzeczywiście jest to własność pomiędzy tranzytywnością oraz $2$-tranzytywnością.
+Aby lepiej zrozumieć tą własność, pokażemy, że rzeczywiście jest to
+własność pomiędzy tranzytywnością oraz $2$-tranzytywnością.
 
 \begin{thh}
-	Załóżmy, że $\rho$ jest nietrywialnym działaniem grupy $G$ na zbiorze $X$. Wówczas:
-	\begin{enumerate}[label=\alph*)]
-	 \item Jeżeli $\rho$ jest prymitywne, to jest tranzytywne.
-	 \item Jeżeli $\rho$ jest $2$-tranzytywne, to jest prymitywne.
-	\end{enumerate}
+    Załóżmy, że $\rho$ jest nietrywialnym działaniem grupy $G$ na zbiorze $X$. Wówczas:
+    \begin{enumerate}[label=\alph*)]
+     \item Jeżeli $\rho$ jest prymitywne, to jest tranzytywne.
+     \item Jeżeli $\rho$ jest $2$-tranzytywne, to jest prymitywne.
+    \end{enumerate}
 \end{thh}
 
 \begin{proof}% jak to zrobić, żeby było ładne?
 %$ $\\
-	\begin{enumerate}[label=Ad \alph*)] 
-	 \item 	Załóżmy nie wprost, że $\rho$ nie jest tranzytywne. 
-					Wówczas rozbicie $X$ na orbity daje nietrywialny system bloków.
-					Rzeczywiście, z~nieprzechodniości dostajemy, że ilość bloków wynosi co najmniej 2 a
-					z nietrywialności $\rho$ -- któryś blok ma co najmniej 2 elementy.
-					Ostatecznie $\rho$ permutuje elementy orbit, więc w szczególności je zachowuje.
-					Znaleźliśmy nietrywialny system bloków działania $\rho$, czyli sprzeczność -- $\rho$ nie jest prymitywne.
-					Stąd $\rho$ musi być tranzytywne.
-	 \item 	Załóżmy nie wprost, że $\rho$ nie jest prymitywne.
-					Wówczas istnieje nietrywialny system bloków $\mathfrak{A} = \{Y_i \colon i \in I \}$, 
-					w którym istnieją $Y_1, Y_2 \in \mathfrak{A}$ takie, że $|Y_1| > 1$.
-					Niech więc $x,y \in Y_1, z \in Y_2$ gdzie $x \ne y$.
-					Z 2-tranzytywności możemy odwzorować parę $(x, y)$ na parę $(x, z)$, co daje sprzeczność z~definicją systemu bloków.
-					Stąd $\rho$ musi być prymitywne.
-	\end{enumerate}
+    \begin{enumerate}[label=Ad \alph*)]
+     \item  Załóżmy nie wprost, że $\rho$ nie jest tranzytywne.
+                    Wówczas rozbicie $X$ na orbity daje nietrywialny system bloków.
+                    Rzeczywiście, z~nieprzechodniości dostajemy, że liczba bloków wynosi co najmniej 2 a
+                    z nietrywialności $\rho$ -- któryś blok ma co najmniej 2 elementy.
+                    Ostatecznie $\rho$ permutuje elementy orbit, więc w szczególności je zachowuje.
+                    Znaleźliśmy nietrywialny system bloków działania $\rho$, czyli sprzeczność -- $\rho$ nie jest prymitywne.
+                    Stąd $\rho$ musi być tranzytywne.
+     \item  Załóżmy nie wprost, że $\rho$ nie jest prymitywne.
+                    Wówczas istnieje nietrywialny system bloków $\mathfrak{A} = \{Y_i \colon i \in I \}$,
+                    w którym istnieją $Y_1, Y_2 \in \mathfrak{A}$ takie, że $|Y_1| > 1$.
+                    Niech więc $x,y \in Y_1, z \in Y_2$ gdzie $x \ne y$.
+                    Z 2-tranzytywności możemy odwzorować parę $(x, y)$ na parę $(x, z)$, co daje sprzeczność z~definicją systemu bloków.
+                    Stąd $\rho$ musi być prymitywne.
+    \end{enumerate}
 \end{proof}
 
-Oczywiście możliwe jest, że grupa działa tranzytywnie a nie prymitywnie, lub prymitywnie, a nie 2-tranzytywnie.
+Oczywiście możliwe jest, że grupa działa tranzytywnie a nie
+prymitywnie, lub prymitywnie, a nie 2-tranzytywnie.
 
-Jako pierwszy przykład możemy rozważyć naturalne działanie czteroelementowej 
-grupy $H= \langle (1,2)(3,4), (1,3)(2,4) \rangle$ będącej podgrupą $S_4$ na zbiorze 4 elementowym.
-Jak łatwo widać jest ono przechodnie.
-Nie jest jednak prymitywne, gdyż zachowuje ono np. system bloków $\{\{1,2\}, \{3,4\}\}$.
+Jako pierwszy przykład możemy rozważyć naturalne działanie
+czteroelementowej grupy $H= \langle (1,2)(3,4), (1,3)(2,4) \rangle$
+będącej podgrupą $S_4$ na zbiorze 4 elementowym. Jak łatwo widać
+jest ono przechodnie. Nie jest jednak prymitywne, gdyż zachowuje ono
+np. system bloków $\{\{1,2\}, \{3,4\}\}$.
 
-Jako drugi przykład rozważmy działanie $A_3$ na zbiorze $\{1, 2, 3\}$.
-Jak pokazaliśmy wcześniej nie jest ono 2-tranzytywne, ale jest tranzytywne.
-To, że jest to również działanie prymitywne wynika z~następującego lematu:
+Jako drugi przykład rozważmy działanie $A_3$ na zbiorze $\{1, 2,
+3\}$. Jak pokazaliśmy wcześniej nie jest ono 2-tranzytywne, ale jest
+tranzytywne. To, że jest to również działanie prymitywne wynika
+z~następującego lematu:
 
 \begin{lemma}
-	Załóżmy, że $\rho$ jest tranzytywnym działaniem grupy $G$ na zbiorze $X$.
-	Wówczas w dowolnym systemie bloków wszystkie bloki są równych rozmiarów.
+    Załóżmy, że $\rho$ jest tranzytywnym działaniem grupy $G$ na zbiorze $X$.
+    Wówczas w dowolnym systemie bloków wszystkie bloki są równych rozmiarów.
 \end{lemma}
 \begin{proof}
-Rzeczywiście, jeżeli $Y_1, Y_2$ są blokami, to skoro możemy odwzorować $y_1 \in Y_1$ na $y_2 \in Y_2$, 
-To całe $Y_1$ musi być przekształcone w $Y_2$ (z własności systemu bloków), stąd $|Y_1| \le |Y_2|$.
-Analogicznie $|Y_2| \le |Y_1|$, zatem $|Y_1| = |Y_2|$.
+Rzeczywiście, jeżeli $Y_1, Y_2$ są blokami, to skoro możemy
+odwzorować $y_1 \in Y_1$ na $y_2 \in Y_2$, To całe $Y_1$ musi być
+przekształcone w $Y_2$ (z własności systemu bloków), stąd $|Y_1| \le
+|Y_2|$. Analogicznie $|Y_2| \le |Y_1|$, zatem $|Y_1| = |Y_2|$.
 \end{proof}
 
 
-W tym przypadku bloki w nietrywialnym systemie bloków muszą mieć rozmiary 1 i 2,
-czyli różne, więc nietrywialny system bloków nie może istnieć.
+W tym przypadku bloki w nietrywialnym systemie bloków muszą mieć
+rozmiary 1 i 2, czyli różne, więc nietrywialny system bloków nie
+może istnieć.
 
-Udowodnijmy teraz jeszcze jedno stwierdzenie, które jest użyteczne w dowodzie lematu Iwasawy.
+Udowodnijmy teraz jeszcze jedno stwierdzenie, które jest użyteczne w
+dowodzie lematu Iwasawy.
 
 \begin{lemma}\label{max_group}
-	Załóżmy, że $\rho$ jest tranzytywnym działaniem grupy $G$ na zbiorze $X$ oraz $x \in X$.
-	Wówczas $\rho$ jest prymitywne wtedy i tylko wtedy, gdy $G_x$ jest maksymalną podgrupą $G$, tzn.
-	nie istnieje podgrupa $H$ grupy $G$, taka że $G_x \lneq H \lneq G$.
+    Załóżmy, że $\rho$ jest tranzytywnym działaniem grupy $G$ na zbiorze $X$ oraz $x \in X$.
+    Wówczas $\rho$ jest prymitywne wtedy i tylko wtedy, gdy $G_x$ jest maksymalną podgrupą $G$, tzn.
+    nie istnieje podgrupa $H$ grupy $G$, taka że $G_x \lneq H \lneq G$.
 \end{lemma}
 \begin{proof}
-Zauważmy najpierw, że warstwy (lewostronne) $G_x$ odpowiadają jednoznacznie elementom zbioru $X$ --
-bijekcja zadana jest wzorem $\zeta \colon g G_x \mapsto x^g$.
-Funkcja ta jest dobrze określona oraz jest iniekcją, gdyż $g_1 G_x = g_2 G_x \iff g_1^{-1} \cdot g_2 = h$ dla pewnego $h \in G_x$
-$\iff x^{g_1^{-1} \cdot g_2} = x^h = x \iff x^{g_1} = x^{g_2}$.
-Ponadto $\zeta$ jest suriekcją, gdyż działanie jest tranzytywne.
-Stąd rzeczywiście $\zeta$ jest bijekcją.
+Zauważmy najpierw, że warstwy (lewostronne) $G_x$ odpowiadają
+jednoznacznie elementom zbioru $X$ -- bijekcja zadana jest wzorem
+$\zeta \colon g G_x \mapsto x^g$. Funkcja ta jest dobrze określona
+oraz jest iniekcją, gdyż $g_1 G_x = g_2 G_x \iff g_1^{-1} \cdot g_2
+= h$ dla pewnego $h \in G_x$ $\iff x^{g_1^{-1} \cdot g_2} = x^h = x
+\iff x^{g_1} = x^{g_2}$. Ponadto $\zeta$ jest surjekcją, gdyż
+działanie jest tranzytywne. Stąd rzeczywiście $\zeta$ jest bijekcją.
 
-Przejdźmy teraz do dalszej części dowodu
+Przejdźmy teraz do dalszej części dowodu.
 
 $\Rightarrow)$ \\
-Załóżmy nie w prost, że $G_x$ nie jest maksymalna, czyli istnieje $H$, takie, że $G_x \lneq H \lneq G$.
-Skoro $H$ zawiera $G_x$, to warstwy $H$ są sumami pewnych warstw $G_x$ -- 
-jeżeli $g_1 G_x = g_2 G_x \iff g_1^{-1} \cdot g_2 \in G_x$ to również $g_1^{-1} \cdot g_2 \in H \iff g_1 H = g_2 H$.
-Stąd warstwy $H$ odpowiadają rozbiciu zbioru warstw $G_x$, czyli również rozbiciu zbioru $X$.
-Zauważmy jeszcze, że działanie $G$ zachowuje warstwy $H$.
-Jest tak dlatego, że dla $g_1 H = g_2 H$ zachodzi $g_1^{-1} \cdot g_2 \in H$.
-Punkt $g_i G_x = x^{g_i}$ przy działaniu elementem $f$ grupy $G$ przechodzi na $(x^{g_i})^f = x^{f g_i} = f g_i G_x$.
-Ale warstwy $f g_1 G_x$ oraz $f g_2 G_x$ zawierają się w jednej warstwie $H$, gdyż $(f g_1)^{-1} f g_2 = g_1^{-1} f^{-1} f g_2 = g_1^{-1} g_2 \in H$.
+Załóżmy nie wprost, że $G_x$ nie jest maksymalna, czyli istnieje
+$H$, takie, że $G_x \lneq H \lneq G$. Skoro $H$ zawiera $G_x$, to
+warstwy $H$ są sumami pewnych warstw $G_x$ -- jeżeli $g_1 G_x = g_2
+G_x \iff g_1^{-1} \cdot g_2 \in G_x$ to również $g_1^{-1} \cdot g_2
+\in H \iff g_1 H = g_2 H$. Stąd warstwy $H$ odpowiadają rozbiciu
+zbioru warstw $G_x$, czyli również rozbiciu zbioru $X$. Zauważmy
+jeszcze, że działanie $G$ zachowuje warstwy $H$. Jest tak dlatego,
+że dla $g_1 H = g_2 H$ zachodzi $g_1^{-1} \cdot g_2 \in H$. Punkt
+$g_i G_x = x^{g_i}$ przy działaniu elementem $f$ grupy $G$
+przechodzi na $(x^{g_i})^f = x^{f g_i} = f g_i G_x$. Ale warstwy $f
+g_1 G_x$ oraz $f g_2 G_x$ zawierają się w jednej warstwie $H$, gdyż
+$(f g_1)^{-1} f g_2 = g_1^{-1} f^{-1} f g_2 = g_1^{-1} g_2 \in H$.
 
-Otrzymaliśmy zatem system bloków, który na dodatek jest nietrywialny, gdyż $H$ zawiera się ściśle pomiędzy $G_x$ a $G$.
-Zatem działanie $\rho$ nie jest prymitywne -- sprzeczność.
-Stąd taka grupa $H$ nie istnieje -- $G_x$ jest maksymalną podgrupą $G$.
+Otrzymaliśmy zatem system bloków, który na dodatek jest
+nietrywialny, gdyż $H$ zawiera się ściśle pomiędzy $G_x$ a $G$.
+Zatem działanie $\rho$ nie jest prymitywne -- sprzeczność. Stąd taka
+grupa $H$ nie istnieje -- $G_x$ jest maksymalną podgrupą $G$.
 
 $\Leftarrow)$ \\
-Tutaj również przeprowadzimy dowód nie w prost.
-Załóżmy, że $\rho$ nie działa prymitywnie na $X$, czyli istnieje pewien nietrywialny system bloków $\mathfrak{A}$.
-Niech $Y \in \mathfrak{A}$ takie, że $x \in Y$ oraz niech $H$ będzie stabilizatorem całego zbioru $Y$
+Tutaj również przeprowadzimy dowód nie wprost. Załóżmy, że $\rho$
+nie działa prymitywnie na $X$, czyli istnieje pewien nietrywialny
+system bloków $\mathfrak{A}$. Niech $Y \in \mathfrak{A}$ będzie tym blokiem, który
+zawiera $x$ oraz niech $H$ będzie stabilizatorem całego zbioru $Y$
 (czyli zbiorem $\{g \in G \colon \forall_{y \in Y} y^g \in Y \}$).
-Skoro $\mathfrak{A}$ jest nietrywialne, to $Y \ne X$ oraz istnieje blok rozmiaru co najmniej 2.
-Ale z~poprzedniego lematu wiemy, że wszystkie bloki mają tą samą wielkość, więc również $|Y| \ge 2$.
+Skoro $\mathfrak{A}$ jest nietrywialne, to $Y \ne X$ oraz istnieje
+blok rozmiaru co najmniej 2. Ale z~poprzedniego lematu wiemy, że
+wszystkie bloki mają tą samą wielkość, więc również $|Y| \ge 2$.
 
-Zauważmy, że $H = \{ g \in G \colon x^g \in Y\} \stackrel{def}{=} K$. 
-Oczywiście $H \subseteq K$, gdyż elementy $H$ zachowują zbiór $Y$.
-Z drugiej strony, jeżeli jakiś element z~$Y$ trafia z~powrotem do $Y$, to całe $Y$ jest zachowywane, 
-gdyż $Y$ jest elementem systemu bloków.
-Stąd rzeczywiście $H = K$.
+Zauważmy, że $H = \{ g \in G \colon x^g \in Y\} \stackrel{def}{=}
+K$. Oczywiście $H \subseteq K$, gdyż elementy $H$ zachowują zbiór
+$Y$. Z drugiej strony, jeżeli jakiś element z~$Y$ trafia z~powrotem
+do $Y$, to całe $Y$ jest zachowywane, gdyż $Y$ jest elementem
+systemu bloków. Stąd rzeczywiście $H = K$.
 
-Na koniec wystarczy zobaczyć, że skoro $\{x\} \subsetneq  Y \subsetneq X$,
-to $G_x \lneq H \lneq G$.
-Jest tak dlatego, że $H$, w przeciwieństwie do $G_x$, zawiera elementy odwzorowujące $x$ na jakiś inny element zbioru $Y$
-ale nie zawiera elementów, które odwzorowują $x$ na elementy spoza $Y$ (które istnieją).
-Stąd $G_x$ nie jest maksymalne -- sprzeczność.
-Stąd to działanie musi być prymitywne.
+Na koniec wystarczy zobaczyć, że skoro $\{x\} \subsetneq  Y
+\subsetneq X$, to $G_x \lneq H \lneq G$. Jest tak dlatego, że $H$, w
+przeciwieństwie do $G_x$, zawiera elementy odwzorowujące $x$ na
+jakiś inny element zbioru $Y$ ale nie zawiera elementów, które
+odwzorowują $x$ na elementy spoza $Y$ (które istnieją). Stąd $G_x$
+nie jest maksymalne -- sprzeczność. Stąd to działanie musi być
+prymitywne.
 \end{proof}
 
-Teraz jesteśmy już gotowi na sformułowanie i dowód lematy Iwasawy.
+Teraz jesteśmy już gotowi na sformułowanie i dowód lematu Iwasawy.
 
 \section{Lemat Iwasawy}
 
 \begin{thh}
-	Załóżmy, że $G$ jest skończoną [dowolną?] grupą doskonałą, $\rho$ -- wiernie oraz prymitywnie działanie $G$ na zbiorze $X$.
-	Załóżmy dodatkowo, że dla pewnego $x \in X$ stabilizator $G_x$ zawiera normalną podgrupę abelową $A$, 
-	której sprzężenia w $G$ generują całe $G$.
-	Wówczas grupa $G$ jest prosta.
+    Załóżmy, że $G$ jest skończoną grupą doskonałą, $\rho$ -- wiernie oraz prymitywnie działanie $G$ na zbiorze $X$.
+    Załóżmy dodatkowo, że dla pewnego $x \in X$ stabilizator $G_x$ zawiera normalną podgrupę abelową $A$,
+    której sprzężenia w $G$ generują całe $G$.
+    Wówczas grupa $G$ jest prosta.
 \end{thh}
 \begin{proof}
-	Załóżmy przeciwnie, że w $G$ istnieje właściwa, nietrywialna podgrupa normalna $K$.
-	Skoro $G$ działa wiernie oraz $K$ jest nietrywialna, to $x_0^{k_0} \ne x_0$ dla pewnego $k_0 \in K$.
-	Niech $H = G_{x_0}$.
-	Dostajemy, że $K \nleq H$, gdyż $k_0 \not \in H$, stąd również $H \lneq H K$.
+    Załóżmy przeciwnie, że w $G$ istnieje właściwa, nietrywialna podgrupa normalna $K$.
+    Skoro $G$ działa wiernie oraz $K$ jest nietrywialna, to $x_0^{k_0} \ne x_0$ dla pewnego $k_0 \in K$.
+    Niech $H = G_{x_0}$.
+    Dostajemy, że $K \nleq H$, gdyż $k_0 \not \in H$, stąd również $H \lneq H K$.
 
-	Z lematu \ref{max_group} otrzymujemy, że $H$ jest podgrupą maksymalną w $G$.
-	$H \lneq H K$, więc $H K = G$.
-	Stąd (i z~twierdzenia \ref{mult_groups}) każdy element $g \in G$ jest postaci $g = h k$, gdzie $h \in H$ oraz $k \in K$.
+    Z lematu \ref{max_group} otrzymujemy, że $H$ jest podgrupą maksymalną w $G$.
+    $H \lneq H K$, więc $H K = G$.
+    Stąd (i z~twierdzenia \ref{mult_groups}) każdy element $g \in G$ jest postaci $g = h k$, gdzie $h \in H$ oraz $k \in K$.
 
-	Skoro działanie $\rho$ jest prymitywne, a więc tranzytywne, to z~twierdzenia \ref{conj_stab}
-	dostajemy, że $G_x$ jest sprzężone z~$H$.
-	Z założenia dodatkowo wynika, że $H$ zawiera podgrupę $B$ sprzężoną do $A$, 
-	ponadto $B$ jest normalną podgrupą abelową $H$, której sprzężenia (w $G$) generują całe $G$.
-	Sprzężenia $B$ są postaci $g^{-1} B g = k^{-1} h^{-1} B h k = k^{-1} B k \le B K$.
-	Wszystkie sprzężenie $B$ generują $G$ i są zawarte w $B K \le G$, stąd $G = B K$.
+    Skoro działanie $\rho$ jest prymitywne, a więc tranzytywne, to z~twierdzenia \ref{conj_stab}
+    dostajemy, że $G_x$ jest sprzężone z~$H$.
+    Z założenia dodatkowo wynika, że $H$ zawiera podgrupę $B$ sprzężoną do $A$,
+    ponadto $B$ jest normalną podgrupą abelową $H$, której sprzężenia (w $G$) generują całe $G$.
+    Sprzężenia $B$ są postaci $g^{-1} B g = k^{-1} h^{-1} B h k = k^{-1} B k \le B K$.
+    Wszystkie sprzężenia $B$ generują $G$ i są zawarte w $B K \le G$, stąd $G = B K$.
 
-	Korzystając z~trzeciego twierdzenia o izomorfizmie dostajemy:
-	$$ G/K = BK/K \simeq B/B\cap K$$
-	Ale grupa ilorazowa grupy abelowej jest abelowa, stąd zarówno $B/B\cap K$ jaki i $G/K$ są abelowe.
-	Z twierdzenia o komutancie wnioskujemy, że $K \ge [G, G] = G$, gdyż $G$ jest grupą doskonałą --
-	dostaliśmy sprzeczność z~założeniem, że $K$ jest właściwą podgrupą $G$, stąd $G$ jest grupą prostą.
+    Korzystając z~trzeciego twierdzenia o izomorfizmie dostajemy:
+    $$ G/K = BK/K \simeq B/B\cap K$$
+    Ale grupa ilorazowa grupy abelowej jest abelowa, stąd zarówno $B/B\cap K$ jaki i $G/K$ są abelowe.
+    Z twierdzenia o komutancie wnioskujemy, że $K \ge [G, G] = G$, gdyż $G$ jest grupą doskonałą --
+    dostaliśmy sprzeczność z~założeniem, że $K$ jest właściwą podgrupą $G$, stąd $G$ jest grupą prostą.
 \end{proof}
 
 Zastosowania lematu Iwasawy znajdują się w dalszej części pracy.
@@ -708,19 +777,8 @@ Zastosowania lematu Iwasawy znajdują się w dalszej części pracy.
 \bibitem[Bag02]{Baginski} Czesław Bagiński, \textit{Wstęp do teorii grup}, Script, 2002.
 \bibitem[Neu03]{G_and_G} Peter M. Neumann, Gabrielle A. Stoy, Edward C. Thompson, \textit{Groups and Geometry}, Oxford Science Publications, 2003.
 
-
-
 \end{thebibliography}
 
 \end{document}
 
-
 % \cite{B}
-
-%\begin{def}\label{Co}
-%\end{def}
-
-%\chapter{}
-%	\section{}
-%\appendix
-%\chapter{} % - zrobi dodatek
