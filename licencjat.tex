@@ -366,10 +366,10 @@ klasę sprzężoności:
     czyli działa grupą permutacji z prawej strony. Warto to chyba zapowiedzieć zaraz po definicji permutacji}]
 
     Niech $\lambda = (c_1, c_2, \cdots, c_k)$ będzie cyklem w $S_n$, $c_{k+1} = c_1$ oraz $\gamma \in S_n$.
-    Wówczas
+    Wówczas zachodzi 
     $(\gamma^{-1} \lambda \gamma)(\gamma(c_i)) = (\lambda \gamma)(c_i) = \gamma(c_{i+1})$,
-    na pozostałych elementach $\gamma^{-1} \lambda \gamma$ jest stałe,
-    zatem $\gamma^{-1} (c_1, c_2, \cdots, c_k) \gamma = (\gamma(c_1), \gamma(c_2), \cdots, \gamma(c_k))$.
+    a na pozostałych elementach $\gamma^{-1} \lambda \gamma$ jest stałe.
+    atem $\gamma^{-1} (c_1, c_2, \cdots, c_k) \gamma = (\gamma(c_1), \gamma(c_2), \cdots, \gamma(c_k))$.
     Stąd również
 
         $$\gamma \Big(c_1^1, c_2^1, \cdots, c_{k_1}^1\Big) \cdots \Big(c_1^m, c_2^m, \cdots, c_{k_m}^m \Big) \gamma^{-1} = $$
@@ -730,7 +730,7 @@ Teraz jesteśmy już gotowi na sformułowanie i dowód lematu Iwasawy.
 \section{Lemat Iwasawy}
 
 \begin{thh}
-    Załóżmy, że $G$ jest skończoną grupą doskonałą, $\rho$ -- wiernie oraz prymitywnie działanie $G$ na zbiorze $X$.
+    Załóżmy, że $G$ jest grupą doskonałą, $\rho$ -- wiernie oraz prymitywnie działanie $G$ na zbiorze $X$.
     Załóżmy dodatkowo, że dla pewnego $x \in X$ stabilizator $G_x$ zawiera normalną podgrupę abelową $A$,
     której sprzężenia w $G$ generują całe $G$.
     Wówczas grupa $G$ jest prosta.
@@ -759,13 +759,179 @@ Teraz jesteśmy już gotowi na sformułowanie i dowód lematu Iwasawy.
     dostaliśmy sprzeczność z~założeniem, że $K$ jest właściwą podgrupą $G$, stąd $G$ jest grupą prostą.
 \end{proof}
 
-Zastosowania lematu Iwasawy znajdują się w dalszej części pracy.
-
 
 
 \chapter{Prostota specjalnej rzutowej grupy liniowej $PSL_n(k)$}
 
-%\chapter{Prostota $A_n$ z~lematu Iwasawy}
+W tym rozdziale pokażemy zastosowania udowodnionego powyżej lematy Iwasawy.
+Udowodnimy prostotę grupy $PSL_n(k)$ oraz zaproponujemy alternatywny dowód prostoty $A_n$.
+
+\section{Grupy liniowe}
+
+Zacznijmy od przypomnienia definicji grup liniowych.
+
+\begin{deff}
+  \emph{Ogólną grupą liniową $GL_n(k)$} nazywamy grupę kwadratowych macierzy odwracalnych 
+  ustalonego $n$ nad ciałem $k$ wraz z operacją mnożenia macierzy i macierzą jednostkową $I_n$
+  jako element neutralny.
+\end{deff}
+
+Grupa $GL_n(k)$ ma dwie ważne podgrupy -- $PGL_n(K)$ oraz $SL_n(k)$.
+Zanim je zdefiniujemy, przypomnimy pewne wiadomości z algebry liniowej.
+
+\begin{fact}
+  Wyznacznik $\det \colon GL_n(k) \to k^*$ jest homomorfizmem grup.
+\end{fact}
+
+\begin{fact}
+  Centrum $Z_n$ grupy $GL_n(k)$ składa się z macierzy postaci $\lambda I_n$, 
+  gdzie $\lambda \in k \setminus \{0\} \stackrel{def}{=} k^*$.
+\end{fact}
+
+Centrum jest oczywiście podgrupą normalną. Stąd poprawna jest
+
+\begin{deff}
+  \emph{Rzutową grupą liniową $PGL_n(k)$} nazywamy grupę ilorazową $GL_n(k) / Z_n$.
+\end{deff}
+
+\begin{deff}
+  \emph{Specjalną grupą liniową $SL_n(k)$} nazywamy jądro funkcji $\det \colon GL_n(k) \to k^*$.
+  Innymi słowy $SL_n(k)$ to macierze o wyznaczniku równym 1.
+\end{deff}
+
+W $SL_n(k)$ prawdziwe jest analogiczne od powyższego stwierdzenie o jego centrum.
+
+\begin{fact}
+  Centrum $SZ_n$ grupy $SL_n(k)$ składa się z macierzy postaci $\lambda I_n$, 
+  gdzie $\lambda \in k^* \colon \lambda^n = 1$.
+\end{fact}
+
+Jesteśmy teraz gotowi na zdefiniowanie obiektu badań tego rozdziału.
+
+\begin{deff}
+  \emph{Specjalną rzutową grupą liniową $PSL_n(k)$} nazywamy iloraz $SL_n(k) / SZ_n$.
+\end{deff}
+
+\textcolor{red}{Twierdzenie o rzędzie grup dla ciała skończonego?}
+
+
+W celu zastosowania lematu Iwasawy macierzami elementarnymi postaci
+$E_{i j} (a) = I_n + a \Delta_{i j}$, gdzie $a \in k$, $i \ne j$ oraz 
+$\Delta_{i j}$ to macierz składająca się z jedynki na pozycji $(i, j)$ oraz samych zer.
+
+Udowodnimy o tych macierzach 2 lematy.
+
+\begin{lemma}
+  Macierze $E_{i j}(a)$ dla $i \ne j$ generują grupę $SL_n(k)$.
+\end{lemma}
+\begin{proof}
+  Oczywiście $E_{i j}(a) \in SL_n(k)$ dla $i \ne j$. 
+  Ponadto $E_{i j}(a)^{-1} = E_{i j}(-a)$, zatem aby pokazać, że każdy element $M \in SL_n(k)$ jest iloczynem macierzy $E_{i j}(a)$,
+  Wystarczy pokazać, że jak będziemy mnożyć $M$ (z dowolnej strony) przez macierze $E_{i j}(a)$ to dostaniemy identyczność.
+  Ale mnożenie przez $E_{i j}(a)$ to dodanie do $j$-tego wiersza / kolumny $i$-tego wiersza / kolumny przemnożonego przez $a$.
+  Dzięki zastosowaniu eliminacji Gaussa możemy w ten sposób $M$ doprowadzić do postaci diagonalnej,
+  a nawet z jedynkami na przekątnej poza pozycją $(n, n)$, gdyż dodając $i$-ty wiersz do $i+1$-go, a następnie odpowiednio
+  odejmując od $i$-tego $i+1$-wszy dostajemy na przekątnej jedynkę. Ale wówczas ostatnia pozycja również będzie równa 1, 
+  gdyż $\det(M) = 1$ a mnożenie przez $E_{i j}(a)$ wyznacznika nie zmienia, więc jak na przekątnej będą same jedynki i $a_{n n}$,
+  to również $a_{n n} = 1$.
+\end{proof}
+
+\begin{lemma}
+  Macierze $E_{i j}(a)$ dla $i \ne j$ są komutantami pewnych elementów, poza przypadkami, gdy $n = 2, |k| \le 3$
+\end{lemma}
+\begin{proof}
+  Gdy $n > 2$, to weźmy $k \le n$ takie, że $k \ne i$ oraz $k \ne j$. Wówczas
+  $$ [ E_{k j}(1), E_{i k}(-a) ] = E_{k j}(1) E_{i k}(-a) E_{k j}(1)^{-1} E_{i k}(-a) ^{-1} = $$
+  $$ = E_{k j}(1) E_{i k}(-a) E_{k j}(-1) E_{i k}(a) = $$
+  $$ = (I_n + \Delta_{k j})(I_n -a \Delta_{i k})(I_n - \Delta_{k j}) (I_n + a \Delta_{i k}) = $$
+  $$ = (I_n + \Delta_{k j} - a \Delta_{i k}) (I_n - \Delta_{k j} + a \Delta_{i k}) = I_n + a \Delta_{i j} = E_{i j}(a)$$
+
+  gdyż $\Delta_{a b} \Delta_{b c} = \Delta_{a c}$ oraz $\Delta_{a b} \Delta_{d c} = 0$ dla $b \ne d$.
+
+  W przypadku, gdy $n = 2$ oraz $|k| > 3$, w $k$ istnieje element $x$ różny od $0, 1, -1$.
+  Wtedy $x^2 \not \in \{0, 1\}$ i dla $y = \frac{a}{1 - x^2}$ gdzie $\epsilon = i - j \in \{-1, 1\}$ zachodzi
+  $$ [ E_{i j}(y), x \Delta_{1 1} + x^{-1} \Delta_{2 2}] = $$
+  $$ = E_{i j}(y)(x \Delta_{1 1} + x^{-1} \Delta_{2 2}) E_{i j}(y)^{-1} (x \Delta_{1 1} + x^{-1} \Delta_{2 2})^{-1} = $$
+  $$ = E_{i j}(y)(x \Delta_{1 1} + x^{-1} \Delta_{2 2}) E_{i j}(-y) (x^{-1} \Delta_{1 1} + x \Delta_{2 2}) = $$
+  $$ = (I_n + y \Delta_{i j})(x \Delta_{1 1} + x^{-1} \Delta_{2 2}) (I_n -y \Delta_{i j}) (x^{-1} \Delta_{1 1} + x \Delta_{2 2}) = $$
+  $$ = (x \Delta_{1 1} + x^{-1} \Delta_{2 2} + y x^\epsilon \Delta_{i j}) (x^{-1} \Delta_{1 1} + x \Delta_{2 2} - y x^{-\epsilon} \Delta_{i j}) = $$
+  $$ = \Delta_{1 1} + \Delta_{2 2} + y (1-x^2) \Delta_{i j}= I_n + a \Delta_{i j} = E_{i j}(a) $$
+\end{proof}
+
+
+\section{Prostota $PSL_n(k)$}
+
+\begin{thh}
+  Grupa $PSL_n(k)$ jest prosta dla $n \ge 2$ i dowolnego ciała $k$ poza przypadkami, gdy $n = 2$ oraz $|k| \le 3$.
+\end{thh}
+\begin{proof}
+  Rozważmy naturalne działanie $\rho$ grupy $SL_n(k)$ na zbiorze jednowymiarowych podprzestrzeni $k^n$,
+  tzn. dla $M \in SL_n(k)$ oraz $v \in k^n, v \ne 0$ definiujemy $\langle v \rangle ^ M = \langle Mv \rangle$.
+  
+  Wówczas dla $M \in SZ_n$ zachodzi $\langle v \rangle ^ M = \langle M v \rangle = \langle \lambda v \rangle = \langle v \rangle$.
+  Zatem $SZ_n \subset \ker \rho$. Jeżeli natomiast $M \in SL_n(k) \setminus SZ_n$, to $M$ ma niezerowy element $a_{i j}$, 
+  więc przekształca podprzestrzeń wektora standardowego $e_j$ na inną, albo $M$ ma tylko elementy na przekątnej, 
+  ale $a_{i i} \ne a_{j j}$ -- wówczas $\langle e_i + e_j \rangle^M = \langle a_{i i} e_i + a_{j j} e_j \rangle \ne \langle  e_i + e_j \rangle$.
+  Stąd $SZ_n = \ker \rho$, czyli $rho$ wyznacza również wierne działanie $\tilde{\rho}$ grupy $SL_n(k) / SZ_n = PSL_n(k)$ na tym samym zbiorze.
+
+  Zauważmy również, że działanie $\rho$, a więc również $\tilde{\rho}$, jest 2-tranzytywne, stąd również prymarne.
+  Jest tak dlatego, że, za pomocą mnożenia przez odpowiednią macierz, możemy przekształcić dowolną bazę $k^n$ na inną.
+  Stąd chcąc przekształcić $\langle v_i \rangle$ na $\langle w_i \rangle$ dla $i = 1, 2$ dopełniamy $v_i$ do bazy $v_1, \cdots, v_n$
+  oraz $w_i$ do bazy $w_1, \cdots, w_n$ dostajemy macierz przejścia $M$ i dzielimy ostatni wiersz $M$ przez $\det(M)$.
+  Otrzymana macierz jest z $SL_n(k)$, przekształca tak samo jednowymiarowe podprzestrzenie co $M$, w szczególności przekształca 
+  $\langle v_i \rangle$ na $\langle w_i \rangle$ dla $i = 1, 2$.
+
+  Rozważmy teraz stabilizator $H$ punktu $\langle e_1 \rangle$ przy działaniu $\rho$.
+  $H$ składa się z tych macierzy o wyznaczniku 1, które stabilizują $\langle e_1 \rangle$,
+  czyli w pierwszym wierszu mają wektor $(\lambda, 0, 0, \cdots, 0)$, gdzie $\lambda \in k^*$.
+
+  Niech $A$ będzie podzbiorem $H$ składających się z macierzy postaci 
+  $
+    \left( \begin{array}{cc}
+    1 & 0_{n-1} \\
+    v_{n-1} & I_{n-1} \\
+    \end{array} \right)
+  $.
+  Wówczas $A$ jest abelową podgrupą $H$.
+  Rzeczywiście:
+  $$
+    \left( \begin{array}{cc} 1 & 0_{n-1} \\ v_{n-1} & I_{n-1} \\ \end{array} \right) \cdot
+    \left( \begin{array}{cc} 1 & 0_{n-1} \\ w_{n-1} & I_{n-1} \\ \end{array} \right) =
+    \left( \begin{array}{cc} 1 & 0_{n-1} \\ v_{n-1} + w_{n-1} & I_{n-1} \\ \end{array} \right)
+  $$
+  Czyli iloczyn elementów z $A$ należy do $A$, jest przemienny oraz biorąc $w_{n-1} = -v_{n-1}$
+  otrzymujemy, że odwrotność elementów z $A$ również należy do $A$.
+  
+  Ponadto $A$ jest podgrupą normalną $H$, gdyż
+  $$
+    \left( \begin{array}{cc} \lambda & 0_{n-1} \\ w_{n-1} & A_{n-1} \\ \end{array} \right)^{-1} \cdot
+    \left( \begin{array}{cc} 1 & 0_{n-1} \\ v_{n-1} & I_{n-1} \\ \end{array} \right)  \cdot
+    \left( \begin{array}{cc} \lambda & 0_{n-1} \\ w_{n-1} & A_{n-1} \\ \end{array} \right) = 
+  $$
+  $$ = 
+    \left( \begin{array}{cc} \lambda^{-1} & 0_{n-1} \\ w'_{n-1} & A^{-1}_{n-1} \\ \end{array} \right) \cdot
+    \left( \begin{array}{cc} 1 & 0_{n-1} \\ v_{n-1} & I_{n-1} \\ \end{array} \right)  \cdot
+    \left( \begin{array}{cc} \lambda & 0_{n-1} \\ w_{n-1} & A_{n-1} \\ \end{array} \right) = 
+  $$
+  $$ = 
+    \left( \begin{array}{cc} \lambda^{-1} & 0_{n-1} \\ w'_{n-1} & A^{-1}_{n-1} \\ \end{array} \right) \cdot
+    \left( \begin{array}{cc} \lambda & 0_{n-1} \\ \lambda v_{n-1} + w_{n-1} & A_{n-1} \\ \end{array} \right) = 
+    \left( \begin{array}{cc} 1 & 0_{n-1} \\ v'_{n-1} & I_{n-1} \\ \end{array} \right)  \cdot
+  $$
+  
+
+  
+
+%  Musimy sprawdzić założenia lematu Iwasawy.
+
+  
+\end{proof}
+
+
+
+
+
+
 
 \begin{thebibliography}{99}
 \addcontentsline{toc}{chapter}{Bibliografia}
