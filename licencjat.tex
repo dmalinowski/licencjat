@@ -772,11 +772,11 @@ Zacznijmy od przypomnienia definicji grup liniowych.
 
 \begin{deff}
   \emph{Ogólną grupą liniową $GL_n(k)$} nazywamy grupę kwadratowych macierzy odwracalnych 
-  ustalonego $n$ nad ciałem $k$ wraz z operacją mnożenia macierzy i macierzą jednostkową $I_n$
+  stopnia $n$ nad ciałem $k$, wraz z operacją mnożenia macierzy i macierzą jednostkową $I_n$
   jako element neutralny.
 \end{deff}
 
-Grupa $GL_n(k)$ ma dwie ważne podgrupy -- $PGL_n(K)$ oraz $SL_n(k)$.
+Oprócz $PGL_n(k)$ ważne są również inne grupy liniowe -- $PGL_n(K)$, $SL_n(k)$ oraz $PSL_n(k)$.
 Zanim je zdefiniujemy, przypomnimy pewne wiadomości z algebry liniowej.
 
 \begin{fact}
@@ -785,7 +785,7 @@ Zanim je zdefiniujemy, przypomnimy pewne wiadomości z algebry liniowej.
 
 \begin{fact}
   Centrum $Z_n$ grupy $GL_n(k)$ składa się z macierzy postaci $\lambda I_n$, 
-  gdzie $\lambda \in k \setminus \{0\} \stackrel{def}{=} k^*$.
+  gdzie $\lambda \in k \setminus \{0\} \stackrel{ozn}{=} k^*$.
 \end{fact}
 
 Centrum jest oczywiście podgrupą normalną. Stąd poprawna jest
@@ -799,7 +799,7 @@ Centrum jest oczywiście podgrupą normalną. Stąd poprawna jest
   Innymi słowy $SL_n(k)$ to macierze o wyznaczniku równym 1.
 \end{deff}
 
-W $SL_n(k)$ prawdziwe jest analogiczne od powyższego stwierdzenie o jego centrum.
+W $SL_n(k)$ prawdziwe jest, analogiczne od powyższego, stwierdzenie o jego centrum.
 
 \begin{fact}
   Centrum $SZ_n$ grupy $SL_n(k)$ składa się z macierzy postaci $\lambda I_n$, 
@@ -815,29 +815,28 @@ Jesteśmy teraz gotowi na zdefiniowanie obiektu badań tego rozdziału.
 \textcolor{red}{Twierdzenie o rzędzie grup dla ciała skończonego?}
 
 
-W celu zastosowania lematu Iwasawy macierzami elementarnymi postaci
+W celu zastosowania lematu Iwasawy, zajmiemy się macierzami elementarnymi postaci
 $E_{i j} (a) = I_n + a \Delta_{i j}$, gdzie $a \in k$, $i \ne j$ oraz 
 $\Delta_{i j}$ to macierz składająca się z jedynki na pozycji $(i, j)$ oraz samych zer.
 
 Udowodnimy o tych macierzach 2 lematy.
 
-\begin{lemma}
+\begin{lemma}\label{lemma_Eij_generates_SL}
   Macierze $E_{i j}(a)$ dla $i \ne j$ generują grupę $SL_n(k)$.
 \end{lemma}
 \begin{proof}
   Oczywiście $E_{i j}(a) \in SL_n(k)$ dla $i \ne j$. 
   Ponadto $E_{i j}(a)^{-1} = E_{i j}(-a)$, zatem aby pokazać, że każdy element $M \in SL_n(k)$ jest iloczynem macierzy $E_{i j}(a)$,
-  Wystarczy pokazać, że jak będziemy mnożyć $M$ (z dowolnej strony) przez macierze $E_{i j}(a)$ to dostaniemy identyczność.
-  Ale mnożenie przez $E_{i j}(a)$ to dodanie do $j$-tego wiersza / kolumny $i$-tego wiersza / kolumny przemnożonego przez $a$.
-  Dzięki zastosowaniu eliminacji Gaussa możemy w ten sposób $M$ doprowadzić do postaci diagonalnej,
-  a nawet z jedynkami na przekątnej poza pozycją $(n, n)$, gdyż dodając $i$-ty wiersz do $i+1$-go, a następnie odpowiednio
-  odejmując od $i$-tego $i+1$-wszy dostajemy na przekątnej jedynkę. Ale wówczas ostatnia pozycja również będzie równa 1, 
-  gdyż $\det(M) = 1$ a mnożenie przez $E_{i j}(a)$ wyznacznika nie zmienia, więc jak na przekątnej będą same jedynki i $a_{n n}$,
-  to również $a_{n n} = 1$.
+  wystarczy pokazać, że jak będziemy mnożyć $M$ z lewej strony przez macierze $E_{i j}(a)$, to dostaniemy identyczność.
+  Ale mnożenie przez $E_{i j}(a)$ to dodanie do $j$-tego wiersza $a$ krotność $i$-tego wiersza.
+  Dzięki zastosowaniu eliminacji Gaussa możemy w ten sposób doprowadzić $M$ do postaci diagonalnej,
+  a nawet postaci diagonalnej z jedynkami na przekątnej poza pozycją $(n, n)$, gdyż dodając $i$-ty wiersz do $(i+1)$-go, a następnie odpowiednio
+  odejmując od $i$-tego $c$ krotność $(i+1)$-wszego dostajemy na przekątnej jedynkę. Ale wówczas ostatnia pozycja również będzie równa 1, 
+  gdyż $\det(M) = 1$, a mnożenie przez $E_{i j}(a)$ wyznacznika nie zmienia.
 \end{proof}
 
-\begin{lemma}
-  Macierze $E_{i j}(a)$ dla $i \ne j$ są komutantami pewnych elementów, poza przypadkami, gdy $n = 2, |k| \le 3$
+\begin{lemma}\label{lemma_Eij_are_commutants}
+  Macierze $E_{i j}(a)$ dla $i \ne j$ są komutantami pewnych elementów z $SL_n(k)$, poza przypadkiem, gdy $n = 2$ oraz $|k| \le 3$.
 \end{lemma}
 \begin{proof}
   Gdy $n > 2$, to weźmy $k \le n$ takie, że $k \ne i$ oraz $k \ne j$. Wówczas
@@ -849,10 +848,10 @@ Udowodnimy o tych macierzach 2 lematy.
   gdyż $\Delta_{a b} \Delta_{b c} = \Delta_{a c}$ oraz $\Delta_{a b} \Delta_{d c} = 0$ dla $b \ne d$.
 
   W przypadku, gdy $n = 2$ oraz $|k| > 3$, w $k$ istnieje element $x$ różny od $0, 1, -1$.
-  Wtedy $x^2 \not \in \{0, 1\}$ i dla $y = \frac{a}{1 - x^2}$ gdzie $\epsilon = i - j \in \{-1, 1\}$ zachodzi
+  Wtedy $x^2 \ne 1$ i dla $y = \frac{a}{1 - x^2}$ oraz $\epsilon = i - j \in \{-1, 1\}$ zachodzi
   $$ [ E_{i j}(y), x \Delta_{1 1} + x^{-1} \Delta_{2 2}] = $$
   $$ = E_{i j}(y)(x \Delta_{1 1} + x^{-1} \Delta_{2 2}) E_{i j}(y)^{-1} (x \Delta_{1 1} + x^{-1} \Delta_{2 2})^{-1} = $$
-  $$ = E_{i j}(y)(x \Delta_{1 1} + x^{-1} \Delta_{2 2}) E_{i j}(-y) (x^{-1} \Delta_{1 1} + x \Delta_{2 2}) = $$
+%  $$ = E_{i j}(y)(x \Delta_{1 1} + x^{-1} \Delta_{2 2}) E_{i j}(-y) (x^{-1} \Delta_{1 1} + x \Delta_{2 2}) = $$
   $$ = (I_n + y \Delta_{i j})(x \Delta_{1 1} + x^{-1} \Delta_{2 2}) (I_n -y \Delta_{i j}) (x^{-1} \Delta_{1 1} + x \Delta_{2 2}) = $$
   $$ = (x \Delta_{1 1} + x^{-1} \Delta_{2 2} + y x^\epsilon \Delta_{i j}) (x^{-1} \Delta_{1 1} + x \Delta_{2 2} - y x^{-\epsilon} \Delta_{i j}) = $$
   $$ = \Delta_{1 1} + \Delta_{2 2} + y (1-x^2) \Delta_{i j}= I_n + a \Delta_{i j} = E_{i j}(a) $$
@@ -862,20 +861,20 @@ Udowodnimy o tych macierzach 2 lematy.
 \section{Prostota $PSL_n(k)$}
 
 \begin{thh}
-  Grupa $PSL_n(k)$ jest prosta dla $n \ge 2$ i dowolnego ciała $k$ poza przypadkami, gdy $n = 2$ oraz $|k| \le 3$.
+  Grupa $PSL_n(k)$ jest prosta dla $n \ge 2$ i dowolnego ciała $k$, poza przypadkiem, gdy $n = 2$ oraz $|k| \le 3$.
 \end{thh}
 \begin{proof}
-  Rozważmy naturalne działanie $\rho$ grupy $SL_n(k)$ na zbiorze jednowymiarowych podprzestrzeni $k^n$,
+  Rozważmy działanie $\rho$ grupy $SL_n(k)$ na $X$ -- zbiorze jednowymiarowych podprzestrzeni $k^n$ przez domnażanie,
   tzn. dla $M \in SL_n(k)$ oraz $v \in k^n, v \ne 0$ definiujemy $\langle v \rangle ^ M = \langle Mv \rangle$.
   
   Wówczas dla $M \in SZ_n$ zachodzi $\langle v \rangle ^ M = \langle M v \rangle = \langle \lambda v \rangle = \langle v \rangle$.
-  Zatem $SZ_n \subset \ker \rho$. Jeżeli natomiast $M \in SL_n(k) \setminus SZ_n$, to $M$ ma niezerowy element $a_{i j}$, 
-  więc przekształca podprzestrzeń wektora standardowego $e_j$ na inną, albo $M$ ma tylko elementy na przekątnej, 
-  ale $a_{i i} \ne a_{j j}$ -- wówczas $\langle e_i + e_j \rangle^M = \langle a_{i i} e_i + a_{j j} e_j \rangle \ne \langle  e_i + e_j \rangle$.
-  Stąd $SZ_n = \ker \rho$, czyli $rho$ wyznacza również wierne działanie $\tilde{\rho}$ grupy $SL_n(k) / SZ_n = PSL_n(k)$ na tym samym zbiorze.
+  Zatem $SZ_n \subset \ker \rho$. Jeżeli natomiast $M \in SL_n(k) \setminus SZ_n$, to $M$ ma niezerowy element $a_{i j}$ dla $i \ne j$, 
+  więc przekształca podprzestrzeń rozpinaną przez wektor standardowy $e_j$ na inną, albo $M$ ma tylko elementy na przekątnej, 
+  ale dla $a_{i i} \ne a_{j j}$ gdzie $i \ne j$ wynika, że $\langle e_i + e_j \rangle^M = \langle a_{i i} e_i + a_{j j} e_j \rangle \ne \langle  e_i + e_j \rangle$.
+  Stąd $SZ_n = \ker \rho$, czyli $\rho$ indukuje również wierne działanie $\tilde{\rho}$ grupy $SL_n(k) / SZ_n = PSL_n(k)$ na tym samym zbiorze.
 
-  Zauważmy również, że działanie $\rho$, a więc również $\tilde{\rho}$, jest 2-tranzytywne, stąd również prymarne.
-  Jest tak dlatego, że, za pomocą mnożenia przez odpowiednią macierz, możemy przekształcić dowolną bazę $k^n$ na inną.
+  Zauważmy również, że działanie $\rho$, a więc również $\tilde{\rho}$, jest 2-tranzytywne, stąd również prymitywne.
+  Jest tak dlatego, że za pomocą mnożenia przez odpowiednią macierz, możemy przekształcić dowolną bazę $k^n$ na inną.
   Stąd chcąc przekształcić $\langle v_i \rangle$ na $\langle w_i \rangle$ dla $i = 1, 2$ dopełniamy $v_i$ do bazy $v_1, \cdots, v_n$
   oraz $w_i$ do bazy $w_1, \cdots, w_n$ dostajemy macierz przejścia $M$ i dzielimy ostatni wiersz $M$ przez $\det(M)$.
   Otrzymana macierz jest z $SL_n(k)$, przekształca tak samo jednowymiarowe podprzestrzenie co $M$, w szczególności przekształca 
@@ -885,7 +884,7 @@ Udowodnimy o tych macierzach 2 lematy.
   $H$ składa się z tych macierzy o wyznaczniku 1, które stabilizują $\langle e_1 \rangle$,
   czyli w pierwszym wierszu mają wektor $(\lambda, 0, 0, \cdots, 0)$, gdzie $\lambda \in k^*$.
 
-  Niech $A$ będzie podzbiorem $H$ składających się z macierzy postaci 
+  Niech $A$ będzie podzbiorem $H$ macierzy o postaci blokowej
   $
     \left( \begin{array}{cc}
     1 & 0_{n-1} \\
@@ -916,19 +915,56 @@ Udowodnimy o tych macierzach 2 lematy.
   $$ = 
     \left( \begin{array}{cc} \lambda^{-1} & 0_{n-1} \\ w'_{n-1} & A^{-1}_{n-1} \\ \end{array} \right) \cdot
     \left( \begin{array}{cc} \lambda & 0_{n-1} \\ \lambda v_{n-1} + w_{n-1} & A_{n-1} \\ \end{array} \right) = 
-    \left( \begin{array}{cc} 1 & 0_{n-1} \\ v'_{n-1} & I_{n-1} \\ \end{array} \right)  \cdot
+    \left( \begin{array}{cc} 1 & 0_{n-1} \\ v'_{n-1} & I_{n-1} \\ \end{array} \right)  
   $$
-  
+  dla odpowiednio dobranych $w'_{n-1}$ oraz $v'_{n-1}$.
 
-  
+  Pokażemy teraz również, że sprzężenia $A$ w $SL_n(k)$ zawierają wszystkie macierze elementarne $E_{i j}(a)$ (dla $i \ne j$).
+  Dzięki temu oraz lematu \ref{lemma_Eij_generates_SL} będziemy wiedzieć, że sprzężenia $A$ generują całe $SL_n(k)$.
 
-%  Musimy sprawdzić założenia lematu Iwasawy.
-
+  Gdy $n = 2$, to $E_{2 1}(a) \in A$ oraz 
+  $$ 
+    \left( \begin{array}{cc} 0 & 1 \\ -1 & 0 \\ \end{array} \right)^{-1} \cdot
+    \left( \begin{array}{cc} 1 & 0 \\ -a & 1 \\ \end{array} \right) \cdot
+    \left( \begin{array}{cc} 0 & 1 \\ -1 & 0 \\ \end{array} \right) = 
+  $$
+  $$ 
+    \left( \begin{array}{cc} 0 & -1 \\ 1 & 0 \\ \end{array} \right) \cdot
+    \left( \begin{array}{cc} 0 & 1 \\ -1 & -1 \\ \end{array} \right) =
+    \left( \begin{array}{cc} 1 & a \\ 0 & 1 \\ \end{array} \right) = E_{1 2}(a)
+  $$
+  Gdy natomiast $n \ge 3$ oraz $j \ne k$ to z przechodniości naturalnego działania grupy $A_n$ na $\{1, 2, \cdots, n \}$ 
+  dostajemy pewien element $\pi \in A_n$ taki, że $\pi(1) = k$. Niech $l = \pi^{-1}(j) \ne 1$ oraz $P_\pi$ -- macierz permutacji $\pi$,
+  tzn. $P_\pi$ zawiera jedynki na pozycjach $(i, \pi(i)$ a poza tym same zera.
+  Wówczas z parzystości $\pi$ dostajemy, że $\det(P_\pi) = 1$, czyli $P_\pi \in SL_n(k)$ oraz
+  $$ (P_\pi)^{-1} E_{l 1}(a) P_\pi = P_{\pi^{-1}} (I_n + a \Delta_{l 1}) P_\pi = $$
+  $$ = I_n + P_{\pi^{-1}} (a \Delta_{l \pi(1)}) = I_n + a \Delta_{\pi(l) \pi(1)} = I_n + a \Delta_{j k} = E_{j k}(a) $$
   
+  Przechodząc teraz do działania $\tilde{\rho}$ widzimy, że stabilizatorem punktu $\langle e_1 \rangle$ 
+  przy tym działaniu jest $\tilde{H} = H/SZ_n \le PSL_n(k)$.
+  Ponadto $\tilde{A} = A/SZ_n$ jest abelową podgrupą normalną $\tilde{H}$ oraz sprzężenia $\tilde{A}$ generują $PSL_n(k)$,
+  gdyż $\tilde{g}^{-1} \tilde{A} \tilde{g} = (g^{-1} A g) / SZ_n$.
+
+  Udowodniliśmy zatem, że działanie $\tilde{\rho}$ grupy $PSL_n(k)$ na zbiorze $X$ jest wierne, prymitywne 
+  oraz stabilizator $\tilde{H}$ punktu $\langle e_1 \rangle$ zawiera podgrupę normalną $\tilde{A}$, 
+  której sprzężenia generują całe $PSL_n(k)$.
+
+  Żeby zatem skorzystać z lematu Iwasawy wystarczy pokazać, że $PSL_n(k)$ jest grupą doskonałą 
+  poza przypadkiem, gdy $n = 2$ oraz $|k| \le 3$.
+  Ale z lematu \ref{lemma_Eij_generates_SL} dostajemy, że macierze $E_{i j}(a)$ generują $SL_n(k)$,
+  zatem również elementy $E_{i j}(a) \cdot SZ_n$ generują $PSL_n(k)$.
+  Ponadto z lematu \ref{lemma_Eij_are_commutants} dostajemy, że dla $n > 2$ lub $k > 3$ macierze $E_{i j}(a)$ 
+  są komutantami macierzy z $SL_n(k)$, stąd także elementy $E_{i j}(a) \cdot SZ_n$ są komutantami elementów z $PSL_n(k)$
+  Stąd zarówno grupa $SL_n(k)$ jak i grupa $PSL_n(k)$ jest grupą doskonałą.
+  
+  Założenia lematu Iwasawy dla grupy $PSL_n(k)$ są spełnione, zatem jest to grupa prosta.
 \end{proof}
 
+\subsection{Dodatkowe informacje o grupach $PSL_n(k)$ oraz lemacie Iwasawy}
 
-
+Na koniec tej pracy wspomnimy jeszcze o dwóch rzeczach -- udowodnimy, że rzeczywiście 
+grupy $PSL_2(\mathbb{F}_2)$ oraz $PSL_2(\mathbb{F}_3)$ nie są proste,
+a także naszkicujemy alternatywny dowód prostoty grup $A_n$ dla $n \ge 5$ -- tym razem korzystając z lematu Iwasawy.
 
 
 
