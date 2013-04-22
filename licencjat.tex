@@ -35,6 +35,7 @@ liniowa, lemat Iwasawy}
 % Tu jest dobre miejsce na Twoje w?asne makra i~?rodowiska:
 \newtheorem{deff}{Definicja}[section]
 \newtheorem{thh}{Twierdzenie}[section]
+\newtheorem*{thh2}{Twierdzenie}
 \newtheorem{lemma}{Lemat}[section]
 \newtheorem{fact}{Stwierdzenie}[section]
 \newsymbol\eop 1003
@@ -57,10 +58,73 @@ liniowa, lemat Iwasawy}
 \chapter*{Wprowadzenie}
 \addcontentsline{toc}{chapter}{Wprowadzenie}
 
+Grupy proste są jednymi z ważniejszych pojęć w teorii grup.
+Badając ich strukturę możemy poznać własności np. wszystkich skończonych grup,
+gdyż grupy proste są budulcem, z których zbudowane są inne grupy, co wyraża następujące
+(nie omawiane dalej w pracy) twierdzenie:
+\begin{thh2}[Jordana -- H\"oldera  \textcolor{red}{ -- odsyłacz}] $ $ \\
+  Jeżeli $G$ jest grupą skończoną, to istnieje w niej skończony ciąg podgrup
+    $$ G = G_n > G_{n-1} > \cdots > G_1 > G_0 = \{e\} $$
+  taki, że $G_{i-1}$ jest podgrupą normalną $G_{i}$ oraz $G_{i}/G_{i-1}$ jest grupą prostą dla $i = 1, \cdots, n$.
+
+  Ponadto dla każdego innego ciągu podgrup
+    $$ G = H_m > H_{m-1} > \cdots > H_1 > H_0 = \{e\} $$
+  spełniającego powyższe warunki zachodzi $n = m$ oraz $G_{i}/G_{i-1} \simeq H_{\pi(i)}/H_{\pi(i)-1}$ 
+  dla $i = 1, \cdots, n$ oraz pewnej permutacji indeksów $\pi \in S_{n}$.
+\end{thh2}
+
+W związku z tym klasyfikacja skończonych grup prostych była istotnym zagadnieniem w matematyce
+począwszy od pierwszej połowy XIX wieku, kiedy to E. Galois sformułował podstawowe
+pojęcia teorii grup i udowodnił m.in. prostotę grup $A_n$, 
+aż do zakończenia dowodu klasyfikacyjnego na początku lat 80' ubiegłego wieku.
+Uproszczone sformułowanie tego twierdzenia brzmi:
+
+% podać źródło treści twierdzenia?
+\begin{thh2}[Twierdzenie klasyfikacyjne skończonych grup prostych] $ $ \\
+  Jeśli grupa $G$ jest skończoną grupą prostą, to $G$ jest izomorficzna z jedną z następujących grup:
+  \begin{enumerate}
+    \item grupą cykliczną $C_p$ rzędu $p$ będącego liczbą pierwszą;
+    \item grupą alternującą $A_n$ dla $n \ge 5$;
+    \item grupą prostą typu Liego należącą do jednej z 16 nieskończonych rodzin skończonych grup prostych;
+    \item jedną z 26 sporadycznych grup prostych.
+  \end{enumerate}
+\end{thh2}
+
+Dowód tego twierdzenia zajmuje kilkanaście tysięcy stron i jest zawarty w kilkuset artykułach,
+w związku z czym niektórzy matematycy nie są przekonani, że nie zawiera on luk ani błędów.
+
+W tej pracy zajmiemy się czymś prostszym -- udowodnimy prostotę dwóch najprostszych rodzin (nieprzemiennych) grup prostych --
+grup alternujących oraz specjalnych rzutowych grup liniowych.
+Poniżej znajduje się dokładniejszy opis zawartości poszczególnych rozdziałów.
+
+Rozdział pierwszy \emph{Wiadomości wstępne} zawiera przypomnienie różnych definicji,
+twierdzeń oraz własności znanych z podstawowego kursu Algebry I, do których będziemy się odwoływali
+w dalszej części pracy lub też zostały tam zamieszczone w celu podsumowania wiedzy na dany temat.
+Poszczególne przypomniane tematy to definicja grupy prostej, twierdzenia o~izomorfizmie,
+komutant i abelianizacja oraz działanie grupy na zbiorze.
+
+Kolejny rozdział \emph{Prostota grupy alternującej $A_n$} zaczyna się od przypomnienia definicji
+grupy symetrycznej, cyklów oraz grupy alternującej.
+Następnie wprowadzimy pojęcie typu permutacji oraz pokażemy jego związek 
+z klasami sprzężoności w grupie $S_n$ oraz w grupie $A_n$.
+Na koniec udowodnimy główny wynik tego rozdziału -- twierdzenie, że grupa alternująca $A_n$
+jest prosta dla $n = 3$ oraz $n \ge 5$ (i żadnych innych).
+
+Rozdział \emph{Lemat Iwasawy} wprowadza nowe pojęcia -- $k$-tranzytywność oraz prymitywność
+działania grupy na zbiorze.
+Udowodnimy w nim związki między tymi pojęciami, maksymalność grup izotropii przy działaniu prymitywnym
+a także lemat Iwasawy -- jedno z podstawowych narzędzi do dowodzenia prostoty grup.
+
+Ostatni rozdział \emph{Prostota specjalnej rzutowej grupy liniowej $PSL_n(k)$}
+pokazuje zastosowanie lematu Iwasawy.
+Zaczyna się on od definicji grup liniowych, a następnie, korzystając z~lematu Iwasawy 
+oraz pomocniczych stwierdzeń dowodzi, że grupa $PSL_n(k)$ jest prosta poza przypadkiem $n = 2$ oraz $|k| \le 3$.
+
+Na koniec pracy pokazujemy jeszcze jedno zastosowanie lematu Iwasawy -- alternatywny dowód 
+prostoty grup alternujących.
+% wspomnieć, że to było zadanie?
 
 
-%TODO
-TODO
 
 \chapter{Wiadomości wstępne}
 
