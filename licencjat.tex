@@ -966,7 +966,7 @@ Udowodnimy o tych macierzach 2 lematy.
 
 Na koniec tej pracy wspomnimy jeszcze o dwóch rzeczach -- udowodnimy, że rzeczywiście 
 grupy $PSL_2(\mathbb{F}_2)$ oraz $PSL_2(\mathbb{F}_3)$ nie są proste,
-a także naszkicujemy alternatywny dowód prostoty grup $A_n$ dla $n \ge 5$ -- tym razem korzystając z lematu Iwasawy.
+a także podamy alternatywny dowód prostoty grup $A_n$ dla $n \ge 5$ -- tym razem korzystając z lematu Iwasawy.
 
 \begin{fact}
   $PSL_2(\mathbb{F}_2)$ oraz $PSL_2(\mathbb{F}_3)$ nie są grupami prostymi.
@@ -989,14 +989,37 @@ to również $\langle e_1 + e_2 \rangle$ oraz $\langle e_1 - e_2 \rangle$ przech
 Stąd $PSL_2(\mathbb{F}_2) \simeq A_4$ nie jest grupą prostą.
 \end{proof}
 
+
+Teraz zobaczymy jak łatwo udowodnić prostotę $A_n$ dla $n \ge 5$ korzystając z lematu Iwasawy 
+oraz dwóch prostych faktów o cyklach długości 3.
+
 % appendix?
 \addtocounter{chapter}{-2}
-
 \begin{thh}[O prostocie $A_n$] $ $ \\
     Grupa alternująca $A_n$ jest prosta dla $n \ge 5$.
 \end{thh}
-\begin{proof}[II sposób, szkic]
-  TODO %TODO
+\begin{proof}[Dowód (II sposób)]
+  Zauważmy najpierw, że dla $n \ge 5$ cykle długości 3 są komutantami pewnych elementów z $A_n$.
+  Rzeczywiście, dla parami różnych $a, b, c, d, e \in \{ 1, 2, \cdots, n \}$ mamy
+  $$ [(b, c, d)(a, c, e)] = (b, c, d)(a, c, e)(d, c, b)(e, c, a) = $$
+  $$ = (b, e, a, c, d)(d, a, e, c, b) = (a, b, c)(d)(e) = (a, b, c)$$
+  Zatem z lematu \ref{lemma_3cycles} grupa $A_n$ jest prosta.
+
+  Rozważmy działanie $\rho$ grupy $A_n$ na trzy elementowych podzbiorach zbioru $\{ 1, 2, \cdots, n \}$,
+  w~którym po prostu przestawiam elementy zbioru $\{1, 2, \cdots, n\}$, 
+  tzn dla $\sigma \in A_n$ mamy $\{a, b, c \}^\sigma = \{ \sigma(a), \sigma(b), \sigma(c) \}$.
+  Wówczas jest to działanie wierne.
+  Ponadto stabilizatorem zbioru $\{1, 2, 3\}$ jest grupa $H$ permutacji parzystych, 
+  która osobno permutuje zbiór $\{1, 2, 3\}$ i~osobno $\{4, 5, \cdots, n\}$.
+  Zatem $A =  \langle (1, 2, 3)  \rangle \le H$ jest oczywiście przemienną grupą,
+  ale jest również podgrupą normalną $H$, gdyż $(1, 2, 3)$ jest przemienne z permutacjami $\{4, 5, \cdots, n\}$
+  oraz sprzężenia $A$ permutacjami zbioru $\{1, 2, 3\}$ zachowują $A$ ($\langle (1, 2, 3)  \rangle \unlhd S_3$).
+  
+  Ponadto z twierdzenia \ref{thm_o_klasach_A_n} wszystkie cykle długości 3 są sprzężone w $A_n$ dla $n \ge 5$
+  (co można udowodnić prościej, wprost), a z lematu \ref{lemma_3cycles} generują one całe $A_n$.
+  Stąd sprzężenia $A$ generują całą grupę $A_n$.
+
+  Możemy zatem skorzystać z lematu Iwasawy -- dostajemy tezę, czyli $A_n$ jest grupą prostą dla $n \ge 5$.
 \end{proof}
 
 
