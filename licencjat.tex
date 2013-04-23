@@ -73,7 +73,7 @@ gdyż grupy proste są budulcem, z których zbudowane są inne grupy, co wyraża
   dla $i = 1, \cdots, n$ oraz pewnej permutacji indeksów $\pi \in S_{n}$.
 \end{thh2}
 
-W związku z tym klasyfikacja skończonych grup prostych była istotnym zagadnieniem w matematyce
+W związku z tym, klasyfikacja skończonych grup prostych była istotnym zagadnieniem w matematyce,
 począwszy od pierwszej połowy XIX wieku, kiedy to E. Galois sformułował podstawowe
 pojęcia teorii grup i udowodnił m.in. prostotę grup $A_n$, 
 aż do zakończenia dowodu klasyfikacyjnego na początku lat 80' ubiegłego wieku.
@@ -83,39 +83,39 @@ Uproszczone sformułowanie tego twierdzenia brzmi:
 \begin{thh2}[Twierdzenie klasyfikacyjne skończonych grup prostych] $ $ \\
   Jeśli grupa $G$ jest skończoną grupą prostą, to $G$ jest izomorficzna z jedną z następujących grup:
   \begin{enumerate}
-    \item grupą cykliczną $C_p$ rzędu $p$ będącego liczbą pierwszą;
-    \item grupą alternującą $A_n$ dla $n \ge 5$;
-    \item grupą prostą typu Liego należącą do jednej z 16 nieskończonych rodzin skończonych grup prostych;
+    \item grupą cykliczną $C_p$ rzędu $p$, będącego liczbą pierwszą;
+    \item grupą alternującą $A_n$, dla $n \ge 5$;
+    \item grupą prostą typu Liego, należącą do jednej z 16 nieskończonych rodzin skończonych grup prostych;
     \item jedną z 26 sporadycznych grup prostych.
   \end{enumerate}
 \end{thh2}
 
-Dowód tego twierdzenia zajmuje kilkanaście tysięcy stron i jest zawarty w kilkuset artykułach,
-w związku z czym niektórzy matematycy nie są przekonani, że nie zawiera on luk ani błędów.
+%Dowód tego twierdzenia zajmuje kilkanaście tysięcy stron i jest zawarty w kilkuset artykułach,
+%w związku z czym niektórzy matematycy nie są przekonani, że nie zawiera on luk ani błędów.
 
-W tej pracy zajmiemy się czymś prostszym -- udowodnimy prostotę dwóch najprostszych rodzin (nieprzemiennych) grup prostych --
+W tej pracy zajmiemy się czymś znacznie prostszym -- udowodnimy prostotę dwóch najprostszych rodzin (nieprzemiennych) grup prostych --
 grup alternujących oraz specjalnych rzutowych grup liniowych.
 Poniżej znajduje się dokładniejszy opis zawartości poszczególnych rozdziałów.
 
-Rozdział pierwszy \emph{Wiadomości wstępne} zawiera przypomnienie różnych definicji,
+Rozdział pierwszy, \emph{Wiadomości wstępne}, zawiera przypomnienie różnych definicji,
 twierdzeń oraz własności znanych z podstawowego kursu Algebry I, do których będziemy się odwoływali
 w dalszej części pracy lub też zostały tam zamieszczone w celu podsumowania wiedzy na dany temat.
 Poszczególne przypomniane tematy to definicja grupy prostej, twierdzenia o~izomorfizmie,
 komutant i abelianizacja oraz działanie grupy na zbiorze.
 
-Kolejny rozdział \emph{Prostota grupy alternującej $A_n$} zaczyna się od przypomnienia definicji
+Kolejny rozdział, \emph{Prostota grupy alternującej $A_n$}, zaczyna się od przypomnienia definicji
 grupy symetrycznej, cyklów oraz grupy alternującej.
 Następnie wprowadzimy pojęcie typu permutacji oraz pokażemy jego związek 
 z klasami sprzężoności w grupie $S_n$ oraz w grupie $A_n$.
 Na koniec udowodnimy główny wynik tego rozdziału -- twierdzenie, że grupa alternująca $A_n$
-jest prosta dla $n = 3$ oraz $n \ge 5$ (i żadnych innych).
+jest prosta dla $n = 3$ oraz $n \ge 5$.
 
 Rozdział \emph{Lemat Iwasawy} wprowadza nowe pojęcia -- $k$-tranzytywność oraz prymitywność
 działania grupy na zbiorze.
-Udowodnimy w nim związki między tymi pojęciami, maksymalność grup izotropii przy działaniu prymitywnym
+Udowodnimy w nim związki między tymi pojęciami, maksymalność grup izotropii przy działaniu prymitywnym,
 a także lemat Iwasawy -- jedno z podstawowych narzędzi do dowodzenia prostoty grup.
 
-Ostatni rozdział \emph{Prostota specjalnej rzutowej grupy liniowej $PSL_n(k)$}
+Ostatni rozdział, \emph{Prostota specjalnej rzutowej grupy liniowej $PSL_n(k)$},
 pokazuje zastosowanie lematu Iwasawy.
 Zaczyna się on od definicji grup liniowych, a następnie, korzystając z~lematu Iwasawy 
 oraz pomocniczych stwierdzeń dowodzi, że grupa $PSL_n(k)$ jest prosta poza przypadkiem $n = 2$ oraz $|k| \le 3$.
@@ -428,10 +428,6 @@ klasę sprzężoności:
     Permutacje $\pi, \sigma \in S_n$ są sprzężone wtedy i tylko wtedy, gdy ich indeks cyklowy jest taki sam.
 \end{thh}
 \begin{proof}
-
-    [\textcolor{red}{\bf Wygląda na to, że stosuje Pan funkcje do argumentu od strony lewej do prawej,
-    czyli działa grupą permutacji z prawej strony. Warto to chyba zapowiedzieć zaraz po definicji permutacji}]
-
     Niech $\lambda = (c_1, c_2, \cdots, c_k)$ będzie cyklem w $S_n$, $c_{k+1} = c_1$ oraz $\gamma \in S_n$.
     Wówczas zachodzi 
     $(\gamma^{-1} \lambda \gamma)(\gamma(c_i)) = (\lambda \gamma)(c_i) = \gamma(c_{i+1})$,
@@ -503,16 +499,15 @@ lematy.
 \end{lemma}
 \begin{proof}
     Niech $\sigma \in A_n$, $\sigma \ne \mathrm{id}$.
-    Oszacujmy ile permutacji ma ten sam typ cyklowy co $\sigma$.
+    Oszacujmy ile permutacji ma ten sam typ cyklowy $\tau$ co $\sigma$.
 
-    Jeżeli $\sigma$ zawiera cykl długości $\ge 3$, to samych permutacji o tym samym typie co $\sigma$, które w tym cyklu mają liczbę 1 jest co najmniej $(n-1)(n-2)$,
-    gdyż możemy wybrać na co przechodzi liczba 1 i~na co przechodzi wybrana liczba.
-    \textcolor{red}{$\leftarrow$ \bf niejasne}
+    Jeżeli $\sigma$ zawiera cykl długości $k \ge 3$, to permutacji o typie $\tau$, których rozkład na cykle rozłączne zawiera cykl $(1, a_1, a_2, \cdots, a_k)$
+    jest co najmniej tyle, ile wyborów $a_1$ i $a_2$, czyli $(n-1)(n-2)$.
     Stąd z poprzedniego twierdzenia w~klasie sprzężoności $\sigma$ jest co najmniej $\frac{(n-1)(n-2)}{2} \ge n$ elementów (bo $n \ge 5$).
 
     W przeciwnym przypadku $\sigma$ zawiera co najmniej dwa cykle długości 2.
-    Analogicznie dostajemy, że samych permutacji o tym samym typie co $\sigma$,
-    które w jednym z tych cykli mają liczbę 1, a w drugim liczbę 2 jest co najmniej $(n-2)(n-3)$,
+    Analogicznie dostajemy, że samych permutacji o typie $\tau$, których rozkład na cykle rozłączne zawiera cykle $(1, a)$ oraz $(2, b)$
+    jest co najmniej $(n-2)(n-3)$,
     więc z poprzedniego twierdzenia w tym przypadku również rozmiar klasy sprzężoności $\sigma$ wynosi co najmniej $(n-2)(n-3) \ge n$.
 \end{proof}
 
@@ -584,7 +579,7 @@ Jesteśmy już gotowi, żeby udowodnić twierdzenie:
 Można się jeszcze zastanawiać, jak wygląda $A_n$ dla $n < 5$. Z
 twierdzenia \ref{thm_A_n} wiemy, że $|A_n| = n!/2$. Zatem $A_2$ jest
 grupą trywialną. $A_3$ ma
-3 elementy -- jest grupą cykliczną o 3 elementach, więc jest prosta.
+3 elementy -- jest grupą cykliczną o~3~elementach, więc jest prosta.
 Natomiast grupa $A_4$ nie jest prosta -- jej czteroelementowa
 podgrupa $H = \langle (1,2)(3,4), (1,3)(2,4) \rangle$ jest normalna,
 gdyż składa się ze wszystkich elementów o rzędzie $\le 2$.
@@ -846,12 +841,13 @@ Oprócz $PGL_n(k)$ ważne są również inne grupy liniowe -- $PGL_n(K)$, $SL_n(
 Zanim je zdefiniujemy, przypomnimy pewne wiadomości z algebry liniowej.
 
 \begin{fact}
-  Wyznacznik $\det \colon GL_n(k) \to k^*$ jest homomorfizmem grup.
+  Wyznacznik $\det \colon GL_n(k) \to k^*$ jest homomorfizmem grup, 
+  gdzie $k^* = k \setminus \{0\}$ jest grupą multiplikatywną ciała $k$.
 \end{fact}
 
 \begin{fact}
   Centrum $Z_n$ grupy $GL_n(k)$ składa się z macierzy postaci $\lambda I_n$, 
-  gdzie $\lambda \in k \setminus \{0\} \stackrel{ozn}{=} k^*$.
+  gdzie $\lambda \in k^*$.
 \end{fact}
 
 Centrum jest oczywiście podgrupą normalną. Stąd poprawna jest
@@ -934,15 +930,15 @@ Udowodnimy o tych macierzach 2 lematy.
   tzn. dla $M \in SL_n(k)$ oraz $v \in k^n, v \ne 0$ definiujemy $\langle v \rangle ^ M = \langle Mv \rangle$.
   
   Wówczas dla $M \in SZ_n$ zachodzi $\langle v \rangle ^ M = \langle M v \rangle = \langle \lambda v \rangle = \langle v \rangle$.
-  Zatem $SZ_n \subset \ker \rho$. Jeżeli natomiast $M \in SL_n(k) \setminus SZ_n$, to $M$ ma niezerowy element $a_{i j}$ dla $i \ne j$, 
+  Zatem $SZ_n \subset \ker \rho$. Jeżeli natomiast $M \in SL_n(k) \setminus SZ_n$, to albo $M$ ma niezerowy element $a_{i j}$ dla $i \ne j$, 
   więc przekształca podprzestrzeń rozpinaną przez wektor standardowy $e_j$ na inną, albo $M$ ma tylko elementy na przekątnej, 
-  ale dla $a_{i i} \ne a_{j j}$ gdzie $i \ne j$ wynika, że $\langle e_i + e_j \rangle^M = \langle a_{i i} e_i + a_{j j} e_j \rangle \ne \langle  e_i + e_j \rangle$.
+  ale dla pewnych $i \ne j$ zachodzi $a_{i i} \ne a_{j j}$ -- wówczas $\langle e_i + e_j \rangle^M = \langle a_{i i} e_i + a_{j j} e_j \rangle \ne \langle  e_i + e_j \rangle$.
   Stąd $SZ_n = \ker \rho$, czyli $\rho$ indukuje również wierne działanie $\tilde{\rho}$ grupy $SL_n(k) / SZ_n = PSL_n(k)$ na tym samym zbiorze.
 
-  Zauważmy również, że działanie $\rho$, a więc również $\tilde{\rho}$, jest 2-tranzytywne, stąd również prymitywne.
+  Zauważmy również, że działanie $\rho$, a więc także $\tilde{\rho}$, jest 2-tranzytywne, stąd prymitywne.
   Jest tak dlatego, że za pomocą mnożenia przez odpowiednią macierz, możemy przekształcić dowolną bazę $k^n$ na inną.
   Stąd chcąc przekształcić $\langle v_i \rangle$ na $\langle w_i \rangle$ dla $i = 1, 2$ dopełniamy $v_i$ do bazy $v_1, \cdots, v_n$
-  oraz $w_i$ do bazy $w_1, \cdots, w_n$ dostajemy macierz przejścia $M$ i dzielimy ostatni wiersz $M$ przez $\det(M)$.
+  oraz $w_i$ do bazy $w_1, \cdots, w_n$, dostajemy macierz przejścia $M$ i dzielimy ostatni wiersz $M$ przez $\det(M)$.
   Otrzymana macierz jest z $SL_n(k)$, przekształca tak samo jednowymiarowe podprzestrzenie co $M$, w szczególności przekształca 
   $\langle v_i \rangle$ na $\langle w_i \rangle$ dla $i = 1, 2$.
 
@@ -986,7 +982,7 @@ Udowodnimy o tych macierzach 2 lematy.
   dla odpowiednio dobranych $w'_{n-1}$ oraz $v'_{n-1}$.
 
   Pokażemy teraz również, że sprzężenia $A$ w $SL_n(k)$ zawierają wszystkie macierze elementarne $E_{i j}(a)$ (dla $i \ne j$).
-  Dzięki temu oraz lematu \ref{lemma_Eij_generates_SL} będziemy wiedzieć, że sprzężenia $A$ generują całe $SL_n(k)$.
+  Dzięki temu oraz lematowi \ref{lemma_Eij_generates_SL} będziemy wiedzieć, że sprzężenia $A$ generują całe $SL_n(k)$.
 
   Gdy $n = 2$, to $E_{2 1}(a) \in A$ oraz 
   $$ 
@@ -996,12 +992,12 @@ Udowodnimy o tych macierzach 2 lematy.
   $$
   $$ 
     \left( \begin{array}{cc} 0 & -1 \\ 1 & 0 \\ \end{array} \right) \cdot
-    \left( \begin{array}{cc} 0 & 1 \\ -1 & -1 \\ \end{array} \right) =
+    \left( \begin{array}{cc} 0 & 1 \\ -1 & -a \\ \end{array} \right) =
     \left( \begin{array}{cc} 1 & a \\ 0 & 1 \\ \end{array} \right) = E_{1 2}(a)
   $$
-  Gdy natomiast $n \ge 3$ oraz $j \ne k$ to z przechodniości naturalnego działania grupy $A_n$ na $\{1, 2, \cdots, n \}$ 
-  dostajemy pewien element $\pi \in A_n$ taki, że $\pi(1) = k$. Niech $l = \pi^{-1}(j) \ne 1$ oraz $P_\pi$ -- macierz permutacji $\pi$,
-  tzn. $P_\pi$ zawiera jedynki na pozycjach $(i, \pi(i)$ a poza tym same zera.
+  Natomiast, gdy $n \ge 3$ oraz $j \ne k$ to z przechodniości naturalnego działania grupy $A_n$ na zbiorze $\{1, 2, \cdots, n \}$ 
+  otrzymujemy pewien element $\pi \in A_n$ taki, że $\pi(1) = k$. Niech $l = \pi^{-1}(j) \ne 1$ oraz $P_\pi$ -- macierz permutacji $\pi$,
+  tzn. $P_\pi$ zawiera jedynki na pozycjach $(i, \pi(i))$ a~poza tym same zera.
   Wówczas z parzystości $\pi$ dostajemy, że $\det(P_\pi) = 1$, czyli $P_\pi \in SL_n(k)$ oraz
   $$ (P_\pi)^{-1} E_{l 1}(a) P_\pi = P_{\pi^{-1}} (I_n + a \Delta_{l 1}) P_\pi = $$
   $$ = I_n + P_{\pi^{-1}} (a \Delta_{l \pi(1)}) = I_n + a \Delta_{\pi(l) \pi(1)} = I_n + a \Delta_{j k} = E_{j k}(a) $$
@@ -1012,7 +1008,7 @@ Udowodnimy o tych macierzach 2 lematy.
   gdyż $\tilde{g}^{-1} \tilde{A} \tilde{g} = (g^{-1} A g) / SZ_n$.
 
   Udowodniliśmy zatem, że działanie $\tilde{\rho}$ grupy $PSL_n(k)$ na zbiorze $X$ jest wierne, prymitywne 
-  oraz stabilizator $\tilde{H}$ punktu $\langle e_1 \rangle$ zawiera podgrupę normalną $\tilde{A}$, 
+  oraz stabilizator $\tilde{H}$ punktu $\langle e_1 \rangle$ zawiera przemienną podgrupę normalną $\tilde{A}$, 
   której sprzężenia generują całe $PSL_n(k)$.
 
   Żeby zatem skorzystać z lematu Iwasawy wystarczy pokazać, że $PSL_n(k)$ jest grupą doskonałą 
@@ -1020,7 +1016,7 @@ Udowodnimy o tych macierzach 2 lematy.
   Ale z lematu \ref{lemma_Eij_generates_SL} dostajemy, że macierze $E_{i j}(a)$ generują $SL_n(k)$,
   zatem również elementy $E_{i j}(a) \cdot SZ_n$ generują $PSL_n(k)$.
   Ponadto z lematu \ref{lemma_Eij_are_commutants} dostajemy, że dla $n > 2$ lub $k > 3$ macierze $E_{i j}(a)$ 
-  są komutantami macierzy z $SL_n(k)$, stąd także elementy $E_{i j}(a) \cdot SZ_n$ są komutantami elementów z $PSL_n(k)$
+  są komutantami macierzy z $SL_n(k)$, stąd także elementy $E_{i j}(a) \cdot SZ_n$ są komutantami elementów z $PSL_n(k)$.
   Stąd zarówno grupa $SL_n(k)$ jak i grupa $PSL_n(k)$ jest grupą doskonałą.
   
   Założenia lematu Iwasawy dla grupy $PSL_n(k)$ są spełnione, zatem jest to grupa prosta.
@@ -1036,9 +1032,9 @@ a także podamy alternatywny dowód prostoty grup $A_n$ dla $n \ge 5$ -- tym raz
   $PSL_2(\mathbb{F}_2)$ oraz $PSL_2(\mathbb{F}_3)$ nie są grupami prostymi.
 \end{fact}
 \begin{proof}
-W przypadku $PSL_2(\mathbb{F}_2)$, że działanie $\tilde{\rho}$ takie jak w dowodzie twierdzenia \ref{PSL_simplicy}
-jest wiernym działaniem 2-przechodnim na zbiorze 3 elementowym $\{ \langle e_1 \rangle, \langle e_2 \rangle, \langle e_1 + e_2 \rangle\}$,
-ale jak wcześniej pokazaliśmy takie działanie jest też 3-przechodnie, stąd $\tilde{\rho}$ zadaje bijekcję między $PSL_2(\mathbb{F}_2)$
+W przypadku $PSL_2(\mathbb{F}_2)$ zauważmy, że działanie $\tilde{\rho}$ takie jak w dowodzie poprzedniego twierdzenia
+jest wiernym działaniem 2-przechodnim na zbiorze  $\{ \langle e_1 \rangle, \langle e_2 \rangle, \langle e_1 + e_2 \rangle\}$,
+ale jak wcześniej pokazaliśmy, działanie 2-przechodnie na biorze 3 elementowym jest też 3-przechodnie, stąd $\tilde{\rho}$ zadaje bijekcję między $PSL_2(\mathbb{F}_2)$
 a $S_3$, czyli $PSL_2(\mathbb{F}_2) \simeq S_3$ nie jest grupą prostą.
 
 Natomiast dla $PSL_2(\mathbb{F}_2)$ działanie $\tilde{\rho}$
@@ -1048,8 +1044,8 @@ Stąd $| PSL_2(\mathbb{F}_2) | \ge 12$, gdyż mamy 12 możliwości wyboru par el
 na które ma przejść para $(\langle e_1 \rangle, \langle e_2 \rangle)$.
 Ponadto z wierności $\tilde{\rho}$ otrzymujemy, że $PSL_2(\mathbb{F}_2)$ jest izomorficzne z podgrupą $S_4$,
 czyli $PSL_2(\mathbb{F}_2)$ to $A_4$ lub $S_4$.
-Ale $\tilde{\rho}$ nie jest 4-przechodnie, bo jak $\langle e_1 \rangle$ oraz $\langle e_2 \rangle$ przechodzi na siebie,
-to również $\langle e_1 + e_2 \rangle$ oraz $\langle e_1 - e_2 \rangle$ przechodzi na siebie.
+Ale $\tilde{\rho}$ nie jest 4-przechodnie, bo jeśli zarówno $\langle e_1 \rangle$ jak i $\langle e_2 \rangle$ przechodzi na siebie,
+to również $\langle e_1 + e_2 \rangle$ jak i $\langle e_1 - e_2 \rangle$ przechodzi na siebie.
 Stąd $PSL_2(\mathbb{F}_2) \simeq A_4$ nie jest grupą prostą.
 \end{proof}
 
@@ -1073,7 +1069,7 @@ oraz dwóch prostych faktów o cyklach długości 3.
   w~którym po prostu przestawiam elementy zbioru $\{1, 2, \cdots, n\}$, 
   tzn dla $\sigma \in A_n$ mamy $\{a, b, c \}^\sigma = \{ \sigma(a), \sigma(b), \sigma(c) \}$.
   Wówczas jest to działanie wierne.
-  Ponadto stabilizatorem zbioru $\{1, 2, 3\}$ jest grupa $H$ permutacji parzystych, 
+  Ponadto stabilizatorem zbioru $\{1, 2, 3\}$ jest podgrupa $H$ permutacji parzystych, 
   która osobno permutuje zbiór $\{1, 2, 3\}$ i~osobno $\{4, 5, \cdots, n\}$.
   Zatem $A =  \langle (1, 2, 3)  \rangle \le H$ jest oczywiście przemienną grupą,
   ale jest również podgrupą normalną $H$, gdyż $(1, 2, 3)$ jest przemienne z permutacjami $\{4, 5, \cdots, n\}$
@@ -1083,7 +1079,7 @@ oraz dwóch prostych faktów o cyklach długości 3.
   (co można udowodnić prościej, wprost), a z lematu \ref{lemma_3cycles} generują one całe $A_n$.
   Stąd sprzężenia $A$ generują całą grupę $A_n$.
 
-  Możemy zatem skorzystać z lematu Iwasawy -- dostajemy tezę, czyli $A_n$ jest grupą prostą dla $n \ge 5$.
+  Możemy zatem skorzystać z lematu Iwasawy -- dostajemy, że $A_n$ jest grupą prostą dla $n \ge 5$, czyli tezę.
 \end{proof}
 
 
