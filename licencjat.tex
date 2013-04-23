@@ -27,7 +27,7 @@
 }
 
 %Klasyfikacja tematyczna według AMS (matematyka) lub ACM (informatyka)
-\klasyfikacja{20. Group theory and generalizations}
+\klasyfikacja{20. Group theory and generalizations} %TODO dobrze - ?
 
 \keywords{grupa prosta, grupa alternująca, specjalna rzutowa grupa
 liniowa, lemat Iwasawy}
@@ -62,7 +62,7 @@ Grupy proste są jednymi z ważniejszych pojęć w teorii grup.
 Badając ich strukturę możemy poznać własności np. wszystkich skończonych grup,
 gdyż grupy proste są budulcem, z których zbudowane są inne grupy, co wyraża następujące
 (nie omawiane dalej w pracy) twierdzenie:
-\begin{thh2}[Jordana -- H\"oldera  \textcolor{red}{ -- odsyłacz}] $ $ \\
+\begin{thh2}[{Jordana -- H\"oldera  \cite[tw. 11.9.]{BB}}] $ $ \\
   Jeżeli $G$ jest grupą skończoną, to istnieje w niej skończony ciąg podgrup
     $$ G = G_n > G_{n-1} > \cdots > G_1 > G_0 = \{e\} $$
   taki, że $G_{i-1}$ jest podgrupą normalną $G_{i}$ oraz $G_{i}/G_{i-1}$ jest grupą prostą dla $i = 1, \cdots, n$.
@@ -79,7 +79,7 @@ pojęcia teorii grup i udowodnił m.in. prostotę grup $A_n$,
 aż do zakończenia dowodu klasyfikacyjnego na początku lat 80' ubiegłego wieku.
 Uproszczone sformułowanie tego twierdzenia brzmi:
 
-% podać źródło treści twierdzenia?
+%TODO podać źródło treści twierdzenia?
 \begin{thh2}[Twierdzenie klasyfikacyjne skończonych grup prostych] $ $ \\
   Jeśli grupa $G$ jest skończoną grupą prostą, to $G$ jest izomorficzna z jedną z następujących grup:
   \begin{enumerate}
@@ -104,7 +104,7 @@ Poszczególne przypomniane tematy to definicja grupy prostej, twierdzenia o~izom
 komutant i abelianizacja oraz działanie grupy na zbiorze.
 
 Kolejny rozdział, \emph{Prostota grupy alternującej $A_n$}, zaczyna się od przypomnienia definicji
-grupy symetrycznej, cyklów oraz grupy alternującej.
+grupy symetrycznej, cykli oraz grupy alternującej.
 Następnie wprowadzimy pojęcie typu permutacji oraz pokażemy jego związek 
 z klasami sprzężoności w grupie $S_n$ oraz w grupie $A_n$.
 Na koniec udowodnimy główny wynik tego rozdziału -- twierdzenie, że grupa alternująca $A_n$
@@ -146,6 +146,7 @@ będzie oznaczany podzbiór iloczynów $\{ h\cdot k \colon h \in H, k \in K\}\su
 
 W związku z~tym oznaczeniem warto przytoczyć twierdzenie:
 
+%TODO źródło?
 \begin{thh} \label{mult_groups} $ $ \\
     Jeżeli $H$ oraz $K$ są podgrupami grupy $G$, przy czym $K$ jest podgrupą normalną,
     to $HK$ jest podgrupą grupy $G$.
@@ -164,23 +165,23 @@ Przypomnijmy teraz podstawową definicję w~tej pracy.
 \end{fact}
 Jest to prosta konsekwencja tego, że w~grupach przemiennych
 wszystkie podgrupy są normalne oraz że każda inna grupa przemienna ma właściwą podgrupę cykliczną.
-% jak zrobić odwołanie po szczegóły?
+
 
 
 \section{Twierdzenia o~izomorfizmie}
 Przejdźmy teraz do podstawowych twierdzeń o~izomorfizmie.
-\begin{thh}[Pierwsze twierdzenie o~izomorfizmie \textcolor{red}{ -- odsyłacz}] $ $ \\
+\begin{thh}[{Pierwsze twierdzenie o~izomorfizmie \cite[tw. 4.5.]{BB}}] $ $ \\
     Niech $ \varphi \colon G \to H$ będzie homomorfizmem grup. Oznaczmy $K = \ker{\varphi}$ oraz
     $H' = \mathrm{im}\varphi $. 
     Wówczas ma miejsce izomorfizm $$G/K \simeq H'.\quad\eop$$
 \end{thh}
-\begin{thh}[Drugie twierdzenie o~izomorfizmie \textcolor{red}{ -- odsyłacz}]$ $\\
+\begin{thh}[{Drugie twierdzenie o~izomorfizmie \cite[tw. 4.6. a)]{BB}}]$ $\\
     Niech $G$ będzie grupą,  $H_1, H_2$ jej podgrupami normalnymi,
     przy czym $H_2 \leq H_1$. 
     Wówczas $H_2 \trianglelefteq H_1$, $H_1/H_2 \trianglelefteq G/H_2$ i~ma miejsce izomorfizm
     $$ (G/H_2) / (H_1/H_2) \simeq G/H_1.\quad\eop$$
 \end{thh}
-\begin{thh}[Trzecie twierdzenie o~izomorfizmie \textcolor{red}{ -- odsyłacz}] $ $ \\
+\begin{thh}[{Trzecie twierdzenie o~izomorfizmie \cite[tw. 4.6. b)]{BB}}] $ $ \\
     Niech $G$ będzie grupą, $H$ oraz $H_1$
     -- jej podgrupami, przy czym $H_1$ jest podgrupą normalną w~$G$. 
     Wówczas $H\cap H_1$ jest podgrupą normalną w~$H$ oraz ma miejsce izomorfizm
@@ -195,7 +196,7 @@ o~komutancie.
     Niech $G$ będzie dowolną grupą. Wówczas \emph{komutantem grupy $G$} nazywamy podgrupę $G$ generowaną przez wszystkie elementy postaci
     $aba^{-1}b^{-1}$, gdzie $a, b \in G$. Komutant grupy $G$ oznaczamy przez $[G, G]$.
 \end{deff}
-\begin{thh}[O komutancie \textcolor{red}{ -- odsyłacz}] $ $\\
+\begin{thh}[{O komutancie \cite[tw. 7.3. - 7.5.]{BB}}] $ $\\
     Komutant $[G,G]$ jest podgrupą normalną $G$, przy czym grupa ilorazowa $G/[G,G]$ jest grupą abelową.
     Ponadto dla dowolnej podgrupy normalnej $H \trianglelefteq G$ takiej, że $G/H$ jest abelowa, zachodzi $[G,G] \le H$
     \quad$\eop$.
@@ -243,6 +244,7 @@ jeszcze jedną definicję.
     wraz z~operacją składania. Grupę tę oznaczamy $S_X$.
 \end{deff}
 
+%TODO źródło?
 \begin{thh}[O działaniu grupy na zbiorze] $ $ \\
     Niech $G$ będzie grupą, a~$X$ -- zbiorem. Wówczas $\rho$ jest działaniem $G$ na $X$ wtedy i~tylko wtedy,
     gdy $\rho$ jest homomorfizmem z~$G$ w~grupę symetrii zbioru $X$.\quad$\eop$
@@ -263,7 +265,7 @@ widzenia tej pracy.
 \end{deff}
 
 Podstawowe własności tych obiektów przedstawia następujące stwierdzenie:
-\begin{fact} [\textcolor{red}{odsyłacz}]
+\begin{fact} [{\cite[tw. 1.3.a,b)]{BB}}]
     Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$ oraz $x, y \in X$. Wówczas:
     \begin{enumerate}[label=\alph*)]
      \item $G_x$ jest podgrupą $G$.
@@ -288,18 +290,18 @@ Jak to zostało wcześniej zapowiedziane, na koniec przytoczmy kilka
 ważnych twierdzeń pokazujących zależność między orbitami
 a~stabilizatorami.
 
-\begin{thh}\label{conj_stab} $ $[\textcolor{red}{odsyłacz}]\\
+\begin{thh}[{\cite[tw. 1.3.c)]{BB}}]\label{conj_stab} $ $\\
     Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$ oraz $x, y \in X$ należą do jednej orbity.
     Wówczas grupy $G_x$ oraz $G_y$ są sprzężone w grupie $G$.
 \end{thh}
 
-\begin{thh}[O orbitach i~stabilizatorach] [\textcolor{red}{odsyłacz}]$ $\\
+\begin{thh}[{O orbitach i~stabilizatorach \cite[stw. 11.3.]{Baginski}}] $ $\\
     Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$ oraz $x\in X$.
     Wówczas $|G(x)| = [G : G_x]$.
 \end{thh}
 
-\begin{thh}[Równanie klas] [\textcolor{red}{odsyłacz}] $ $\\
-    Przy założeniach z~poprzedniego twierdzenia zachodzi
+\begin{thh}[{Równanie klas \cite[str. 37]{Lang}}]  $ $\\
+    Zakładając dodatkowo, że $G$ jest grupą skończoną, prawdziwa jest równość
     $$ |X| = \sum_{i=1}^k [G : G_{x_i}] ,$$
     gdzie $x_1, x_2, \cdots, x_k$ są reprezentantami wszystkich orbit działania $\rho$.
 \end{thh}
@@ -320,8 +322,11 @@ jest zbiorem skończonym o $n$ elementach. Wówczas, jako że grupy
 symetrii zbiorów równolicznych są izomorficzne, grupę $S_X$ będziemy
 oznaczać $S_n$ i bez straty ogólności przyjmiemy, że jej elementami
 są permutacje zbioru $\{1, 2, \cdots, n\}$.
-%TODO
-%napisać coś o składaniu permutacji, tzn. że inaczej niż funkcji, lub przepisać na takie samo
+
+W przypadku elementów z $S_n$, będziemy się trzymać odwrotnej konwencji 
+zapisu mnożenia permutacji,
+tzn. $(\pi \sigma) (a) = \sigma ( \pi (a) )$.
+
 
 \begin{fact}
     Rząd grupy $S_n$ wynosi $n!$.\quad$\eop$
@@ -354,7 +359,7 @@ Powtarzając tę procedurę z~niewybranymi jeszcze elementami $x$, dostaniemy ro
 
 \begin{thh} $ $ \\
     Każdą permutację $\sigma \in S_n$ można przedstawić jako iloczyn rozłącznych cykli,
-    czyli takich $(c_1, c_2, \cdots, c_k)$, $(d_1, d_2, \cdots, d_l)$, że $\{ c_1, c_2, \cdots, c_k \} \cap \{ d_1, d_2, \cdots, d_l \} = \emptyset$
+    czyli takich $(c_1, c_2, \cdots, c_k)$, $(d_1, d_2, \cdots, d_l)$, że $\{ c_1, c_2, \cdots, c_k \} \cap \{ d_1, d_2, \cdots, d_l \} = \emptyset$,
     przy czym każdy element ze zbioru $\{1, 2, \cdots, n\}$ znajduje się w pewnym cyklu.
     Przedstawienie jest jednoznaczne z~dokładnością do kolejności cykli.
 \end{thh}
@@ -370,6 +375,7 @@ do końca tego rozdziału, że $n \ge 2$.
 
 Transpozycję są cegiełkami, z~których można budować permutacje, tzn.
 
+%TODO źródło?
 \begin{thh} $ $ \\
     Każda permutacja jest iloczynem pewnej liczby transpozycji.
 \end{thh}
@@ -389,7 +395,7 @@ transpozycji w rozkładzie.
 
 Poprawność definicji wynika z~twierdzenia:
 
-\begin{thh}\label{thm_A_n} $ $[\textcolor{red}{odsyłacz}] \\
+\begin{thh}[{\cite[stw. 3.8.]{Baginski}}]\label{thm_A_n} $ $ \\
     Parzystość liczby transpozycji w rozkładzie permutacji na transpozycje nie zależy od rozkładu.
     Permutacje o parzystej liczbie transpozycji tworzą podgrupę normalną grupy $S_n$ indeksu 2, czyli
     rzędu $n!/2$.
@@ -432,7 +438,7 @@ klasę sprzężoności:
     Wówczas zachodzi 
     $(\gamma^{-1} \lambda \gamma)(\gamma(c_i)) = (\lambda \gamma)(c_i) = \gamma(c_{i+1})$,
     a na pozostałych elementach $\gamma^{-1} \lambda \gamma$ jest stałe.
-    atem $\gamma^{-1} (c_1, c_2, \cdots, c_k) \gamma = (\gamma(c_1), \gamma(c_2), \cdots, \gamma(c_k))$.
+    Zatem $\gamma^{-1} (c_1, c_2, \cdots, c_k) \gamma = (\gamma(c_1), \gamma(c_2), \cdots, \gamma(c_k))$.
     Stąd również
 
         $$\gamma \Big(c_1^1, c_2^1, \cdots, c_{k_1}^1\Big) \cdots \Big(c_1^m, c_2^m, \cdots, c_{k_m}^m \Big) \gamma^{-1} = $$
@@ -541,7 +547,7 @@ Jesteśmy już gotowi, żeby udowodnić twierdzenie:
 
     Na podstawie Stwierdzenia \ref{fact_typ_A_n} wiemy, że elementy $A_5$ mają jeden z~następujących typów cyklowych:
     $(1^5), (1^2, 3^1), (1^1, 2^2)$ lub $(5^1)$.
-    z twierdzenia \ref{thm_o_klasach_A_n} każdy z~pierwszych czterech odpowiada jednej klasie sprzężoności, a~ostatni dwóm -- równolicznym.
+    Z twierdzenia \ref{thm_o_klasach_A_n} każdy z~pierwszych czterech odpowiada jednej klasie sprzężoności, a~ostatni -- dwóm -- równolicznym.
     Stąd klasy sprzężoności $A_5$ mają rozmiary: 1, 20, 15, 12, 12.
 
     Załóżmy nie wprost, że $H$ jest nietrywialną, właściwą podgrupą normalną $A_5$.
@@ -874,7 +880,7 @@ Jesteśmy teraz gotowi na zdefiniowanie obiektu badań tego rozdziału.
   \emph{Specjalną rzutową grupą liniową $PSL_n(k)$} nazywamy iloraz $SL_n(k) / SZ_n$.
 \end{deff}
 
-%\textcolor{red}{Twierdzenie o rzędzie grup dla ciała skończonego?}
+%Twierdzenie o rzędzie grup dla ciała skończonego?
 
 
 W celu zastosowania lematu Iwasawy, zajmiemy się macierzami elementarnymi postaci
