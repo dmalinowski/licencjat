@@ -452,7 +452,7 @@ klasę sprzężoności:
     Wystarczy jeszcze pokazać, że permutacje o tym samym typie są sprzężone.
     Niech $\pi =    \Big(c_1^1, c_2^1, \cdots, c_{k_1}^1\Big) \cdots \Big(c_1^m, c_2^m, \cdots, c_{k_m}^m \Big)$
     oraz  $\sigma = \Big(d_1^1, d_2^1, \cdots, d_{k_1}^1\Big) \cdots \Big(d_1^m, d_2^m, \cdots, d_{k_m}^m \Big)$.
-    Wówczas permutacja $\gamma \colon c_i^j \mapsto d_i^j$ jest taka, że $\gamma \pi \gamma^{-1} = \sigma$.
+    Wówczas permutacja $\gamma \colon d_i^j \mapsto c_i^j$ jest taka, że $\gamma \pi \gamma^{-1} = \sigma$.
 \end{proof}
 
 Klasy sprzężoności permutacji parzystych w $S_n$ mogą rozpaść się
@@ -509,7 +509,7 @@ lematy.
 
     Jeżeli $\sigma$ zawiera cykl długości $k \ge 3$, to permutacji o typie $\tau$, których rozkład na cykle rozłączne zawiera cykl $(1, a_1, a_2, \cdots, a_k)$
     jest co najmniej tyle, ile wyborów $a_1$ i $a_2$, czyli $(n-1)(n-2)$.
-    Stąd z poprzedniego twierdzenia w~klasie sprzężoności $\sigma$ jest co najmniej $\frac{(n-1)(n-2)}{2} \ge n$ elementów (bo $n \ge 5$).
+    Stąd i z poprzedniego twierdzenia, w~klasie sprzężoności $\sigma$ jest co najmniej $\frac{(n-1)(n-2)}{2} \ge n$ elementów (bo $n \ge 5$).
 
     W przeciwnym przypadku $\sigma$ zawiera co najmniej dwa cykle długości 2.
     Analogicznie dostajemy, że samych permutacji o typie $\tau$, których rozkład na cykle rozłączne zawiera cykle $(1, a)$ oraz $(2, b)$
@@ -565,7 +565,7 @@ Jesteśmy już gotowi, żeby udowodnić twierdzenie:
 
     Jeżeli $H$ zawiera pewną nietrywialną permutację $\sigma$, która ma punkt stały $a \in \{ 1, 2, \cdots, n \}$, to niech $K = H_a$.
     Wówczas $K \simeq A_{n-1}$ oraz (np. z~trzeciego twierdzenia o izomorfizmie) $H \cap K$ jest podgrupą normalną w $K$.
-    Ale $\sigma \in H \cap K$ oraz $K$ jest grupą prostą, zatem z~założenia indukcyjnego $H \cap K = K$.
+    Ale $e \ne \sigma \in H \cap K$ oraz $K$ jest grupą prostą, zatem z~założenia indukcyjnego $H \cap K = K$.
     Stąd $H$ zawiera pewien element o typie $(1^{n-3}, 3^1)$, a~zatem wszystkie elementy
     tego typu, na mocy twierdzenia \ref{thm_o_klasach_A_n}, gdyż $n-3 \ge 3$.
     Ale z~lematu \ref{lemma_3cycles}    cykle o długości 3 generują całe $A_n$, stąd $H = A_n$ --
@@ -838,7 +838,7 @@ Udowodnimy prostotę grupy $PSL_n(k)$ oraz zaproponujemy alternatywny dowód pro
 Zacznijmy od przypomnienia definicji grup liniowych.
 
 \begin{deff}
-  \emph{Ogólną grupą liniową $GL_n(k)$} nazywamy grupę kwadratowych macierzy odwracalnych 
+  \emph{Pełną grupą liniową $GL_n(k)$} nazywamy grupę kwadratowych macierzy odwracalnych 
   stopnia $n$ nad ciałem $k$, wraz z operacją mnożenia macierzy i macierzą jednostkową $I_n$
   jako element neutralny.
 \end{deff}
@@ -851,7 +851,7 @@ Zanim je zdefiniujemy, przypomnimy pewne wiadomości z algebry liniowej.
   gdzie $k^* = k \setminus \{0\}$ jest grupą multiplikatywną ciała $k$.
 \end{fact}
 
-\begin{fact}
+\begin{fact}[{\cite[str. 47]{BB}}]
   Centrum $Z_n$ grupy $GL_n(k)$ składa się z macierzy postaci $\lambda I_n$, 
   gdzie $\lambda \in k^*$.
 \end{fact}
@@ -1017,11 +1017,11 @@ Udowodnimy o tych macierzach 2 lematy.
   oraz stabilizator $\tilde{H}$ punktu $\langle e_1 \rangle$ zawiera przemienną podgrupę normalną $\tilde{A}$, 
   której sprzężenia generują całe $PSL_n(k)$.
 
-  Żeby zatem skorzystać z lematu Iwasawy wystarczy pokazać, że $PSL_n(k)$ jest grupą doskonałą 
-  poza przypadkiem, gdy $n = 2$ oraz $|k| \le 3$.
+  Żeby zatem skorzystać z lematu Iwasawy wystarczy pokazać, że $PSL_n(k)$ jest grupą doskonałą, 
+  gdy $n > 2$ lub $|k| > 3$.
   Ale z lematu \ref{lemma_Eij_generates_SL} dostajemy, że macierze $E_{i j}(a)$ generują $SL_n(k)$,
   zatem również elementy $E_{i j}(a) \cdot SZ_n$ generują $PSL_n(k)$.
-  Ponadto z lematu \ref{lemma_Eij_are_commutants} dostajemy, że dla $n > 2$ lub $k > 3$ macierze $E_{i j}(a)$ 
+  Ponadto z lematu \ref{lemma_Eij_are_commutants} wiemy, że dla $n > 2$ lub $|k| > 3$ macierze $E_{i j}(a)$ 
   są komutantami macierzy z $SL_n(k)$, stąd także elementy $E_{i j}(a) \cdot SZ_n$ są komutantami elementów z $PSL_n(k)$.
   Stąd zarówno grupa $SL_n(k)$ jak i grupa $PSL_n(k)$ jest grupą doskonałą.
   
@@ -1038,21 +1038,21 @@ a także podamy alternatywny dowód prostoty grup $A_n$ dla $n \ge 5$ -- tym raz
   $PSL_2(\mathbb{F}_2)$ oraz $PSL_2(\mathbb{F}_3)$ nie są grupami prostymi.
 \end{fact}
 \begin{proof}
-W przypadku $PSL_2(\mathbb{F}_2)$ zauważmy, że działanie $\tilde{\rho}$ takie jak w dowodzie poprzedniego twierdzenia
-jest wiernym działaniem 2-przechodnim na zbiorze  $\{ \langle e_1 \rangle, \langle e_2 \rangle, \langle e_1 + e_2 \rangle\}$,
-ale jak wcześniej pokazaliśmy, działanie 2-przechodnie na biorze 3 elementowym jest też 3-przechodnie, stąd $\tilde{\rho}$ zadaje bijekcję między $PSL_2(\mathbb{F}_2)$
-a $S_3$, czyli $PSL_2(\mathbb{F}_2) \simeq S_3$ nie jest grupą prostą.
+  W przypadku $PSL_2(\mathbb{F}_2)$ zauważmy, że działanie $\tilde{\rho}$, takie jak w dowodzie poprzedniego twierdzenia,
+  jest wiernym działaniem 2-przechodnim na zbiorze  $\{ \langle e_1 \rangle, \langle e_2 \rangle, \langle e_1 + e_2 \rangle\}$.
+  Ale jak wcześniej pokazaliśmy, działanie 2-przechodnie na biorze 3 elementowym jest też 3-przechodnie, stąd $\tilde{\rho}$ zadaje bijekcję między $PSL_2(\mathbb{F}_2)$
+  a $S_3$, czyli $PSL_2(\mathbb{F}_2) \simeq S_3$ nie jest grupą prostą.
 
-Natomiast dla $PSL_2(\mathbb{F}_2)$ działanie $\tilde{\rho}$
-jest wiernym działaniem 2-przechodnim na zbiorze 4 elementowym: 
-$\{ \langle e_1 \rangle, \langle e_2 \rangle, \langle e_1 + e_2 \rangle, \langle e_1 - e_2 \rangle \}$.
-Stąd $| PSL_2(\mathbb{F}_2) | \ge 12$, gdyż mamy 12 możliwości wyboru par elementów $(a, b)$, 
-na które ma przejść para $(\langle e_1 \rangle, \langle e_2 \rangle)$.
-Ponadto z wierności $\tilde{\rho}$ otrzymujemy, że $PSL_2(\mathbb{F}_2)$ jest izomorficzne z podgrupą $S_4$,
-czyli $PSL_2(\mathbb{F}_2)$ to $A_4$ lub $S_4$.
-Ale $\tilde{\rho}$ nie jest 4-przechodnie, bo jeśli zarówno $\langle e_1 \rangle$ jak i $\langle e_2 \rangle$ przechodzi na siebie,
-to również $\langle e_1 + e_2 \rangle$ jak i $\langle e_1 - e_2 \rangle$ przechodzi na siebie.
-Stąd $PSL_2(\mathbb{F}_2) \simeq A_4$ nie jest grupą prostą.
+  Natomiast dla $PSL_2(\mathbb{F}_2)$ działanie $\tilde{\rho}$
+  jest wiernym działaniem 2-przechodnim na zbiorze 4 elementowym
+  $\{ \langle e_1 \rangle, \langle e_2 \rangle, \langle e_1 + e_2 \rangle, \langle e_1 - e_2 \rangle \}$.
+  Stąd $| PSL_2(\mathbb{F}_2) | \ge 12$, gdyż mamy 12 możliwości wyboru par elementów $(a, b)$, 
+  na które ma przejść para $(\langle e_1 \rangle, \langle e_2 \rangle)$.
+  Ponadto z wierności $\tilde{\rho}$ otrzymujemy, że $PSL_2(\mathbb{F}_2)$ jest izomorficzne z pewną podgrupą $S_4$,
+  czyli $PSL_2(\mathbb{F}_2)$ to $A_4$ lub $S_4$.
+  Ale $\tilde{\rho}$ nie jest 4-przechodnie, bo jeśli zarówno $\langle e_1 \rangle$ jak i $\langle e_2 \rangle$ przechodzi na siebie,
+  to również $\langle e_1 + e_2 \rangle$ jak i $\langle e_1 - e_2 \rangle$ przechodzi na siebie.
+  Stąd $PSL_2(\mathbb{F}_2) \simeq A_4$ nie jest grupą prostą.
 \end{proof}
 
 
