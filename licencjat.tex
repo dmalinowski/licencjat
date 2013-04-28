@@ -552,10 +552,10 @@ Jesteśmy już gotowi, żeby udowodnić twierdzenie:
 
     Załóżmy nie wprost, że $H$ jest nietrywialną, właściwą podgrupą normalną $A_5$.
     Wówczas $H$ musi być sumą pewnych klas sprzężoności $A_5$, w tym klasy sprzężoności elementu neutralnego.
-    Ponadto rozmiar $H$ musi być dzielnikiem rozmiaru $A_5 = 60$.
+    Ponadto rząd $H$ musi być dzielnikiem rzędu $A_5$ równego 60.
     Najmniejszy nietrywialny możliwy rozmiar sumy klas sprzężoności wraz z~trywialną wynosi 13.
     Stąd $|H| = 15$, $|H| = 20$ lub $|H| = 30$.
-    Ale żaden podzbiór multizbioru $\{1, 12, 12, 15, 20 \}$ zawierający jedynkę nie sumuje się do potencjalnego rozmiaru $H$,
+    Ale żaden podzbiór multizbioru $\{1, 12, 12, 15, 20 \}$ zawierający jedynkę nie sumuje się do potencjalnego rzędu $H$,
     zatem takie $H$ nie może istnieć -- $A_5$ jest grupą prostą.
 
     Załóżmy zatem, że $n \ge 6$ oraz grupa $A_{n-1}$ jest prosta.
@@ -575,7 +575,7 @@ Jesteśmy już gotowi, żeby udowodnić twierdzenie:
     W~przeciwnym przypadku istniałyby dwie różne permutacje $\pi, \sigma \in H$ takie, że $\pi(1) = \sigma(1)$.
     Wtedy $\gamma = \pi \sigma ^{-1} \ne \mathrm{id}$, $\gamma \in H$ oraz $\gamma(1) = 1$ -- sprzeczność.
     Stąd rzeczywiście $|H| \le n$.
-    Ale z~lematu \ref{lemma_big_con} $H$ jako nietrywialna suma pewnej liczby klas sprzężoności w tym trywialnej musiałaby mieć rozmiar co najmniej $n+1$.
+    Ale z~lematu \ref{lemma_big_con} $H$ jako nietrywialna suma pewnej liczby klas sprzężoności w tym trywialnej musiałaby mieć rząd co najmniej $n+1$.
     Stąd w tym przypadku również otrzymujemy sprzeczność.
 
     We wszystkich przypadkach otrzymaliśmy sprzeczność, czyli rzeczywiście $A_n$ jest grupą prostą,
@@ -804,7 +804,7 @@ Teraz jesteśmy już gotowi na sformułowanie i dowód lematu Iwasawy.
 \end{thh}
 \begin{proof}
     Załóżmy przeciwnie, że w $G$ istnieje właściwa, nietrywialna podgrupa normalna $K$.
-    Skoro $G$ działa wiernie oraz $K$ jest nietrywialna, to $x_0^{k_0} \ne x_0$ dla pewnego $k_0 \in K$ oraz $x_0 \in X$.
+    Skoro $G$ działa wiernie oraz $K$ jest nietrywialna, to $x_0^{k_0} \ne x_0$ dla pewnych $k_0 \in K$ oraz $x_0 \in X$.
     Niech $H = G_{x_0}$.
     Dostajemy, że $K \nleq H$, gdyż $k_0 \not \in H$, stąd również $H \lneq H K$.
 
@@ -904,14 +904,14 @@ Udowodnimy o tych macierzach 2 lematy.
 \end{proof}
 
 \begin{lemma}\label{lemma_Eij_are_commutants}
-  Macierze $E_{i j}(a)$ dla $i \ne j$ są komutantami pewnych elementów z $SL_n(k)$, poza przypadkiem, gdy $n = 2$ oraz $|k| \le 3$.
+  Macierze $E_{i j}(a)$ dla $i \ne j$ są komutantami pewnych elementów z $SL_n(k)$ dla $n > 2$ lub $|k| > 3$.
 \end{lemma}
 \begin{proof}
-  Gdy $n > 2$, to weźmy $k \le n$ takie, że $k \ne i$ oraz $k \ne j$. Wówczas
-  $$ [ E_{k j}(1), E_{i k}(-a) ] = E_{k j}(1) E_{i k}(-a) E_{k j}(1)^{-1} E_{i k}(-a) ^{-1} = $$
-  $$ = E_{k j}(1) E_{i k}(-a) E_{k j}(-1) E_{i k}(a) = $$
-  $$ = (I_n + \Delta_{k j})(I_n -a \Delta_{i k})(I_n - \Delta_{k j}) (I_n + a \Delta_{i k}) = $$
-  $$ = (I_n + \Delta_{k j} - a \Delta_{i k}) (I_n - \Delta_{k j} + a \Delta_{i k}) = I_n + a \Delta_{i j} = E_{i j}(a)$$
+  Gdy $n > 2$, to weźmy $m \le n$ takie, że $m \ne i$ oraz $m \ne j$. Wówczas
+  $$ [ E_{m j}(1), E_{i m}(-a) ] = E_{m j}(1) E_{i m}(-a) E_{m j}(1)^{-1} E_{i m}(-a) ^{-1} = $$
+  $$ = E_{m j}(1) E_{i m}(-a) E_{m j}(-1) E_{i m}(a) = $$
+  $$ = (I_n + \Delta_{m j})(I_n -a \Delta_{i m})(I_n - \Delta_{m j}) (I_n + a \Delta_{i m}) = $$
+  $$ = (I_n + \Delta_{m j} - a \Delta_{i m}) (I_n - \Delta_{m j} + a \Delta_{i m}) = I_n + a \Delta_{i j} = E_{i j}(a)$$
 
   gdyż $\Delta_{a b} \Delta_{b c} = \Delta_{a c}$ oraz $\Delta_{a b} \Delta_{d c} = 0$ dla $b \ne d$.
 
@@ -987,7 +987,7 @@ Udowodnimy o tych macierzach 2 lematy.
   $$
   dla odpowiednio dobranych $w'_{n-1}$ oraz $v'_{n-1}$.
 
-  Pokażemy teraz również, że sprzężenia $A$ w $SL_n(k)$ zawierają wszystkie macierze elementarne $E_{i j}(a)$ (dla $i \ne j$).
+  Pokażemy teraz, że sprzężenia $A$ w $SL_n(k)$ zawierają wszystkie macierze elementarne $E_{i j}(a)$ (dla $i \ne j$).
   Dzięki temu oraz lematowi \ref{lemma_Eij_generates_SL} będziemy wiedzieć, że sprzężenia $A$ generują całe $SL_n(k)$.
 
   Gdy $n = 2$, to $E_{2 1}(a) \in A$ oraz 
@@ -1001,12 +1001,12 @@ Udowodnimy o tych macierzach 2 lematy.
     \left( \begin{array}{cc} 0 & 1 \\ -1 & -a \\ \end{array} \right) =
     \left( \begin{array}{cc} 1 & a \\ 0 & 1 \\ \end{array} \right) = E_{1 2}(a)
   $$
-  Natomiast, gdy $n \ge 3$ oraz $j \ne k$ to z przechodniości naturalnego działania grupy $A_n$ na zbiorze $\{1, 2, \ldots, n \}$ 
-  otrzymujemy pewien element $\pi \in A_n$ taki, że $\pi(1) = k$. Niech $l = \pi^{-1}(j) \ne 1$ oraz $P_\pi$ -- macierz permutacji $\pi$,
+  Natomiast, gdy $n \ge 3$ oraz $j \ne m$ to z przechodniości naturalnego działania grupy $A_n$ na zbiorze $\{1, 2, \ldots, n \}$ 
+  otrzymujemy pewien element $\pi \in A_n$ taki, że $\pi(1) = m$. Niech $l = \pi^{-1}(j) \ne 1$ oraz $P_\pi$ -- macierz permutacji $\pi$,
   tzn. $P_\pi$ zawiera jedynki na pozycjach $(i, \pi(i))$ a~poza tym same zera.
   Wówczas z parzystości $\pi$ dostajemy, że $\det(P_\pi) = 1$, czyli $P_\pi \in SL_n(k)$ oraz
   $$ (P_\pi)^{-1} E_{l 1}(a) P_\pi = P_{\pi^{-1}} (I_n + a \Delta_{l 1}) P_\pi = $$
-  $$ = I_n + P_{\pi^{-1}} (a \Delta_{l \pi(1)}) = I_n + a \Delta_{\pi(l) \pi(1)} = I_n + a \Delta_{j k} = E_{j k}(a) $$
+  $$ = I_n + P_{\pi^{-1}} (a \Delta_{l \pi(1)}) = I_n + a \Delta_{\pi(l) \pi(1)} = I_n + a \Delta_{j m} = E_{j m}(a) $$
   
   Przechodząc teraz do działania $\tilde{\rho}$ widzimy, że stabilizatorem punktu $\langle e_1 \rangle$ 
   przy tym działaniu jest $\tilde{H} = H/SZ_n \le PSL_n(k)$.
