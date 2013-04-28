@@ -64,13 +64,13 @@ gdyż grupy proste są budulcem, z których zbudowane są inne grupy, co wyraża
 (nie omawiane dalej w pracy) twierdzenie:
 \begin{thh2}[{Jordana -- H\"oldera  \cite[tw. 11.9.]{BB}}] $ $ \\
   Jeżeli $G$ jest grupą skończoną, to istnieje w niej skończony ciąg podgrup
-    $$ G = G_n > G_{n-1} > \cdots > G_1 > G_0 = \{e\} $$
-  taki, że $G_{i-1}$ jest podgrupą normalną $G_{i}$ oraz $G_{i}/G_{i-1}$ jest grupą prostą dla $i = 1, \cdots, n$.
+    $$ G = G_n > G_{n-1} > \ldots > G_1 > G_0 = \{e\} $$
+  taki, że $G_{i-1}$ jest podgrupą normalną $G_{i}$ oraz $G_{i}/G_{i-1}$ jest grupą prostą dla $i = 1, \ldots, n$.
 
   Ponadto dla każdego innego ciągu podgrup
-    $$ G = H_m > H_{m-1} > \cdots > H_1 > H_0 = \{e\} $$
+    $$ G = H_m > H_{m-1} > \ldots > H_1 > H_0 = \{e\} $$
   spełniającego powyższe warunki zachodzi $n = m$ oraz $G_{i}/G_{i-1} \simeq H_{\pi(i)}/H_{\pi(i)-1}$ 
-  dla $i = 1, \cdots, n$ oraz pewnej permutacji indeksów $\pi \in S_{n}$.
+  dla $i = 1, \ldots, n$ oraz pewnej permutacji indeksów $\pi \in S_{n}$.
 \end{thh2}
 
 W związku z tym, klasyfikacja skończonych grup prostych była istotnym zagadnieniem w matematyce,
@@ -198,8 +198,8 @@ o~komutancie.
 \end{deff}
 \begin{thh}[{O komutancie \cite[tw. 7.3. - 7.5.]{BB}}] $ $\\
     Komutant $[G,G]$ jest podgrupą normalną $G$, przy czym grupa ilorazowa $G/[G,G]$ jest grupą abelową.
-    Ponadto dla dowolnej podgrupy normalnej $H \trianglelefteq G$ takiej, że $G/H$ jest abelowa, zachodzi $[G,G] \le H$
-    \quad$\eop$.
+    Ponadto dla dowolnej podgrupy normalnej $H \trianglelefteq G$ takiej, że $G/H$ jest abelowa, zachodzi $[G,G] \le H$.
+    \quad$\eop$
 \end{thh}
 \begin{deff}
     Przekształcenie kanoniczne $G \to G/[G,G]$ (rzutowanie na grupę ilorazową) nazywamy
@@ -303,7 +303,7 @@ a~stabilizatorami.
 \begin{thh}[{Równanie klas \cite[str. 37]{Lang}}]  $ $\\
     Zakładając dodatkowo, że $G$ jest grupą skończoną, prawdziwa jest równość
     $$ |X| = \sum_{i=1}^k [G : G_{x_i}] ,$$
-    gdzie $x_1, x_2, \cdots, x_k$ są reprezentantami wszystkich orbit działania $\rho$.
+    gdzie $x_1, x_2, \ldots, x_k$ są reprezentantami wszystkich orbit działania $\rho$.
 \end{thh}
 
 
@@ -321,7 +321,7 @@ zbioru $X$. Ważnym przypadkiem szczególnym jest sytuacja, gdy $X$
 jest zbiorem skończonym o $n$ elementach. Wówczas, jako że grupy
 symetrii zbiorów równolicznych są izomorficzne, grupę $S_X$ będziemy
 oznaczać $S_n$ i bez straty ogólności przyjmiemy, że jej elementami
-są permutacje zbioru $\{1, 2, \cdots, n\}$.
+są permutacje zbioru $\{1, 2, \ldots, n\}$.
 
 W przypadku elementów z $S_n$, będziemy się trzymać odwrotnej konwencji 
 zapisu mnożenia permutacji,
@@ -337,7 +337,7 @@ cykle.
 
 \begin{deff}
     Permutację $\sigma \in S_n$ nazwiemy \emph{cyklem długości $k$},
-    jeżeli istnieją różne elementy $c_1, c_2, \ldots, c_k \in \{1, 2, \cdots, n\}$ takie, że
+    jeżeli istnieją różne elementy $c_1, c_2, \ldots, c_k \in \{1, 2, \ldots, n\}$ takie, że
     $$ \sigma(x) = \left\{
                 \begin{array}{ll}
                     c_{i+1}, & \textrm{jeżeli $x = c_i$}\\
@@ -347,11 +347,11 @@ cykle.
     $$
 \end{deff}
 
-Cykle zapisujemy w postaci $(c_1, c_2, \cdots, c_k)$. Oczywiście zapis cyklu nie jest jednoznaczny; 
-następujące zapisy: $(c_1, c_2, \cdots, c_k) = (c_k, c_1, c_2, \cdots, c_{k-1}) = (c_2, c_3, \cdots, c_k,
+Cykle zapisujemy w postaci $(c_1, c_2, \ldots, c_k)$. Oczywiście zapis cyklu nie jest jednoznaczny; 
+następujące zapisy: $(c_1, c_2, \ldots, c_k) = (c_k, c_1, c_2, \ldots, c_{k-1}) = (c_2, c_3, \ldots, c_k,
 c_1)$ reprezentują ten sam cykl.
 
-Dla $\sigma \in S_n$ oraz $x\in\{1, 2,\cdots, n\}$ zbiór
+Dla $\sigma \in S_n$ oraz $x\in\{1, 2,\ldots, n\}$ zbiór
 $\{x,\sigma(x),\sigma^2(x),\ldots\}\subseteq\{1,\ldots,n\}$ jest skończony, zatem istnieją
 liczby $k<l\leq n$ takie, że $\sigma^k(x)=\sigma^l(x)$, a stąd $\sigma^{l-k}(x)=x$. Jeśli $d$ jest najmniejszą
 liczbą całkowitą dodatnią taką, że $\sigma^d(x)=x$, to mamy cykl $\left(x,\sigma(x),\ldots,\sigma^{d-1}(x)\right)$.
@@ -359,8 +359,8 @@ Powtarzając tę procedurę z~niewybranymi jeszcze elementami $x$, dostaniemy ro
 
 \begin{thh} $ $ \\
     Każdą permutację $\sigma \in S_n$ można przedstawić jako iloczyn rozłącznych cykli,
-    czyli takich $(c_1, c_2, \cdots, c_k)$, $(d_1, d_2, \cdots, d_l)$, że $\{ c_1, c_2, \cdots, c_k \} \cap \{ d_1, d_2, \cdots, d_l \} = \emptyset$,
-    przy czym każdy element ze zbioru $\{1, 2, \cdots, n\}$ znajduje się w pewnym cyklu.
+    czyli takich $(c_1, c_2, \ldots, c_k)$, $(d_1, d_2, \ldots, d_l)$, że $\{ c_1, c_2, \ldots, c_k \} \cap \{ d_1, d_2, \ldots, d_l \} = \emptyset$,
+    przy czym każdy element ze zbioru $\{1, 2, \ldots, n\}$ znajduje się w pewnym cyklu.
     Przedstawienie jest jednoznaczne z~dokładnością do kolejności cykli.
 \end{thh}
 
@@ -420,7 +420,7 @@ problemem -- klasami sprzężoności $S_n$.
 
 \begin{deff}
     \emph{Typem cyklowym} permutacji $\sigma \in S_n$ nazwiemy listę długości cykli występujących w $\sigma$,
-    tzn. ciąg $(1^{i_1}, 2^{i_2}, \cdots, n^{i_n})$,
+    tzn. ciąg $(1^{i_1}, 2^{i_2}, \ldots, n^{i_n})$,
     gdzie $i_k$ to liczba cykli długości $k$ w rozkładzie $\sigma$ na cykle rozłączne.
 \end{deff}
 W celu uproszczenia zapisu można omijać długości cykli, które nie
@@ -434,24 +434,24 @@ klasę sprzężoności:
     Permutacje $\pi, \sigma \in S_n$ są sprzężone wtedy i tylko wtedy, gdy ich indeks cyklowy jest taki sam.
 \end{thh}
 \begin{proof}
-    Niech $\lambda = (c_1, c_2, \cdots, c_k)$ będzie cyklem w $S_n$, $c_{k+1} = c_1$ oraz $\gamma \in S_n$.
+    Niech $\lambda = (c_1, c_2, \ldots, c_k)$ będzie cyklem w $S_n$, $c_{k+1} = c_1$ oraz $\gamma \in S_n$.
     Wówczas zachodzi 
     $(\gamma^{-1} \lambda \gamma)(\gamma(c_i)) = (\lambda \gamma)(c_i) = \gamma(c_{i+1})$,
     a na pozostałych elementach $\gamma^{-1} \lambda \gamma$ jest stałe.
-    Zatem $\gamma^{-1} (c_1, c_2, \cdots, c_k) \gamma = (\gamma(c_1), \gamma(c_2), \cdots, \gamma(c_k))$.
+    Zatem $\gamma^{-1} (c_1, c_2, \ldots, c_k) \gamma = (\gamma(c_1), \gamma(c_2), \ldots, \gamma(c_k))$.
     Stąd również
 
-        $$\gamma \Big(c_1^1, c_2^1, \cdots, c_{k_1}^1\Big) \cdots \Big(c_1^m, c_2^m, \cdots, c_{k_m}^m \Big) \gamma^{-1} = $$
-        $$ = \gamma \Big(c_1^1, c_2^1, \cdots, c_{k_1}^1\Big) \gamma^{-1} \gamma  \cdots \gamma ^{-1} \gamma \Big(c_1^m, c_2^m, \cdots, c_{k_m}^m\Big) \gamma^{-1} = $$
-        $$ = \Big(\gamma (c_1^1), \gamma (c_2^1), \cdots, \gamma (c_{k_1}^1)\Big) \cdots \Big(\gamma (c_1^m), \gamma (c_2^m), \cdots, \gamma (c_{k_m}^m)\Big)$$
+        $$\gamma \Big(c_1^1, c_2^1, \ldots, c_{k_1}^1\Big) \cdots \Big(c_1^m, c_2^m, \ldots, c_{k_m}^m \Big) \gamma^{-1} = $$
+        $$ = \gamma \Big(c_1^1, c_2^1, \ldots, c_{k_1}^1\Big) \gamma^{-1} \gamma  \cdots \gamma ^{-1} \gamma \Big(c_1^m, c_2^m, \ldots, c_{k_m}^m\Big) \gamma^{-1} = $$
+        $$ = \Big(\gamma (c_1^1), \gamma (c_2^1), \ldots, \gamma (c_{k_1}^1)\Big) \cdots \Big(\gamma (c_1^m), \gamma (c_2^m), \ldots, \gamma (c_{k_m}^m)\Big)$$
 
-    Jeżeli cykle $\Big(c_1^1, c_2^1, \cdots, c_{k_1}^1\Big) \cdots \Big(c_1^m, c_2^m, \cdots, c_{k_m}^m \Big)$ były rozłączne,
+    Jeżeli cykle $\Big(c_1^1, c_2^1, \ldots, c_{k_1}^1\Big) \cdots \Big(c_1^m, c_2^m, \ldots, c_{k_m}^m \Big)$ były rozłączne,
     to również powstałe po sprzężeniu cykle są rozłączne.
     Jest ich tyle samo i mają te same długości, zatem rzeczywiście sprzężenie zachowuje typ permutacji.
 
     Wystarczy jeszcze pokazać, że permutacje o tym samym typie są sprzężone.
-    Niech $\pi =    \Big(c_1^1, c_2^1, \cdots, c_{k_1}^1\Big) \cdots \Big(c_1^m, c_2^m, \cdots, c_{k_m}^m \Big)$
-    oraz  $\sigma = \Big(d_1^1, d_2^1, \cdots, d_{k_1}^1\Big) \cdots \Big(d_1^m, d_2^m, \cdots, d_{k_m}^m \Big)$.
+    Niech $\pi =    \Big(c_1^1, c_2^1, \ldots, c_{k_1}^1\Big) \cdots \Big(c_1^m, c_2^m, \ldots, c_{k_m}^m \Big)$
+    oraz  $\sigma = \Big(d_1^1, d_2^1, \ldots, d_{k_1}^1\Big) \cdots \Big(d_1^m, d_2^m, \ldots, d_{k_m}^m \Big)$.
     Wówczas permutacja $\gamma \colon d_i^j \mapsto c_i^j$ jest taka, że $\gamma \pi \gamma^{-1} = \sigma$.
 \end{proof}
 
@@ -477,8 +477,8 @@ rzeczywiście niektóre z~tych klas rozpadają się na dwie:
 
     Jeżeli $\sigma$ ma w rozkładzie na cykle rozłączne cykl parzystej długości $\lambda$,
     to jest przez niego centralizowana (a jest on nieparzysty),
-    a jeżeli ma dwa cykle o tej samej nieparzystej długości $(c_1, c_2, \cdots, c_m)$ oraz $(d_1, d_2, \cdots, d_m)$,
-    to jest centralizowana przez nieparzystą permutację $(c_1, d_1)(c_2, d_2) \cdots (c_m, d_m)$,
+    a jeżeli ma dwa cykle o tej samej nieparzystej długości $(c_1, c_2, \ldots, c_m)$ oraz $(d_1, d_2, \ldots, d_m)$,
+    to jest centralizowana przez nieparzystą permutację $(c_1, d_1)(c_2, d_2) \ldots (c_m, d_m)$,
     czyli rzeczywiście $\sigma$ jest sprzężona ze wszystkimi elementami o~tym samym typie cyklowym.
 
     W przypadku, gdy $\sigma$ nie jest centralizowana przez żadną nieparzystą permutację,
@@ -507,7 +507,7 @@ lematy.
     Niech $\sigma \in A_n$, $\sigma \ne \mathrm{id}$.
     Oszacujmy ile permutacji ma ten sam typ cyklowy $\tau$ co $\sigma$.
 
-    Jeżeli $\sigma$ zawiera cykl długości $k \ge 3$, to permutacji o typie $\tau$, których rozkład na cykle rozłączne zawiera cykl $(1, a_1, a_2, \cdots, a_k)$
+    Jeżeli $\sigma$ zawiera cykl długości $k \ge 3$, to permutacji o typie $\tau$, których rozkład na cykle rozłączne zawiera cykl $(1, a_1, a_2, \ldots, a_k)$
     jest co najmniej tyle, ile wyborów $a_1$ i $a_2$, czyli $(n-1)(n-2)$.
     Stąd i z poprzedniego twierdzenia, w~klasie sprzężoności $\sigma$ jest co najmniej $\frac{(n-1)(n-2)}{2} \ge n$ elementów (bo $n \ge 5$).
 
@@ -563,7 +563,7 @@ Jesteśmy już gotowi, żeby udowodnić twierdzenie:
 
     Załóżmy nie wprost, że $H$ jest nietrywialną, właściwą podgrupą normalną w $A_n$.
 
-    Jeżeli $H$ zawiera pewną nietrywialną permutację $\sigma$, która ma punkt stały $a \in \{ 1, 2, \cdots, n \}$, to niech $K = H_a$.
+    Jeżeli $H$ zawiera pewną nietrywialną permutację $\sigma$, która ma punkt stały $a \in \{ 1, 2, \ldots, n \}$, to niech $K = H_a$.
     Wówczas $K \simeq A_{n-1}$ oraz (np. z~trzeciego twierdzenia o izomorfizmie) $H \cap K$ jest podgrupą normalną w $K$.
     Ale $e \ne \sigma \in H \cap K$ oraz $K$ jest grupą prostą, zatem z~założenia indukcyjnego $H \cap K = K$.
     Stąd $H$ zawiera pewien element o typie $(1^{n-3}, 3^1)$, a~zatem wszystkie elementy
@@ -606,20 +606,20 @@ tworzą jedną orbitę, czyli dla dowolnych $x, y \in X$ istnieje $g
 \begin{deff}
     Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$. \\
     Powiemy, że $\rho$ jest \emph{działaniem $k$-tranzytywnym ($k$-przechodnim)},
-    jeżeli dla dowolnych ciągów $k$ elementowych $(a_1, a_2, \cdots, a_k)$ oraz $(b_1, b_2, \cdots, b_k)$,
+    jeżeli dla dowolnych ciągów $k$ elementowych $(a_1, a_2, \ldots, a_k)$ oraz $(b_1, b_2, \ldots, b_k)$,
     które składają się z~różnych elementów z~$X$, istnieje taki element $g$ z~grupy $G$, że
-    $a_i^g = b_i^g$ dla każdego $i = 1, 2, \cdots, k$.
+    $a_i^g = b_i^g$ dla każdego $i = 1, 2, \ldots, k$.
 \end{deff}
 W szczególności $1$-tranzytywność to jest dokładnie to samo, co
 zwykła tranzytywność.
 
 Aby zilustrować to pojęcie, policzmy jaki jest stopień tranzytywności naturalnego działania
-$S_n$ oraz $A_n$ na zbiorze $X = \{1, 2, \cdots,
+$S_n$ oraz $A_n$ na zbiorze $X = \{1, 2, \ldots,
 n\}$, tzn. takiego, w~którym $i^\sigma = \sigma(i)$.
 
 Jak łatwo zauważyć, działanie $S_n$ jest $n$-tranzytywne -- skoro
 $S_n$ składa się ze wszystkich permutacji, to zawsze możemy
-odwzorować ciąg $(a_1, a_2, \cdots, a_n)$ na $(b_1, b_2, \cdots,
+odwzorować ciąg $(a_1, a_2, \ldots, a_n)$ na $(b_1, b_2, \ldots,
 b_n)$, gdyż jak założyliśmy w~definicji, wszystkie $a_i$ jak
 i~wszystkie $b_i$ są parami różne. Stąd również działanie $S_n$ jest
 $k$-tranzytywne dla każdego $k \le n$.
@@ -632,14 +632,14 @@ też jest ustalony, czyli wybór $(n-1)$ pozycji jest tak na prawdę
 wyborem wszystkich $n$ pozycji, a na wszystkich elementach nie
 możemy dowolnie ustalić permutacji. Zauważmy jednak, że działanie
 $A_n$ jest $(n-2)$-tranzytywne. Rzeczywiście, chcąc żeby $a_i$
-przeszło na $b_i$ dla $i = 1, 2, \cdots, (n-2)$ mamy do wyboru dwie
+przeszło na $b_i$ dla $i = 1, 2, \ldots, (n-2)$ mamy do wyboru dwie
 permutacje (z $S_n$). Jedna z~nich odwzorowuje $x \mapsto y, x'
 \mapsto y'$, a~druga $x \mapsto y', x' \mapsto y$, gdzie $x, x'$ to
 elementy różne od wszystkich  $a_i$, a~$y, y'$ to elementy różne od wszystkich
 $b_i$. Ale te permutacje różnią się o~transpozycję $(y, y')$, zatem
 jedna z~nich jest parzysta, czyli należy do $A_n$, więc rzeczywiście
-możemy odwzorować $(a_1, a_2, \cdots, a_{n-2})$ na $(b_1, b_2,
-\cdots, b_{n-2})$. Stąd działanie $S_n$ jest $k$-tranzytywne dla
+możemy odwzorować $(a_1, a_2, \ldots, a_{n-2})$ na $(b_1, b_2,
+\ldots, b_{n-2})$. Stąd działanie $S_n$ jest $k$-tranzytywne dla
 każdego $k \le n-2$.
 
 Wprowadzimy teraz własność prymitywności. Jest to własność pomiędzy
@@ -719,7 +719,7 @@ z~następującego lematu:
 \end{lemma}
 \begin{proof}
 Rzeczywiście, jeżeli $Y_1, Y_2$ są blokami, to skoro możemy
-odwzorować $y_1 \in Y_1$ na $y_2 \in Y_2$, To całe $Y_1$ musi być
+odwzorować $y_1 \in Y_1$ na $y_2 \in Y_2$, to całe $Y_1$ musi być
 przekształcone w $Y_2$ (z własności systemu bloków), stąd $|Y_1| \le
 |Y_2|$. Analogicznie $|Y_2| \le |Y_1|$, zatem $|Y_1| = |Y_2|$.
 \end{proof}
@@ -797,14 +797,14 @@ Teraz jesteśmy już gotowi na sformułowanie i dowód lematu Iwasawy.
 \section{Lemat Iwasawy}
 
 \begin{thh}
-    Załóżmy, że $G$ jest grupą doskonałą, $\rho$ -- wiernie oraz prymitywnie działanie $G$ na zbiorze $X$.
+    Załóżmy, że $G$ jest grupą doskonałą, natomiast $\rho$ jest wiernym oraz prymitywnym działaniem $G$ na zbiorze $X$.
     Załóżmy dodatkowo, że dla pewnego $x \in X$ stabilizator $G_x$ zawiera normalną podgrupę abelową $A$,
     której sprzężenia w $G$ generują całe $G$.
     Wówczas grupa $G$ jest prosta.
 \end{thh}
 \begin{proof}
     Załóżmy przeciwnie, że w $G$ istnieje właściwa, nietrywialna podgrupa normalna $K$.
-    Skoro $G$ działa wiernie oraz $K$ jest nietrywialna, to $x_0^{k_0} \ne x_0$ dla pewnego $k_0 \in K$.
+    Skoro $G$ działa wiernie oraz $K$ jest nietrywialna, to $x_0^{k_0} \ne x_0$ dla pewnego $k_0 \in K$ oraz $x_0 \in X$.
     Niech $H = G_{x_0}$.
     Dostajemy, że $K \nleq H$, gdyż $k_0 \not \in H$, stąd również $H \lneq H K$.
 
@@ -813,7 +813,7 @@ Teraz jesteśmy już gotowi na sformułowanie i dowód lematu Iwasawy.
     Stąd (i z~twierdzenia \ref{mult_groups}) każdy element $g \in G$ jest postaci $g = h k$, gdzie $h \in H$ oraz $k \in K$.
 
     Skoro działanie $\rho$ jest prymitywne, a więc tranzytywne, to z~twierdzenia \ref{conj_stab}
-    dostajemy, że $G_x$ jest sprzężone z~$H$.
+    dostajemy, że każda grupa izotropii $G_x$ jest sprzężona z~$H$.
     Z założenia dodatkowo wynika, że $H$ zawiera podgrupę $B$ sprzężoną do $A$,
     ponadto $B$ jest normalną podgrupą abelową $H$, której sprzężenia (w $G$) generują całe $G$.
     Sprzężenia $B$ są postaci $g^{-1} B g = k^{-1} h^{-1} B h k = k^{-1} B k \le B K$.
@@ -843,7 +843,7 @@ Zacznijmy od przypomnienia definicji grup liniowych.
   jako element neutralny.
 \end{deff}
 
-Oprócz $PGL_n(k)$ ważne są również inne grupy liniowe -- $PGL_n(K)$, $SL_n(k)$ oraz $PSL_n(k)$.
+Oprócz $GL_n(k)$ ważne są również inne grupy liniowe -- $PGL_n(K)$, $SL_n(k)$ oraz $PSL_n(k)$.
 Zanim je zdefiniujemy, przypomnimy pewne wiadomości z algebry liniowej.
 
 \begin{fact}
@@ -943,14 +943,14 @@ Udowodnimy o tych macierzach 2 lematy.
 
   Zauważmy również, że działanie $\rho$, a więc także $\tilde{\rho}$, jest 2-tranzytywne, stąd prymitywne.
   Jest tak dlatego, że za pomocą mnożenia przez odpowiednią macierz, możemy przekształcić dowolną bazę $k^n$ na inną.
-  Stąd chcąc przekształcić $\langle v_i \rangle$ na $\langle w_i \rangle$ dla $i = 1, 2$ dopełniamy $v_i$ do bazy $v_1, \cdots, v_n$
-  oraz $w_i$ do bazy $w_1, \cdots, w_n$, dostajemy macierz przejścia $M$ i dzielimy ostatni wiersz $M$ przez $\det(M)$.
+  Stąd chcąc przekształcić $\langle v_i \rangle$ na $\langle w_i \rangle$ dla $i = 1, 2$ dopełniamy $v_i$ do bazy $v_1, \ldots, v_n$
+  oraz $w_i$ do bazy $w_1, \ldots, w_n$, dostajemy macierz przejścia $M$ i dzielimy ostatni wiersz $M$ przez $\det(M)$.
   Otrzymana macierz jest z $SL_n(k)$, przekształca tak samo jednowymiarowe podprzestrzenie co $M$, w szczególności przekształca 
   $\langle v_i \rangle$ na $\langle w_i \rangle$ dla $i = 1, 2$.
 
   Rozważmy teraz stabilizator $H$ punktu $\langle e_1 \rangle$ przy działaniu $\rho$.
   $H$ składa się z tych macierzy o wyznaczniku 1, które stabilizują $\langle e_1 \rangle$,
-  czyli w pierwszym wierszu mają wektor $(\lambda, 0, 0, \cdots, 0)$, gdzie $\lambda \in k^*$.
+  czyli w pierwszym wierszu mają wektor $(\lambda, 0, 0, \ldots, 0)$, gdzie $\lambda \in k^*$.
 
   Niech $A$ będzie podzbiorem $H$ macierzy o postaci blokowej
   $
@@ -1001,7 +1001,7 @@ Udowodnimy o tych macierzach 2 lematy.
     \left( \begin{array}{cc} 0 & 1 \\ -1 & -a \\ \end{array} \right) =
     \left( \begin{array}{cc} 1 & a \\ 0 & 1 \\ \end{array} \right) = E_{1 2}(a)
   $$
-  Natomiast, gdy $n \ge 3$ oraz $j \ne k$ to z przechodniości naturalnego działania grupy $A_n$ na zbiorze $\{1, 2, \cdots, n \}$ 
+  Natomiast, gdy $n \ge 3$ oraz $j \ne k$ to z przechodniości naturalnego działania grupy $A_n$ na zbiorze $\{1, 2, \ldots, n \}$ 
   otrzymujemy pewien element $\pi \in A_n$ taki, że $\pi(1) = k$. Niech $l = \pi^{-1}(j) \ne 1$ oraz $P_\pi$ -- macierz permutacji $\pi$,
   tzn. $P_\pi$ zawiera jedynki na pozycjach $(i, \pi(i))$ a~poza tym same zera.
   Wówczas z parzystości $\pi$ dostajemy, że $\det(P_\pi) = 1$, czyli $P_\pi \in SL_n(k)$ oraz
@@ -1066,19 +1066,19 @@ oraz dwóch prostych faktów o cyklach długości 3.
 \end{thh}
 \begin{proof}[Dowód (II sposób)]
   Zauważmy najpierw, że dla $n \ge 5$ cykle długości 3 są komutantami pewnych elementów z $A_n$.
-  Rzeczywiście, dla parami różnych $a, b, c, d, e \in \{ 1, 2, \cdots, n \}$ mamy
+  Rzeczywiście, dla parami różnych $a, b, c, d, e \in \{ 1, 2, \ldots, n \}$ mamy
   $$ [(b, c, d)(a, c, e)] = (b, c, d)(a, c, e)(d, c, b)(e, c, a) = $$
   $$ = (b, e, a, c, d)(d, a, e, c, b) = (a, b, c)(d)(e) = (a, b, c)$$
-  Zatem z lematu \ref{lemma_3cycles} grupa $A_n$ jest prosta.
+  Zatem z lematu \ref{lemma_3cycles} grupa $A_n$ jest doskonała.
 
-  Rozważmy działanie $\rho$ grupy $A_n$ na trzy elementowych podzbiorach zbioru $\{ 1, 2, \cdots, n \}$,
-  w~którym po prostu przestawiam elementy zbioru $\{1, 2, \cdots, n\}$, 
+  Rozważmy działanie $\rho$ grupy $A_n$ na trójelementowych podzbiorach zbioru $\{ 1, 2, \ldots, n \}$,
+  w~którym po prostu przestawiam elementy zbioru $\{1, 2, \ldots, n\}$, 
   tzn dla $\sigma \in A_n$ mamy $\{a, b, c \}^\sigma = \{ \sigma(a), \sigma(b), \sigma(c) \}$.
   Wówczas jest to działanie wierne.
   Ponadto stabilizatorem zbioru $\{1, 2, 3\}$ jest podgrupa $H$ permutacji parzystych, 
-  która osobno permutuje zbiór $\{1, 2, 3\}$ i~osobno $\{4, 5, \cdots, n\}$.
+  która osobno permutuje zbiór $\{1, 2, 3\}$ i~osobno $\{4, 5, \ldots, n\}$.
   Zatem $A =  \langle (1, 2, 3)  \rangle \le H$ jest oczywiście przemienną grupą,
-  ale jest również podgrupą normalną $H$, gdyż $(1, 2, 3)$ jest przemienne z permutacjami $\{4, 5, \cdots, n\}$
+  ale jest również podgrupą normalną $H$, gdyż $(1, 2, 3)$ jest przemienne z permutacjami $\{4, 5, \ldots, n\}$
   oraz sprzężenia $A$ permutacjami zbioru $\{1, 2, 3\}$ zachowują $A$ ($\langle (1, 2, 3)  \rangle \unlhd S_3$).
   
   Ponadto z twierdzenia \ref{thm_o_klasach_A_n} wszystkie cykle długości 3 są sprzężone w $A_n$ dla $n \ge 5$
