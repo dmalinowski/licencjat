@@ -103,7 +103,7 @@ w dalszej części pracy lub też zostały tam zamieszczone w celu podsumowania 
 Poszczególne przypomniane tematy to definicja grupy prostej, twierdzenia o~izomorfizmie,
 komutant i abelianizacja oraz działanie grupy na zbiorze.
 
-Kolejny rozdział, \emph{Prostota grupy alternującej $A_n$}, zaczyna się od przypomnienia definicji
+Kolejny rozdział, \emph{Prostota grupy alternującej $A_n$}, zaczyna się od definicji
 grupy symetrycznej, cykli oraz grupy alternującej.
 Następnie wprowadzimy pojęcie typu permutacji oraz pokażemy jego związek 
 z klasami sprzężoności w grupie $S_n$ oraz w grupie $A_n$.
@@ -112,7 +112,7 @@ jest prosta dla $n = 3$ oraz $n \ge 5$.
 
 Rozdział \emph{Lemat Iwasawy} wprowadza nowe pojęcia -- $k$-tranzytywność oraz prymitywność
 działania grupy na zbiorze.
-Udowodnimy w nim związki między tymi pojęciami, maksymalność grup izotropii przy działaniu prymitywnym,
+Wykażemy w nim związki między tymi pojęciami, maksymalność grup izotropii przy działaniu prymitywnym,
 a także lemat Iwasawy -- jedno z podstawowych narzędzi do dowodzenia prostoty grup.
 
 Ostatni rozdział, \emph{Prostota specjalnej rzutowej grupy liniowej $PSL_n(k)$},
@@ -141,10 +141,10 @@ oznaczany element neutralny. Rozważane grupy będą (w większości)
 nieprzemienne, w~związku z~tym będzie stosowany zapis
 multiplikatywny.
 
-Jeżeli $H$ oraz $K$ są podzbiorami grupy $G$, to przez $HK$
-będzie oznaczany podzbiór iloczynów $\{ h\cdot k \colon h \in H, k \in K\}\subseteq G$.
+Jeżeli $A$ oraz $B$ są podzbiorami grupy $G$, to przez $AB$
+będzie oznaczany podzbiór iloczynów $\{ a\cdot b \colon a \in A, b \in B\}\subseteq G$.
 
-W związku z~tym oznaczeniem warto przytoczyć twierdzenie:
+Przy okazji tego oznaczenia warto przytoczyć twierdzenie:
 
 %TODO źródło?
 \begin{thh} \label{mult_groups} $ $ \\
@@ -227,7 +227,7 @@ własności grup -- możliwości działania na zbiorach.
 
 \begin{deff}
     Niech $G$ będzie grupą, a~$X$ -- zbiorem. Mówimy, że \emph{$\rho$ jest działaniem grupy $G$ na zbiorze $X$},
-    jeżeli każdemu elementowi $g \in G$ przyporządkowane jest przekształcenie $\rho_g\colon X \to X$, takie, że:
+    jeśli każdemu elementowi $g \in G$ przyporządkowane jest przekształcenie $\rho_g\colon X \to X$, takie, że:
     \begin{itemize}
         \item $\rho_e = \mathrm{id}_X$,
         \item $\rho_g \circ \rho_h = \rho_{gh}$, dla dowolnych $g, h \in G$.
@@ -310,7 +310,7 @@ a~stabilizatorami.
 
 \chapter{Prostota grupy alternującej $A_n$}
 
-Zanim udowodnimy główną tezę tego rozdziału, czyli twierdzenie, że $A_n$
+Zanim wykażemy główną tezę tego rozdziału, czyli twierdzenie, że $A_n$
 jest grupą prostą dla $n \ge 5$, przypomnimy znane własności o tej
 grupie oraz udowodnimy kilka mniej znanych.
 
@@ -325,7 +325,7 @@ są permutacje zbioru $\{1, 2, \ldots, n\}$.
 
 W przypadku elementów z $S_n$, będziemy się trzymać odwrotnej konwencji 
 zapisu mnożenia permutacji,
-tzn. $(\pi \sigma) (a) = \sigma ( \pi (a) )$.
+tzn. $(\pi \sigma) (a) = \sigma ( \pi (a) )$ dla $a \in \{1, 2, \ldots, n\}$.
 
 
 \begin{fact}
@@ -407,7 +407,7 @@ cykle o długości nieparzystej są parzyste, a~o~długości parzystej --
 nieparzyste. Stąd prawdziwe jest:
 
 \begin{fact}\label{fact_typ_A_n}
-    Permutacja $\sigma \in S_n$ jest parzysta wtedy i tylko wtedy, kiedy w rozkładzie na cykle
+    Permutacja $\sigma \in S_n$ jest parzysta wtedy i tylko wtedy, gdy w rozkładzie na cykle
     zawiera parzystą liczbę cykli o parzystej długości.\quad$\eop$
 \end{fact}
 
@@ -458,7 +458,7 @@ klasę sprzężoności:
 Klasy sprzężoności permutacji parzystych w $S_n$ mogą rozpaść się
 na kilka mniejszych w~$A_n$, gdyż $A_n \le S_n$, czyli w $A_n$ jest
 mniejszy wybór elementów, którymi możemy sprzęgać. Okazuje się, że
-rzeczywiście niektóre z~tych klas rozpadają się na dwie:
+rzeczywiście niektóre z~tych klas rozpadają się na dwie.
 
 \begin{thh}\label{thm_o_klasach_A_n} $ $ \\
     Typy cyklowe permutacji parzystych, które zawierają cykl o~parzystej długości
@@ -476,7 +476,7 @@ rzeczywiście niektóre z~tych klas rozpadają się na dwie:
     Jedna z permutacji $\pi$ lub $\pi \gamma$ jest parzysta, więc rzeczywiście $\psi$ oraz $\sigma$ są sprzężone w $A_n$.
 
     Jeżeli $\sigma$ ma w rozkładzie na cykle rozłączne cykl parzystej długości $\lambda$,
-    to jest przez niego centralizowana (a jest on nieparzysty),
+    to jest przez niego centralizowana (a jest on permutacją nieparzystą),
     a jeżeli ma dwa cykle o tej samej nieparzystej długości $(c_1, c_2, \ldots, c_m)$ oraz $(d_1, d_2, \ldots, d_m)$,
     to jest centralizowana przez nieparzystą permutację $(c_1, d_1)(c_2, d_2) \ldots (c_m, d_m)$,
     czyli rzeczywiście $\sigma$ jest sprzężona ze wszystkimi elementami o~tym samym typie cyklowym.
@@ -492,13 +492,12 @@ rzeczywiście niektóre z~tych klas rozpadają się na dwie:
     Przy centralizowaniu każdy taki cykl musi przejść na cykl o tej samej długości, czyli na siebie.
     Ponadto pierwsze elementy z cykli muszą przejść na elementy ze swoich cykli,
     a obraz pozostałych elementów jest już przez to wyznaczony jednoznacznie.
-    W związku z tym $\sigma$ może być centralizowane tylko przez permutacje,
+    W związku z tym, $\sigma$ może być centralizowane tylko przez permutacje,
     które są równe iloczynowi potęg cykli z rozkładu $\sigma$,
-    czyli tylko przez permutacje parzyste.
+    a zatem tylko przez permutacje parzyste.
 \end{proof}
 
-Zanim udowodnimy prostotę grup $A_n$ pokażemy jeszcze dwa przydatne
-lematy.
+Zanim udowodnimy prostotę grup $A_n$ pokażemy jeszcze dwa przydatne lematy.
 
 \begin{lemma}\label{lemma_big_con}
     Dla $n \ge 5$ klasy sprzężoności elementów nietrywialnych $A_n$ mają co najmniej $n$ elementów.
@@ -528,9 +527,9 @@ lematy.
     Stąd wystarczy przedstawić iloczyn dwóch transpozycji $\lambda_1 \lambda_2$ jako iloczyn cykli długości 3, a dostaniemy tezę.
 
     Jeżeli $\lambda_1 = \lambda_2$, to $\lambda_1 \lambda_2 = \mathrm{id}$.
-    Gdy $\lambda_1$ i $\lambda_2$ są rozłączne, czyli $\lambda_1 = (a, b)$, $\lambda_2 = (c, d)$, to $\lambda_1 \lambda_2 = (a, c, d)(a, c, b)$.
+    Gdy $\lambda_1$ i $\lambda_2$ są rozłączne, $\lambda_1 = (a, b)$, $\lambda_2 = (c, d)$, to $\lambda_1 \lambda_2 = (a, c, d)(a, c, b)$.
     Jeżeli natomiast $\lambda_1$ i $\lambda_2$ mają jeden element wspólny,
-    czyli $\lambda_1 = (a, b)$, $\lambda_2 = (a, c)$, to $\lambda_1 \lambda_2 = (a, b, c)$.
+    $\lambda_1 = (a, b)$, $\lambda_2 = (a, c)$, to $\lambda_1 \lambda_2 = (a, b, c)$.
 \end{proof}
 
 
@@ -558,15 +557,14 @@ Jesteśmy już gotowi, żeby udowodnić twierdzenie:
     Ale żaden podzbiór multizbioru $\{1, 12, 12, 15, 20 \}$ zawierający jedynkę nie sumuje się do potencjalnego rzędu $H$,
     zatem takie $H$ nie może istnieć -- $A_5$ jest grupą prostą.
 
-    Załóżmy zatem, że $n \ge 6$ oraz grupa $A_{n-1}$ jest prosta.
-    Pokażemy, że $A_n$ również jest prosta.
+    Pokażemy teraz, że jeśli $n \ge 6$ oraz grupa $A_{n-1}$ jest prosta, to również $A_n$ jest prosta.
 
     Załóżmy nie wprost, że $H$ jest nietrywialną, właściwą podgrupą normalną w $A_n$.
 
     Jeżeli $H$ zawiera pewną nietrywialną permutację $\sigma$, która ma punkt stały $a \in \{ 1, 2, \ldots, n \}$, to niech $K = H_a$.
     Wówczas $K \simeq A_{n-1}$ oraz (np. z~trzeciego twierdzenia o izomorfizmie) $H \cap K$ jest podgrupą normalną w $K$.
     Ale $e \ne \sigma \in H \cap K$ oraz $K$ jest grupą prostą, zatem z~założenia indukcyjnego $H \cap K = K$.
-    Stąd $H$ zawiera pewien element o typie $(1^{n-3}, 3^1)$, a~zatem wszystkie elementy
+    Wobec tego $H$ zawiera pewien element o typie $(1^{n-3}, 3^1)$, więc także wszystkie elementy
     tego typu, na mocy twierdzenia \ref{thm_o_klasach_A_n}, gdyż $n-3 \ge 3$.
     Ale z~lematu \ref{lemma_3cycles}    cykle o długości 3 generują całe $A_n$, stąd $H = A_n$ --
     sprzeczność z~założeniem, że $H$ jest podgrupą właściwą.
@@ -576,10 +574,10 @@ Jesteśmy już gotowi, żeby udowodnić twierdzenie:
     Wtedy $\gamma = \pi \sigma ^{-1} \ne \mathrm{id}$, $\gamma \in H$ oraz $\gamma(1) = 1$ -- sprzeczność.
     Stąd rzeczywiście $|H| \le n$.
     Ale z~lematu \ref{lemma_big_con} $H$ jako nietrywialna suma pewnej liczby klas sprzężoności w tym trywialnej musiałaby mieć rząd co najmniej $n+1$.
-    Stąd w tym przypadku również otrzymujemy sprzeczność.
+    Zatem tutaj również otrzymujemy sprzeczność.
 
-    We wszystkich przypadkach otrzymaliśmy sprzeczność, czyli rzeczywiście $A_n$ jest grupą prostą,
-    czyli z~indukcji $A_n$ jest grupą prostą dla wszystkich $n \ge 5$.
+    We wszystkich przypadkach otrzymaliśmy sprzeczność, czyli rzeczywiście $A_n$ jest grupą prostą.
+    W takim razie, z~indukcji, $A_n$ jest grupą prostą dla wszystkich $n \ge 5$.
 \end{proof}
 
 Można się jeszcze zastanawiać, jak wygląda $A_n$ dla $n < 5$. Z
@@ -621,7 +619,7 @@ Jak łatwo zauważyć, działanie $S_n$ jest $n$-tranzytywne -- skoro
 $S_n$ składa się ze wszystkich permutacji, to zawsze możemy
 odwzorować ciąg $(a_1, a_2, \ldots, a_n)$ na $(b_1, b_2, \ldots,
 b_n)$, gdyż jak założyliśmy w~definicji, wszystkie $a_i$ jak
-i~wszystkie $b_i$ są parami różne. Stąd również działanie $S_n$ jest
+i~wszystkie $b_i$ są parami różne. Stąd także działanie $S_n$ jest
 $k$-tranzytywne dla każdego $k \le n$.
 
 Natomiast w~$A_n$ nie ma wszystkich permutacji, zatem działanie
@@ -752,7 +750,7 @@ $\Rightarrow)$ \\
 Załóżmy nie wprost, że $G_x$ nie jest maksymalna, czyli istnieje
 $H$, takie, że $G_x \lneq H \lneq G$. Skoro $H$ zawiera $G_x$, to
 warstwy $H$ są sumami pewnych warstw $G_x$ -- jeżeli $g_1 G_x = g_2
-G_x \iff g_1^{-1} \cdot g_2 \in G_x$ to również $g_1^{-1} \cdot g_2
+G_x \iff g_1^{-1} \cdot g_2 \in G_x$ to także $g_1^{-1} \cdot g_2
 \in H \iff g_1 H = g_2 H$. Stąd warstwy $H$ odpowiadają rozbiciu
 zbioru warstw $G_x$, czyli również rozbiciu zbioru $X$. Zauważmy
 jeszcze, że działanie $G$ zachowuje warstwy $H$. Jest tak dlatego,
@@ -762,14 +760,14 @@ przechodzi na $(x^{g_i})^f = x^{f g_i} = f g_i G_x$. Ale warstwy $f
 g_1 G_x$ oraz $f g_2 G_x$ zawierają się w jednej warstwie $H$, gdyż
 $(f g_1)^{-1} f g_2 = g_1^{-1} f^{-1} f g_2 = g_1^{-1} g_2 \in H$.
 
-Otrzymaliśmy zatem system bloków, który na dodatek jest
-nietrywialny, gdyż $H$ zawiera się ściśle pomiędzy $G_x$ a $G$.
+Otrzymaliśmy system bloków, który na dodatek jest
+nietrywialny, ponieważ $H$ zawiera się ściśle pomiędzy $G_x$ a $G$.
 Zatem działanie $\rho$ nie jest prymitywne -- sprzeczność. Stąd taka
 grupa $H$ nie istnieje -- $G_x$ jest maksymalną podgrupą $G$.
 
 $\Leftarrow)$ \\
-Tutaj również przeprowadzimy dowód nie wprost. Załóżmy, że $\rho$
-nie działa prymitywnie na $X$, czyli istnieje pewien nietrywialny
+Tutaj także przeprowadzimy dowód nie wprost. Załóżmy, że $\rho$
+nie działa prymitywnie na $X$ -- istnieje pewien nietrywialny
 system bloków $\mathfrak{A}$. Niech $Y \in \mathfrak{A}$ będzie tym blokiem, który
 zawiera $x$ oraz niech $H$ będzie stabilizatorem całego zbioru $Y$
 (czyli zbiorem $\{g \in G \colon \forall_{y \in Y} y^g \in Y \}$).
@@ -780,15 +778,15 @@ wszystkie bloki mają tą samą wielkość, więc również $|Y| \ge 2$.
 Zauważmy, że $H = \{ g \in G \colon x^g \in Y\} \stackrel{def}{=}
 K$. Oczywiście $H \subseteq K$, gdyż elementy $H$ zachowują zbiór
 $Y$. Z drugiej strony, jeżeli jakiś element z~$Y$ trafia z~powrotem
-do $Y$, to całe $Y$ jest zachowywane, gdyż $Y$ jest elementem
+do $Y$, to całe $Y$ jest zachowywane, bo $Y$ jest elementem
 systemu bloków. Stąd rzeczywiście $H = K$.
 
 Na koniec wystarczy zobaczyć, że skoro $\{x\} \subsetneq  Y
 \subsetneq X$, to $G_x \lneq H \lneq G$. Jest tak dlatego, że $H$, w
 przeciwieństwie do $G_x$, zawiera elementy odwzorowujące $x$ na
 jakiś inny element zbioru $Y$ ale nie zawiera elementów, które
-odwzorowują $x$ na elementy spoza $Y$ (które istnieją). Stąd $G_x$
-nie jest maksymalne -- sprzeczność. Stąd to działanie musi być
+odwzorowują $x$ na elementy spoza $Y$ (które istnieją). Otrzymujemy, że $G_x$
+nie jest maksymalne -- sprzeczność. Zatem to działanie musi być
 prymitywne.
 \end{proof}
 
@@ -810,9 +808,9 @@ Teraz jesteśmy już gotowi na sformułowanie i dowód lematu Iwasawy.
 
     Z lematu \ref{max_group} otrzymujemy, że $H$ jest podgrupą maksymalną w $G$.
     $H \lneq H K$, więc $H K = G$.
-    Stąd (i z~twierdzenia \ref{mult_groups}) każdy element $g \in G$ jest postaci $g = h k$, gdzie $h \in H$ oraz $k \in K$.
+    Wobec tego (i z~twierdzenia \ref{mult_groups}) każdy element $g \in G$ jest postaci $g = h k$, gdzie $h \in H$ oraz $k \in K$.
 
-    Skoro działanie $\rho$ jest prymitywne, a więc tranzytywne, to z~twierdzenia \ref{conj_stab}
+    Skoro działanie $\rho$ jest prymitywne, czyli również tranzytywne, to z~twierdzenia \ref{conj_stab}
     dostajemy, że każda grupa izotropii $G_x$ jest sprzężona z~$H$.
     Z założenia dodatkowo wynika, że $H$ zawiera podgrupę $B$ sprzężoną do $A$,
     ponadto $B$ jest normalną podgrupą abelową $H$, której sprzężenia (w $G$) generują całe $G$.
@@ -821,9 +819,9 @@ Teraz jesteśmy już gotowi na sformułowanie i dowód lematu Iwasawy.
 
     Korzystając z~trzeciego twierdzenia o izomorfizmie dostajemy:
     $$ G/K = BK/K \simeq B/B\cap K$$
-    Ale grupa ilorazowa grupy abelowej jest abelowa, stąd zarówno $B/B\cap K$ jaki i $G/K$ są abelowe.
+    Ale grupa ilorazowa grupy abelowej jest abelowa, więc zarówno $B/B\cap K$ jaki i $G/K$ są abelowe.
     Z twierdzenia o komutancie wnioskujemy, że $K \ge [G, G] = G$, gdyż $G$ jest grupą doskonałą --
-    dostaliśmy sprzeczność z~założeniem, że $K$ jest właściwą podgrupą $G$, stąd $G$ jest grupą prostą.
+    dostaliśmy sprzeczność z~założeniem, że $K$ jest właściwą podgrupą $G$, zatem $G$ jest grupą prostą.
 \end{proof}
 
 
@@ -831,7 +829,7 @@ Teraz jesteśmy już gotowi na sformułowanie i dowód lematu Iwasawy.
 \chapter{Prostota specjalnej rzutowej grupy liniowej $PSL_n(k)$}
 
 W tym rozdziale pokażemy zastosowania udowodnionego powyżej lematy Iwasawy.
-Udowodnimy prostotę grupy $PSL_n(k)$ oraz zaproponujemy alternatywny dowód prostoty $A_n$.
+Wykażemy prostotę grupy $PSL_n(k)$ oraz zaproponujemy alternatywny dowód prostoty $A_n$.
 
 \section{Grupy liniowe}
 
@@ -895,10 +893,10 @@ Udowodnimy o tych macierzach 2 lematy.
 \begin{proof}
   Oczywiście $E_{i j}(a) \in SL_n(k)$ dla $i \ne j$. 
   Ponadto $E_{i j}(a)^{-1} = E_{i j}(-a)$, zatem aby pokazać, że każdy element $M \in SL_n(k)$ jest iloczynem macierzy $E_{i j}(a)$,
-  wystarczy pokazać, że jak będziemy mnożyć $M$ z lewej strony przez macierze $E_{i j}(a)$, to dostaniemy identyczność.
+  wystarczy dowieść, że jak będziemy mnożyć $M$ z lewej strony przez macierze $E_{i j}(a)$, to dostaniemy identyczność.
   Ale mnożenie przez $E_{i j}(a)$ to dodanie do $j$-tego wiersza $a$ krotność $i$-tego wiersza.
   Dzięki zastosowaniu eliminacji Gaussa możemy w ten sposób doprowadzić $M$ do postaci diagonalnej,
-  a nawet postaci diagonalnej z jedynkami na przekątnej poza pozycją $(n, n)$, gdyż dodając $i$-ty wiersz do $(i+1)$-go, a następnie odpowiednio
+  a nawet postaci diagonalnej z jedynkami na przekątnej poza pozycją $(n, n)$, ponieważ dodając $i$-ty wiersz do $(i+1)$-go, a następnie odpowiednio
   odejmując od $i$-tego $c$ krotność $(i+1)$-wszego dostajemy na przekątnej jedynkę. Ale wówczas ostatnia pozycja również będzie równa 1, 
   gdyż $\det(M) = 1$, a mnożenie przez $E_{i j}(a)$ wyznacznika nie zmienia.
 \end{proof}
@@ -939,11 +937,11 @@ Udowodnimy o tych macierzach 2 lematy.
   Zatem $SZ_n \subset \ker \rho$. Jeżeli natomiast $M \in SL_n(k) \setminus SZ_n$, to albo $M$ ma niezerowy element $a_{i j}$ dla $i \ne j$, 
   więc przekształca podprzestrzeń rozpinaną przez wektor standardowy $e_j$ na inną, albo $M$ ma tylko elementy na przekątnej, 
   ale dla pewnych $i \ne j$ zachodzi $a_{i i} \ne a_{j j}$ -- wówczas $\langle e_i + e_j \rangle^M = \langle a_{i i} e_i + a_{j j} e_j \rangle \ne \langle  e_i + e_j \rangle$.
-  Stąd $SZ_n = \ker \rho$, czyli $\rho$ indukuje również wierne działanie $\tilde{\rho}$ grupy $SL_n(k) / SZ_n = PSL_n(k)$ na tym samym zbiorze.
+  Stąd $SZ_n = \ker \rho$, czyli $\rho$ indukuje wierne działanie $\tilde{\rho}$ grupy $SL_n(k) / SZ_n = PSL_n(k)$ na tym samym zbiorze.
 
   Zauważmy również, że działanie $\rho$, a więc także $\tilde{\rho}$, jest 2-tranzytywne, stąd prymitywne.
-  Jest tak dlatego, że za pomocą mnożenia przez odpowiednią macierz, możemy przekształcić dowolną bazę $k^n$ na inną.
-  Stąd chcąc przekształcić $\langle v_i \rangle$ na $\langle w_i \rangle$ dla $i = 1, 2$ dopełniamy $v_i$ do bazy $v_1, \ldots, v_n$
+  Jest tak, gdyż za pomocą mnożenia przez odpowiednią macierz, możemy przekształcić dowolną bazę $k^n$ na inną.
+  Dlatego chcąc przekształcić $\langle v_i \rangle$ na $\langle w_i \rangle$ dla $i = 1, 2$ dopełniamy $v_i$ do bazy $v_1, \ldots, v_n$
   oraz $w_i$ do bazy $w_1, \ldots, w_n$, dostajemy macierz przejścia $M$ i dzielimy ostatni wiersz $M$ przez $\det(M)$.
   Otrzymana macierz jest z $SL_n(k)$, przekształca tak samo jednowymiarowe podprzestrzenie co $M$, w szczególności przekształca 
   $\langle v_i \rangle$ na $\langle w_i \rangle$ dla $i = 1, 2$.
@@ -966,7 +964,7 @@ Udowodnimy o tych macierzach 2 lematy.
     \left( \begin{array}{cc} 1 & 0_{n-1} \\ w_{n-1} & I_{n-1} \\ \end{array} \right) =
     \left( \begin{array}{cc} 1 & 0_{n-1} \\ v_{n-1} + w_{n-1} & I_{n-1} \\ \end{array} \right)
   $$
-  Czyli iloczyn elementów z $A$ należy do $A$, jest przemienny oraz biorąc $w_{n-1} = -v_{n-1}$
+  Zatem iloczyn elementów z $A$ należy do $A$, jest przemienny oraz biorąc $w_{n-1} = -v_{n-1}$
   otrzymujemy, że odwrotność elementów z $A$ również należy do $A$.
   
   Ponadto $A$ jest podgrupą normalną $H$, gdyż
@@ -1017,12 +1015,12 @@ Udowodnimy o tych macierzach 2 lematy.
   oraz stabilizator $\tilde{H}$ punktu $\langle e_1 \rangle$ zawiera przemienną podgrupę normalną $\tilde{A}$, 
   której sprzężenia generują całe $PSL_n(k)$.
 
-  Żeby zatem skorzystać z lematu Iwasawy wystarczy pokazać, że $PSL_n(k)$ jest grupą doskonałą, 
+  Żeby skorzystać z lematu Iwasawy wystarczy pokazać, że $PSL_n(k)$ jest grupą doskonałą, 
   gdy $n > 2$ lub $|k| > 3$.
   Ale z lematu \ref{lemma_Eij_generates_SL} dostajemy, że macierze $E_{i j}(a)$ generują $SL_n(k)$,
   zatem również elementy $E_{i j}(a) \cdot SZ_n$ generują $PSL_n(k)$.
   Ponadto z lematu \ref{lemma_Eij_are_commutants} wiemy, że dla $n > 2$ lub $|k| > 3$ macierze $E_{i j}(a)$ 
-  są komutantami macierzy z $SL_n(k)$, stąd także elementy $E_{i j}(a) \cdot SZ_n$ są komutantami elementów z $PSL_n(k)$.
+  są komutantami macierzy z $SL_n(k)$, więc także elementy $E_{i j}(a) \cdot SZ_n$ są komutantami elementów z $PSL_n(k)$.
   Stąd zarówno grupa $SL_n(k)$ jak i grupa $PSL_n(k)$ jest grupą doskonałą.
   
   Założenia lematu Iwasawy dla grupy $PSL_n(k)$ są spełnione, zatem jest to grupa prosta.
@@ -1040,13 +1038,14 @@ a także podamy alternatywny dowód prostoty grup $A_n$ dla $n \ge 5$ -- tym raz
 \begin{proof}
   W przypadku $PSL_2(\mathbb{F}_2)$ zauważmy, że działanie $\tilde{\rho}$, takie jak w dowodzie poprzedniego twierdzenia,
   jest wiernym działaniem 2-przechodnim na zbiorze  $\{ \langle e_1 \rangle, \langle e_2 \rangle, \langle e_1 + e_2 \rangle\}$.
-  Ale jak wcześniej pokazaliśmy, działanie 2-przechodnie na biorze 3 elementowym jest też 3-przechodnie, stąd $\tilde{\rho}$ zadaje bijekcję między $PSL_2(\mathbb{F}_2)$
-  a $S_3$, czyli $PSL_2(\mathbb{F}_2) \simeq S_3$ nie jest grupą prostą.
+  Ale jak wcześniej pokazaliśmy, działanie 2-przechodnie na biorze 3 elementowym jest też 3-przechodnie, 
+  stąd $\tilde{\rho}$ zadaje bijekcję między $PSL_2(\mathbb{F}_2)$ a $S_3$, 
+  czyli $PSL_2(\mathbb{F}_2) \simeq S_3$ nie jest grupą prostą.
 
   Natomiast dla $PSL_2(\mathbb{F}_2)$ działanie $\tilde{\rho}$
   jest wiernym działaniem 2-przechodnim na zbiorze 4 elementowym
   $\{ \langle e_1 \rangle, \langle e_2 \rangle, \langle e_1 + e_2 \rangle, \langle e_1 - e_2 \rangle \}$.
-  Stąd $| PSL_2(\mathbb{F}_2) | \ge 12$, gdyż mamy 12 możliwości wyboru par elementów $(a, b)$, 
+  Zatem $| PSL_2(\mathbb{F}_2) | \ge 12$, gdyż mamy 12 możliwości wyboru par elementów $(a, b)$, 
   na które ma przejść para $(\langle e_1 \rangle, \langle e_2 \rangle)$.
   Ponadto z wierności $\tilde{\rho}$ otrzymujemy, że $PSL_2(\mathbb{F}_2)$ jest izomorficzne z pewną podgrupą $S_4$,
   czyli $PSL_2(\mathbb{F}_2)$ to $A_4$ lub $S_4$.
