@@ -62,7 +62,7 @@ Grupy proste są jednymi z ważniejszych pojęć w teorii grup.
 Badając ich strukturę możemy poznać własności np. wszystkich skończonych grup,
 gdyż grupy proste są budulcem, z których zbudowane są inne grupy, co wyraża następujące
 (nie omawiane dalej w pracy) twierdzenie:
-\begin{thh2}[{Jordana -- H\"oldera  \cite[tw. 11.9.]{BB}}] $ $ \\
+\begin{thh2}[{Jordana -- H\"oldera  \cite[tw. II.11.9.]{BB}}] $ $ \\
   Jeżeli $G$ jest grupą skończoną, to istnieje w niej skończony ciąg podgrup
     $$ G = G_n > G_{n-1} > \ldots > G_1 > G_0 = \{e\} $$
   taki, że $G_{i-1}$ jest podgrupą normalną $G_{i}$ oraz $G_{i}/G_{i-1}$ jest grupą prostą dla $i = 1, \ldots, n$.
@@ -170,18 +170,18 @@ wszystkie podgrupy są normalne oraz że każda inna grupa przemienna ma właśc
 
 \section{Twierdzenia o~izomorfizmie}
 Przejdźmy teraz do podstawowych twierdzeń o~izomorfizmie.
-\begin{thh}[{Pierwsze twierdzenie o~izomorfizmie \cite[tw. 4.5.]{BB}}] $ $ \\
+\begin{thh}[{Pierwsze twierdzenie o~izomorfizmie \cite[tw. II.4.5.]{BB}}] $ $ \\
     Niech $ \varphi \colon G \to H$ będzie homomorfizmem grup. Oznaczmy $K = \ker{\varphi}$ oraz
     $H' = \mathrm{im}\varphi $. 
     Wówczas ma miejsce izomorfizm $$G/K \simeq H'.\quad\eop$$
 \end{thh}
-\begin{thh}[{Drugie twierdzenie o~izomorfizmie \cite[tw. 4.6. a)]{BB}}]$ $\\
+\begin{thh}[{Drugie twierdzenie o~izomorfizmie \cite[tw. II.4.6. a)]{BB}}]$ $\\
     Niech $G$ będzie grupą,  $H_1, H_2$ jej podgrupami normalnymi,
     przy czym $H_2 \leq H_1$. 
     Wówczas $H_2 \trianglelefteq H_1$, $H_1/H_2 \trianglelefteq G/H_2$ i~ma miejsce izomorfizm
     $$ (G/H_2) / (H_1/H_2) \simeq G/H_1.\quad\eop$$
 \end{thh}
-\begin{thh}[{Trzecie twierdzenie o~izomorfizmie \cite[tw. 4.6. b)]{BB}}] $ $ \\
+\begin{thh}[{Trzecie twierdzenie o~izomorfizmie \cite[tw. II.4.6. b)]{BB}}] $ $ \\
     Niech $G$ będzie grupą, $H$ oraz $H_1$
     -- jej podgrupami, przy czym $H_1$ jest podgrupą normalną w~$G$. 
     Wówczas $H\cap H_1$ jest podgrupą normalną w~$H$ oraz ma miejsce izomorfizm
@@ -196,7 +196,7 @@ o~komutancie.
     Niech $G$ będzie dowolną grupą. Wówczas \emph{komutantem grupy $G$} nazywamy podgrupę $G$ generowaną przez wszystkie elementy postaci
     $aba^{-1}b^{-1}$, gdzie $a, b \in G$. Komutant grupy $G$ oznaczamy przez $[G, G]$.
 \end{deff}
-\begin{thh}[{O komutancie \cite[tw. 7.3. - 7.5.]{BB}}] $ $\\
+\begin{thh}[{O komutancie \cite[tw. II.7.2-5.]{BB}}] $ $\\
     Komutant $[G,G]$ jest podgrupą normalną $G$, przy czym grupa ilorazowa $G/[G,G]$ jest grupą abelową.
     Ponadto dla dowolnej podgrupy normalnej $H \trianglelefteq G$ takiej, że $G/H$ jest abelowa, zachodzi $[G,G] \le H$.
     \quad$\eop$
@@ -245,7 +245,7 @@ jeszcze jedną definicję.
 \end{deff}
 
 %TODO źródło?
-\begin{thh}[O działaniu grupy na zbiorze] $ $ \\
+\begin{thh}[{O działaniu grupy na zbiorze \cite[str. 79]{BB}}] $ $\\
     Niech $G$ będzie grupą, a~$X$ -- zbiorem. Wówczas $\rho$ jest działaniem $G$ na $X$ wtedy i~tylko wtedy,
     gdy $\rho$ jest homomorfizmem z~$G$ w~grupę symetrii zbioru $X$.\quad$\eop$
 \end{thh}
@@ -265,7 +265,7 @@ widzenia tej pracy.
 \end{deff}
 
 Podstawowe własności tych obiektów przedstawia następujące stwierdzenie:
-\begin{fact} [{\cite[tw. 1.3.a,b)]{BB}}]
+\begin{fact} [{\cite[tw. II.1.3.a,b)]{BB}}]
     Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$ oraz $x, y \in X$. Wówczas:
     \begin{enumerate}[label=\alph*)]
      \item $G_x$ jest podgrupą $G$.
@@ -290,7 +290,7 @@ Jak to zostało wcześniej zapowiedziane, na koniec przytoczmy kilka
 ważnych twierdzeń pokazujących zależność między orbitami
 a~stabilizatorami.
 
-\begin{thh}[{\cite[tw. 1.3.c)]{BB}}]\label{conj_stab} $ $\\
+\begin{thh}[{\cite[tw. II.1.3.c)]{BB}}]\label{conj_stab} $ $\\
     Załóżmy, że $\rho$ jest działaniem grupy $G$ na zbiorze $X$ oraz $x, y \in X$ należą do jednej orbity.
     Wówczas grupy $G_x$ oraz $G_y$ są sprzężone w grupie $G$.
 \end{thh}
@@ -355,9 +355,9 @@ Dla $\sigma \in S_n$ oraz $x\in\{1, 2,\ldots, n\}$ zbiór
 $\{x,\sigma(x),\sigma^2(x),\ldots\}\subseteq\{1,\ldots,n\}$ jest skończony, zatem istnieją
 liczby $k<l\leq n$ takie, że $\sigma^k(x)=\sigma^l(x)$, a stąd $\sigma^{l-k}(x)=x$. Jeśli $d$ jest najmniejszą
 liczbą całkowitą dodatnią taką, że $\sigma^d(x)=x$, to mamy cykl $\left(x,\sigma(x),\ldots,\sigma^{d-1}(x)\right)$.
-Powtarzając tę procedurę z~niewybranymi jeszcze elementami $x$, dostaniemy rozkład na cykle:
+Powtarzając tę procedurę z~niewybranymi jeszcze elementami $x$, dostaniemy twierdzenie:
 
-\begin{thh} $ $ \\
+\begin{thh} [Rozkład na cykle] $ $ \\
     Każdą permutację $\sigma \in S_n$ można przedstawić jako iloczyn rozłącznych cykli,
     czyli takich $(c_1, c_2, \ldots, c_k)$, $(d_1, d_2, \ldots, d_l)$, że $\{ c_1, c_2, \ldots, c_k \} \cap \{ d_1, d_2, \ldots, d_l \} = \emptyset$,
     przy czym każdy element ze zbioru $\{1, 2, \ldots, n\}$ znajduje się w pewnym cyklu.
@@ -375,8 +375,7 @@ do końca tego rozdziału, że $n \ge 2$.
 
 Transpozycję są cegiełkami, z~których można budować permutacje, tzn.
 
-%TODO źródło?
-\begin{thh} $ $ \\
+\begin{thh}[{\cite[stw. 3.7.]{Baginski}}] $ $\\
     Każda permutacja jest iloczynem pewnej liczby transpozycji.
 \end{thh}
 
@@ -436,16 +435,16 @@ klasę sprzężoności:
 \begin{proof}
     Niech $\lambda = (c_1, c_2, \ldots, c_k)$ będzie cyklem w $S_n$, $c_{k+1} = c_1$ oraz $\gamma \in S_n$.
     Wówczas zachodzi 
-    $(\gamma^{-1} \lambda \gamma)(\gamma(c_i)) = (\lambda \gamma)(c_i) = \gamma(c_{i+1})$,
-    a na pozostałych elementach $\gamma^{-1} \lambda \gamma$ jest stałe.
-    Zatem $\gamma^{-1} (c_1, c_2, \ldots, c_k) \gamma = (\gamma(c_1), \gamma(c_2), \ldots, \gamma(c_k))$.
+    $(\gamma \lambda \gamma^{-1})(\gamma^{-1}(c_i)) = (\lambda \gamma^{-1})(c_i) = \gamma^{-1}(c_{i+1})$,
+    a na pozostałych elementach $\gamma \lambda \gamma^{-1}$ jest stałe.
+    Zatem $\gamma (c_1, c_2, \ldots, c_k) \gamma^{-1} = (\gamma^{-1}(c_1), \gamma^{-1}(c_2), \ldots, \gamma^{-1}(c_k))$.
     Stąd również
 
         $$\gamma \Big(c_1^1, c_2^1, \ldots, c_{k_1}^1\Big) \cdots \Big(c_1^m, c_2^m, \ldots, c_{k_m}^m \Big) \gamma^{-1} = $$
         $$ = \gamma \Big(c_1^1, c_2^1, \ldots, c_{k_1}^1\Big) \gamma^{-1} \gamma  \cdots \gamma ^{-1} \gamma \Big(c_1^m, c_2^m, \ldots, c_{k_m}^m\Big) \gamma^{-1} = $$
-        $$ = \Big(\gamma (c_1^1), \gamma (c_2^1), \ldots, \gamma (c_{k_1}^1)\Big) \cdots \Big(\gamma (c_1^m), \gamma (c_2^m), \ldots, \gamma (c_{k_m}^m)\Big)$$
+        $$ = \Big(\gamma^{-1} (c_1^1), \gamma^{-1} (c_2^1), \ldots, \gamma^{-1} (c_{k_1}^1)\Big) \cdots \Big(\gamma^{-1} (c_1^m), \gamma^{-1} (c_2^m), \ldots, \gamma^{-1} (c_{k_m}^m)\Big)$$
 
-    Jeżeli cykle $\Big(c_1^1, c_2^1, \ldots, c_{k_1}^1\Big) \cdots \Big(c_1^m, c_2^m, \ldots, c_{k_m}^m \Big)$ były rozłączne,
+    Jeżeli cykle $\Big(c_1^1, c_2^1, \ldots, c_{k_1}^1\Big), \ldots, \Big(c_1^m, c_2^m, \ldots, c_{k_m}^m \Big)$ były rozłączne,
     to również powstałe po sprzężeniu cykle są rozłączne.
     Jest ich tyle samo i mają te same długości, zatem rzeczywiście sprzężenie zachowuje typ permutacji.
 
@@ -690,8 +689,8 @@ własność pomiędzy tranzytywnością oraz $2$-tranzytywnością.
 \end{proof}
 \begin{proof}[Dowód b)]
      Załóżmy nie wprost, że $\rho$ nie jest prymitywne.
-                    Wówczas istnieje nietrywialny system bloków $\mathfrak{A} = \{Y_i \colon i \in I \}$,
-                    w którym istnieją $Y_1, Y_2 \in \mathfrak{A}$ takie, że $|Y_1| > 1$.
+                    Wówczas istnieje nietrywialny system bloków $\mathfrak{A}$,
+                    w którym istnieją $Y_1 \ne Y_2$ takie, że $|Y_1| > 1$.
                     Niech więc $x,y \in Y_1, z \in Y_2$ gdzie $x \ne y$.
                     Z 2-tranzytywności możemy odwzorować parę $(x, y)$ na parę $(x, z)$, co daje sprzeczność z~definicją systemu bloków.
                     Stąd $\rho$ musi być prymitywne.
@@ -753,7 +752,7 @@ warstwy $H$ są sumami pewnych warstw $G_x$ -- jeżeli $g_1 G_x = g_2
 G_x \iff g_1^{-1} \cdot g_2 \in G_x$ to także $g_1^{-1} \cdot g_2
 \in H \iff g_1 H = g_2 H$. Stąd warstwy $H$ odpowiadają rozbiciu
 zbioru warstw $G_x$, czyli również rozbiciu zbioru $X$. Zauważmy
-jeszcze, że działanie $G$ zachowuje warstwy $H$. Jest tak dlatego,
+jeszcze, że działanie $\rho$ zachowuje zbiór warstw $H$. Jest tak dlatego,
 że dla $g_1 H = g_2 H$ zachodzi $g_1^{-1} \cdot g_2 \in H$. Punkt
 $g_i G_x = x^{g_i}$ przy działaniu elementem $f$ grupy $G$
 przechodzi na $(x^{g_i})^f = x^{f g_i} = f g_i G_x$. Ale warstwy $f
@@ -773,7 +772,7 @@ zawiera $x$ oraz niech $H$ będzie stabilizatorem całego zbioru $Y$
 (czyli zbiorem $\{g \in G \colon \forall_{y \in Y} y^g \in Y \}$).
 Skoro $\mathfrak{A}$ jest nietrywialne, to $Y \ne X$ oraz istnieje
 blok rozmiaru co najmniej 2. Ale z~poprzedniego lematu wiemy, że
-wszystkie bloki mają tą samą wielkość, więc również $|Y| \ge 2$.
+wszystkie bloki mają tą samą wielkość, ponieważ $\rho$ jest tranzytywne, więc również $|Y| \ge 2$.
 
 Zauważmy, że $H = \{ g \in G \colon x^g \in Y\} \stackrel{def}{=}
 K$. Oczywiście $H \subseteq K$, gdyż elementy $H$ zachowują zbiór
@@ -804,11 +803,12 @@ Teraz jesteśmy już gotowi na sformułowanie i dowód lematu Iwasawy.
     Załóżmy przeciwnie, że w $G$ istnieje właściwa, nietrywialna podgrupa normalna $K$.
     Skoro $G$ działa wiernie oraz $K$ jest nietrywialna, to $x_0^{k_0} \ne x_0$ dla pewnych $k_0 \in K$ oraz $x_0 \in X$.
     Niech $H = G_{x_0}$.
-    Dostajemy, że $K \nleq H$, gdyż $k_0 \not \in H$, stąd również $H \lneq H K$.
+    Dostajemy, że $K \nleq H$, gdyż $k_0 \not \in H$, stąd również $H \subsetneq H K$.
 
-    Z lematu \ref{max_group} otrzymujemy, że $H$ jest podgrupą maksymalną w $G$.
+    Z lematu \ref{max_group} otrzymujemy, że $H$ jest podgrupą maksymalną w $G$,
+    a z twierdzenia \ref{mult_groups}, że $H K$ jest podgrupą $G$.
     $H \lneq H K$, więc $H K = G$.
-    Wobec tego (i z~twierdzenia \ref{mult_groups}) każdy element $g \in G$ jest postaci $g = h k$, gdzie $h \in H$ oraz $k \in K$.
+    Wobec tego każdy element $g \in G$ jest postaci $g = h k$, gdzie $h \in H$ oraz $k \in K$.
 
     Skoro działanie $\rho$ jest prymitywne, czyli również tranzytywne, to z~twierdzenia \ref{conj_stab}
     dostajemy, że każda grupa izotropii $G_x$ jest sprzężona z~$H$.
@@ -914,13 +914,13 @@ Udowodnimy o tych macierzach 2 lematy.
   gdyż $\Delta_{a b} \Delta_{b c} = \Delta_{a c}$ oraz $\Delta_{a b} \Delta_{d c} = 0$ dla $b \ne d$.
 
   W przypadku, gdy $n = 2$ oraz $|k| > 3$, w $k$ istnieje element $x$ różny od $0, 1, -1$.
-  Wtedy $x^2 \ne 1$ i dla $y = \frac{a}{1 - x^2}$ oraz $\epsilon = i - j \in \{-1, 1\}$ zachodzi
+  Wtedy $x^2 \ne 1$ i dla $y = \frac{a}{1 - x^{-2\epsilon}}$ gdzie $\epsilon = i - j \in \{-1, 1\}$ zachodzi
   $$ [ E_{i j}(y), x \Delta_{1 1} + x^{-1} \Delta_{2 2}] = $$
   $$ = E_{i j}(y)(x \Delta_{1 1} + x^{-1} \Delta_{2 2}) E_{i j}(y)^{-1} (x \Delta_{1 1} + x^{-1} \Delta_{2 2})^{-1} = $$
 %  $$ = E_{i j}(y)(x \Delta_{1 1} + x^{-1} \Delta_{2 2}) E_{i j}(-y) (x^{-1} \Delta_{1 1} + x \Delta_{2 2}) = $$
   $$ = (I_n + y \Delta_{i j})(x \Delta_{1 1} + x^{-1} \Delta_{2 2}) (I_n -y \Delta_{i j}) (x^{-1} \Delta_{1 1} + x \Delta_{2 2}) = $$
   $$ = (x \Delta_{1 1} + x^{-1} \Delta_{2 2} + y x^\epsilon \Delta_{i j}) (x^{-1} \Delta_{1 1} + x \Delta_{2 2} - y x^{-\epsilon} \Delta_{i j}) = $$
-  $$ = \Delta_{1 1} + \Delta_{2 2} + y (1-x^2) \Delta_{i j}= I_n + a \Delta_{i j} = E_{i j}(a) $$
+  $$ = \Delta_{1 1} + \Delta_{2 2} + y (1-x^{-2\epsilon}12) \Delta_{i j}= I_n + a \Delta_{i j} = E_{i j}(a) $$
 \end{proof}
 
 
@@ -942,74 +942,74 @@ Udowodnimy o tych macierzach 2 lematy.
   Zauważmy również, że działanie $\rho$, a więc także $\tilde{\rho}$, jest 2-tranzytywne, stąd prymitywne.
   Jest tak, gdyż za pomocą mnożenia przez odpowiednią macierz, możemy przekształcić dowolną bazę $k^n$ na inną.
   Dlatego chcąc przekształcić $\langle v_i \rangle$ na $\langle w_i \rangle$ dla $i = 1, 2$ dopełniamy $v_i$ do bazy $v_1, \ldots, v_n$
-  oraz $w_i$ do bazy $w_1, \ldots, w_n$, dostajemy macierz przejścia $M$ i dzielimy ostatni wiersz $M$ przez $\det(M)$.
-  Otrzymana macierz jest z $SL_n(k)$, przekształca tak samo jednowymiarowe podprzestrzenie co $M$, w szczególności przekształca 
-  $\langle v_i \rangle$ na $\langle w_i \rangle$ dla $i = 1, 2$.
+  oraz $w_i$ do bazy $w_1, \ldots, w_n$ i mnożymy $w_n$ przez pewną stałą tak, żeby wyznacznik macierzy $A$ o kolumnach $v_i$ 
+  był równy wyznacznikowi maierzy $B$ o kolumnach $w_i$. 
+  Dzięki temu macierz $B A^{-1} \in SL_n(k)$ przekształca $\langle v_i \rangle$ na $\langle w_i \rangle$ dla $i = 1, 2, \ldots, n$.
 
   Rozważmy teraz stabilizator $H$ punktu $\langle e_1 \rangle$ przy działaniu $\rho$.
   $H$ składa się z tych macierzy o wyznaczniku 1, które stabilizują $\langle e_1 \rangle$,
-  czyli w pierwszym wierszu mają wektor $(\lambda, 0, 0, \ldots, 0)$, gdzie $\lambda \in k^*$.
+  czyli w pierwszej kolumnie mają wektor $(\lambda, 0, 0, \ldots, 0)$, gdzie $\lambda \in k^*$.
 
   Niech $A$ będzie podzbiorem $H$ macierzy o postaci blokowej
   $
     \left( \begin{array}{cc}
-    1 & 0_{n-1} \\
-    v_{n-1} & I_{n-1} \\
+    1 & v_{n-1} \\
+    0_{n-1} & I_{n-1} \\
     \end{array} \right)
   $.
   Wówczas $A$ jest abelową podgrupą $H$.
   Rzeczywiście:
   $$
-    \left( \begin{array}{cc} 1 & 0_{n-1} \\ v_{n-1} & I_{n-1} \\ \end{array} \right) \cdot
-    \left( \begin{array}{cc} 1 & 0_{n-1} \\ w_{n-1} & I_{n-1} \\ \end{array} \right) =
-    \left( \begin{array}{cc} 1 & 0_{n-1} \\ v_{n-1} + w_{n-1} & I_{n-1} \\ \end{array} \right)
+    \left( \begin{array}{cc} 1 & v_{n-1} \\ 0_{n-1} & I_{n-1} \\ \end{array} \right) \cdot
+    \left( \begin{array}{cc} 1 & w_{n-1} \\ 0_{n-1} & I_{n-1} \\ \end{array} \right) =
+    \left( \begin{array}{cc} 1 & v_{n-1} + w_{n-1} \\ 0_{n-1} & I_{n-1} \\ \end{array} \right)
   $$
   Zatem iloczyn elementów z $A$ należy do $A$, jest przemienny oraz biorąc $w_{n-1} = -v_{n-1}$
   otrzymujemy, że odwrotność elementów z $A$ również należy do $A$.
   
   Ponadto $A$ jest podgrupą normalną $H$, gdyż
   $$
-    \left( \begin{array}{cc} \lambda & 0_{n-1} \\ w_{n-1} & A_{n-1} \\ \end{array} \right)^{-1} \cdot
-    \left( \begin{array}{cc} 1 & 0_{n-1} \\ v_{n-1} & I_{n-1} \\ \end{array} \right)  \cdot
-    \left( \begin{array}{cc} \lambda & 0_{n-1} \\ w_{n-1} & A_{n-1} \\ \end{array} \right) = 
+    \left( \begin{array}{cc} \lambda & w_{n-1} \\ 0_{n-1} & A_{n-1} \\ \end{array} \right)^{-1} \cdot
+    \left( \begin{array}{cc} 1 & v_{n-1} \\ 0_{n-1} & I_{n-1} \\ \end{array} \right)  \cdot
+    \left( \begin{array}{cc} \lambda & w_{n-1} \\ 0_{n-1} & A_{n-1} \\ \end{array} \right) = 
   $$
   $$ = 
-    \left( \begin{array}{cc} \lambda^{-1} & 0_{n-1} \\ w'_{n-1} & A^{-1}_{n-1} \\ \end{array} \right) \cdot
-    \left( \begin{array}{cc} 1 & 0_{n-1} \\ v_{n-1} & I_{n-1} \\ \end{array} \right)  \cdot
-    \left( \begin{array}{cc} \lambda & 0_{n-1} \\ w_{n-1} & A_{n-1} \\ \end{array} \right) = 
+    \left( \begin{array}{cc} \lambda^{-1} & w'_{n-1} \\ 0_{n-1} & A^{-1}_{n-1} \\ \end{array} \right) \cdot
+    \left( \begin{array}{cc} 1 & v_{n-1} \\ 0_{n-1} & I_{n-1} \\ \end{array} \right)  \cdot
+    \left( \begin{array}{cc} \lambda & w_{n-1} \\ 0_{n-1} & A_{n-1} \\ \end{array} \right) = 
   $$
   $$ = 
-    \left( \begin{array}{cc} \lambda^{-1} & 0_{n-1} \\ w'_{n-1} & A^{-1}_{n-1} \\ \end{array} \right) \cdot
-    \left( \begin{array}{cc} \lambda & 0_{n-1} \\ \lambda v_{n-1} + w_{n-1} & A_{n-1} \\ \end{array} \right) = 
-    \left( \begin{array}{cc} 1 & 0_{n-1} \\ v'_{n-1} & I_{n-1} \\ \end{array} \right)  
+    \left( \begin{array}{cc} \lambda^{-1} & w'_{n-1} \\ 0_{n-1} & A^{-1}_{n-1} \\ \end{array} \right) \cdot
+    \left( \begin{array}{cc} \lambda & \lambda w_{n-1} + v_{n-1}A_{n-1} \\ 0_{n-1} & A_{n-1} \\ \end{array} \right) = 
+    \left( \begin{array}{cc} 1 & v'_{n-1} \\ 0_{n-1} & I_{n-1} \\ \end{array} \right)  
   $$
   dla odpowiednio dobranych $w'_{n-1}$ oraz $v'_{n-1}$.
 
   Pokażemy teraz, że sprzężenia $A$ w $SL_n(k)$ zawierają wszystkie macierze elementarne $E_{i j}(a)$ (dla $i \ne j$).
   Dzięki temu oraz lematowi \ref{lemma_Eij_generates_SL} będziemy wiedzieć, że sprzężenia $A$ generują całe $SL_n(k)$.
 
-  Gdy $n = 2$, to $E_{2 1}(a) \in A$ oraz 
+  Gdy $n = 2$, to $E_{1 2}(a) \in A$ oraz 
   $$ 
     \left( \begin{array}{cc} 0 & 1 \\ -1 & 0 \\ \end{array} \right)^{-1} \cdot
-    \left( \begin{array}{cc} 1 & 0 \\ -a & 1 \\ \end{array} \right) \cdot
+    \left( \begin{array}{cc} 1 & -a \\ 0 & 1 \\ \end{array} \right) \cdot
     \left( \begin{array}{cc} 0 & 1 \\ -1 & 0 \\ \end{array} \right) = 
   $$
   $$ 
     \left( \begin{array}{cc} 0 & -1 \\ 1 & 0 \\ \end{array} \right) \cdot
-    \left( \begin{array}{cc} 0 & 1 \\ -1 & -a \\ \end{array} \right) =
-    \left( \begin{array}{cc} 1 & a \\ 0 & 1 \\ \end{array} \right) = E_{1 2}(a)
+    \left( \begin{array}{cc} a & 1 \\ -1 & 0 \\ \end{array} \right) =
+    \left( \begin{array}{cc} 1 & 0 \\ a & 1 \\ \end{array} \right) = E_{2 1}(a)
   $$
   Natomiast, gdy $n \ge 3$ oraz $j \ne m$ to z przechodniości naturalnego działania grupy $A_n$ na zbiorze $\{1, 2, \ldots, n \}$ 
-  otrzymujemy pewien element $\pi \in A_n$ taki, że $\pi(1) = m$. Niech $l = \pi^{-1}(j) \ne 1$ oraz $P_\pi$ -- macierz permutacji $\pi$,
+  otrzymujemy pewien element $\pi \in A_n$ taki, że $\pi(1) = j$. Niech $l = \pi^{-1}(m) \ne 1$ oraz $P_\pi$ -- macierz permutacji $\pi$,
   tzn. $P_\pi$ zawiera jedynki na pozycjach $(i, \pi(i))$ a~poza tym same zera.
   Wówczas z parzystości $\pi$ dostajemy, że $\det(P_\pi) = 1$, czyli $P_\pi \in SL_n(k)$ oraz
-  $$ (P_\pi)^{-1} E_{l 1}(a) P_\pi = P_{\pi^{-1}} (I_n + a \Delta_{l 1}) P_\pi = $$
-  $$ = I_n + P_{\pi^{-1}} (a \Delta_{l \pi(1)}) = I_n + a \Delta_{\pi(l) \pi(1)} = I_n + a \Delta_{j m} = E_{j m}(a) $$
+  $$ (P_\pi)^{-1} E_{1 l}(a) P_\pi = P_{\pi^{-1}} (I_n + a \Delta_{1 l}) P_\pi = $$
+  $$ = I_n + P_{\pi^{-1}} (a \Delta_{1 \pi(l)}) = I_n + a \Delta_{\pi(1) \pi(l)} = I_n + a \Delta_{j m} = E_{j m}(a) $$
   
   Przechodząc teraz do działania $\tilde{\rho}$ widzimy, że stabilizatorem punktu $\langle e_1 \rangle$ 
   przy tym działaniu jest $\tilde{H} = H/SZ_n \le PSL_n(k)$.
   Ponadto $\tilde{A} = A/SZ_n$ jest abelową podgrupą normalną $\tilde{H}$ oraz sprzężenia $\tilde{A}$ generują $PSL_n(k)$,
-  gdyż $\tilde{g}^{-1} \tilde{A} \tilde{g} = (g^{-1} A g) / SZ_n$.
+  gdyż $\tilde{g} \tilde{A} \tilde{g}^{-1} = (g A g^{-1}) / SZ_n$.
 
   Udowodniliśmy zatem, że działanie $\tilde{\rho}$ grupy $PSL_n(k)$ na zbiorze $X$ jest wierne, prymitywne 
   oraz stabilizator $\tilde{H}$ punktu $\langle e_1 \rangle$ zawiera przemienną podgrupę normalną $\tilde{A}$, 
