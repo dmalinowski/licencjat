@@ -827,7 +827,7 @@ Teraz jesteśmy już gotowi na sformułowanie i dowód lematu Iwasawy.
 
 \chapter{Prostota specjalnej rzutowej grupy liniowej $PSL_n(k)$}
 
-W tym rozdziale pokażemy zastosowania udowodnionego powyżej lematy Iwasawy.
+W tym rozdziale pokażemy zastosowania udowodnionego powyżej lematu Iwasawy.
 Wykażemy prostotę grupy $PSL_n(k)$ oraz zaproponujemy alternatywny dowód prostoty $A_n$.
 
 \section{Grupy liniowe}
@@ -893,7 +893,7 @@ Udowodnimy o tych macierzach 2 lematy.
   Oczywiście $E_{i j}(a) \in SL_n(k)$ dla $i \ne j$. 
   Ponadto $E_{i j}(a)^{-1} = E_{i j}(-a)$, zatem aby pokazać, że każdy element $M \in SL_n(k)$ jest iloczynem macierzy $E_{i j}(a)$,
   wystarczy dowieść, że jak będziemy mnożyć $M$ z lewej strony przez macierze $E_{i j}(a)$, to dostaniemy identyczność.
-  Ale mnożenie przez $E_{i j}(a)$ to dodanie do $j$-tego wiersza $a$ krotność $i$-tego wiersza.
+  Ale mnożenie przez $E_{i j}(a)$ to dodanie do $i$-tego wiersza $a$ krotność $j$-tego wiersza.
   Dzięki zastosowaniu eliminacji Gaussa możemy w ten sposób doprowadzić $M$ do postaci diagonalnej,
   a nawet postaci diagonalnej z jedynkami na przekątnej poza pozycją $(n, n)$, ponieważ dodając $i$-ty wiersz do $(i+1)$-go, a następnie odpowiednio
   odejmując od $i$-tego $c$ krotność $(i+1)$-wszego dostajemy na przekątnej jedynkę. Ale wówczas ostatnia pozycja również będzie równa 1, 
@@ -1065,7 +1065,7 @@ oraz dwóch prostych faktów o cyklach długości 3.
 \begin{proof}[Dowód (II sposób)]
   Zauważmy najpierw, że dla $n \ge 5$ cykle długości 3 są komutantami pewnych elementów z $A_n$.
   Rzeczywiście, dla parami różnych $a, b, c, d, e \in \{ 1, 2, \ldots, n \}$ mamy
-  $$ [(b, c, d)(a, c, e)] = (b, c, d)(a, c, e)(d, c, b)(e, c, a) = $$
+  $$ [(b, c, d),(a, c, e)] = (b, c, d)(a, c, e)(d, c, b)(e, c, a) = $$
   $$ = (b, e, a, c, d)(d, a, e, c, b) = (a, b, c)(d)(e) = (a, b, c)$$
   Zatem z lematu \ref{lemma_3cycles} grupa $A_n$ jest doskonała.
 
