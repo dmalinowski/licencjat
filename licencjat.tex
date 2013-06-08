@@ -1029,7 +1029,7 @@ Udowodnimy o tych macierzach 2 lematy.
 
 Na koniec tej pracy wspomnimy jeszcze o dwóch rzeczach -- udowodnimy, że rzeczywiście 
 grupy $PSL_2(\mathbb{F}_2)$ oraz $PSL_2(\mathbb{F}_3)$ nie są proste,
-a także podamy alternatywny dowód prostoty grup $A_n$ dla $n \ge 5$ -- tym razem korzystając z lematu Iwasawy.
+a także podamy alternatywny dowód prostoty grup $A_n$ dla $n \ge 7$ -- tym razem korzystając z lematu Iwasawy.
 
 \begin{fact}
   $PSL_2(\mathbb{F}_2)$ oraz $PSL_2(\mathbb{F}_3)$ nie są grupami prostymi.
@@ -1054,13 +1054,13 @@ a także podamy alternatywny dowód prostoty grup $A_n$ dla $n \ge 5$ -- tym raz
 \end{proof}
 
 
-Teraz zobaczymy jak łatwo udowodnić prostotę $A_n$ dla $n \ge 5$ korzystając z lematu Iwasawy 
+Teraz zobaczymy jak udowodnić prostotę $A_n$ dla $n \ge 5$ korzystając z lematu Iwasawy 
 oraz dwóch prostych faktów o cyklach długości 3.
 
 % appendix?
 \addtocounter{chapter}{-2}
 \begin{thh}[O prostocie $A_n$] $ $ \\
-    Grupa alternująca $A_n$ jest prosta dla $n \ge 5$.
+    Grupa alternująca $A_n$ jest prosta dla $n \ge 7$.
 \end{thh}
 \begin{proof}[Dowód (II sposób)]
   Zauważmy najpierw, że dla $n \ge 5$ cykle długości 3 są komutantami pewnych elementów z $A_n$.
@@ -1083,7 +1083,28 @@ oraz dwóch prostych faktów o cyklach długości 3.
   (co można udowodnić prościej, wprost), a z lematu \ref{lemma_3cycles} generują one całe $A_n$.
   Stąd sprzężenia $A$ generują całą grupę $A_n$.
 
-  Możemy zatem skorzystać z lematu Iwasawy -- dostajemy, że $A_n$ jest grupą prostą dla $n \ge 5$, czyli tezę.
+  Aby skorzystać z lematu Iwasawy musimy jeszcze pokazać, że działanie $\rho$ jest prymitywne.
+  Okazuje się, że nie jest ono prymitywne dla $n = 6$, gdyż zachowuje ono wówczas system bloków
+  $\{\{A, B\} \colon |A| = |B| = 3, A \cup B = \{1, 2, 3, 4, 5, 6 \} \}$ dlatego wtedy ten dowód nie działa.
+  Jednak dla $n = 5$ oraz dla $n \ge 7$ to działanie rzeczywiście jest prymitywne.
+
+  Załóżmy przeciwnie, że dany jest pewien nietrywialny system bloków $\mathfrak{A}$ oraz
+  $Y \in \mathfrak{A}$, $|Y| \ge 2$.
+  Jeżeli $Y$ zawiera dwie rozłączne trójki $\{a, b, c\}$ i $\{x, y, z\}$, to $n \ge 6$, więc również $n \ge 7$.
+  Stąd dla $t$ różnego od tych elementów permutacja $(x, t, y)$ stabilizuje $\{a, b, c\}$ oraz 
+  zamienia $\{x, y, z\}$ na $\{x, z, t\}$ czyli z własności systemów bloków
+  $\{x, z, t\} \in Y$, więc $Y$ zawiera też dwie nie rozłączne trójki.
+  Analogicznie, jeżeli $Y$ zawiera dwie trójki $\{a, b, c\}$ i $\{a, b, d\}$, 
+  to permutacja $(a, c)(d, e)$ wymusza, że również $\{b, c, e\} \in Y$, czyli $Y$ zawiera dwie trójki o~jednoelementowej części wspólnej.
+
+  Jeżeli natomiast $Y$ zawiera $\{a, b, c\}$ oraz $\{a, d, e\}$ to zawiera również $\{a, x, y\}$ oraz $\{b, x, y\}$ 
+  dla dowolnych $x, y \not \in \{a, b, c\}$ (gdyż możemy parzystą permutacją zamienić $d$ na $x$, $e$ na $y$ i~odpowiednio spermutować zbiór $\{a, b, c\}$).
+  A działając permutacją $(x, y)(b, t)$ otrzymujemy, że $Y$ zawiera także $\{x, y, t\}$ dla $x, y \not \in \{a, b, c\}$ oraz dowolnego $t$.
+  Postępując analogicznie z tymi elementami dostajemy, że $Y$ zawiera wszystkie trójki, zatem mamy sprzeczność z~założeniem, że 
+  $\mathfrak{A}$ jest nietrywialnym systemem bloków.
+
+  Ze wszystkich przypadków wynika sprzeczność, zatem rzeczywiście dla $n = 5$ lub $n \ge 7$ działanie $\rho$ jest prymitywne, 
+  więc z lematu Iwasawy dostajemy, że $A_n$ jest grupą prostą.
 \end{proof}
 
 
